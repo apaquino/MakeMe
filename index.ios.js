@@ -13,11 +13,15 @@ const {
   TouchableHighlight
 } = React;
 
+const _getNameState = () => {
+  return AppStore.getName();
+};
+
 class MakeMe extends Component {
   constructor(props){
     super(props);
     this.state = {
-      name: this._getNameState(),
+      name: _getNameState(),
       inputValue: ""
     };
   }
@@ -31,7 +35,7 @@ class MakeMe extends Component {
   }
 
   _onFluxChange(){
-    this.setState({name: this._getNameState()});
+    this.setState({name: ._getNameState()});
   }
 
   _getNameState() {

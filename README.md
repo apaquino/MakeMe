@@ -30,22 +30,23 @@ This is the optional if you want to change the name.  You can just run the npm i
   *   If there are API calls,
   *   then the action may make a call to retrieve the data,
   *   then that API call will return a function when the data is received and there you use the dispatcher
-7.    The store is setup and registers to evaluate actionTypes and do something if necessary.
+7.    The store is setup and registers to evaluate actionTypes and do something if necessary, usually the case.
 8.    The store that handles it will then emit that a change event has occurred.
 9.    Each store should have a function to allows components to listen for events and register a callback AND a function to remove the listener when the component unmounts.  Otherwise you will have listeners to running a callback to something that doesn't exist.  Very very bad.
 10.   Have getter functions for the data so components can retrieve them.
 11.   The data is outside the class to keep them private.  The class has access to them but it cannot be called by AppStore.data where you can change it (e.g AppStore.isAdmin = true).  The store is the only thing that can mutate the data.  There are no setters.
-12.   If a component wants data from a store and then wants to get notified when some event happens so it can do something, then import the actions and store to the component.
-13.   For example, use the store to get the data and set the state.
-14.   When you want to do an action, add something, then the handle function should call the action with data it needs.
-15.   Add a listener for change events, and pass a callback that will call setState.  You should use the store getter to assign the state variable as it will be the single source of truth.
-16.   Order of operations:
+12.   Make sure to follow the singleton pattern for the stores so there is only one copy of used by multiple components.  That is to make sure there is a single source of truth.  e.g. export default new fooStore();
+13.   If a component wants data from a store and then wants to get notified when some event happens so it can do something, then import the actions and store to the component.
+14.   For example, use the store to get the data and set the state.
+15.   When you want to do an action, add something, then the handle function should call the action with data it needs.
+16.   Add a listener for change events, and pass a callback that will call setState.  You should use the store getter to assign the state variable as it will be the single source of truth.
+17.   Order of operations:
   *   action will be requested
   *   payload dispatched and received by stores
   *   possibly update the data
   *   broadcast a change event
   *   run the callback you registered
   *   that callback will set the state with the latest info.
-17.   Make sure to remove listener when the component unmounts.
+18.   Make sure to remove listener when the component unmounts.
 
 This is how it is implemented in this app and can be done differently.  Redux could be used as well to reduce the number of stores and other benefits.  I have done both and for this app I chose flux to try out.  There is no need to mapStateToProps or use HOC or ES7 decorators.  

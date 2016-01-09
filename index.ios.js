@@ -35,7 +35,7 @@ class MakeMe extends Component {
   }
 
   _onFluxChange(){
-    this.setState({name: ._getNameState()});
+    this.setState({name: _getNameState()});
   }
 
   _getNameState() {

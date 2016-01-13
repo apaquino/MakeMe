@@ -49,7 +49,7 @@ class LoginSignup extends Component {
     console.log("loginAuthentification pressed");
   };
 
-  _renderLoginSignUpForm(){
+  _renderLoginSignUpForm() {
     const { formType } = this.state;
 
     if(formType === 'login') {

@@ -6,8 +6,6 @@ const {
 	StyleSheet
 } = React;
 
-
-
 class StartLogo extends Component {
 	render(){
 		return (

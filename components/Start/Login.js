@@ -27,28 +27,12 @@ class Login extends Component {
     };
   }
 
-  onUsernameChange = (e) => {
-    this.setState({username: e.nativeEvent.text});
-  };
-
   moveToPasswordField = () => {
     this._password.focus();
   };
 
-  onPasswordChange = (e) => {
-    this.setState({password: e.nativeEvent.text});
-  };
-
-  onNewUsernameChange = (e) => {
-    this.setState({newUsername: e.nativeEvent.text});
-  };
-
   moveToNewPasswordField = () => {
     this._newPassword.focus();
-  };
-
-  onNewPasswordChange = (e) => {
-    this.setState({newPassword: e.nativeEvent.text});
   };
 
   onNewEmailChange = (e) =>{
@@ -56,24 +40,12 @@ class Login extends Component {
   };
 
   signup = () => {
-    var newUsername = this.state.newUsername;
-    var newPassword = this.state.newPassword;
-    var newEmail = this.state.newEmail;
+    const { newUsername, newPassword, newEmail } = this.state;
+    console.log("username", newUsername);
+    console.log("password", newPassword);
+    console.log("email", newEmail);
     this._newUsername.setNativeProps({text: ''});
     this._newPassword.setNativeProps({text: ''});
-    // this._newEmail.setNativeProps({text: ''});
-  };
-
-  showLoginForm = () => {
-    this.setState({formType: 'login'});
-  };
-
-  showSignUp1Form = () => {
-    this.setState({formType: 'signup1'});
-  };
-
-  showSignUp2Form = () => {
-    this.setState({formType: 'signup2'});
     // this._newEmail.setNativeProps({text: ''});
   };
 
@@ -82,8 +54,9 @@ class Login extends Component {
   };
 
   _renderLoginSignUpForm(){
+    const { formType } = this.state;
 
-    if(this.state.formType === 'login') {
+    if(formType === 'login') {
       return (
         <InputBackgroundLeft>
           <View style={styles.inputView}>
@@ -95,9 +68,11 @@ class Login extends Component {
               autoCapitalize='none'
               enablesReturnKeyAutomatically={true}
               returnKeyType='next'
-              onChange={this.onUsernameChange}
+              onChange={(e) => this.setState({username: e.nativeEvent.text})}
               onSubmitEditing={this.moveToPasswordField}
-              ref={(c) => this._username = c}>
+              ref={(c) => this._username = c}
+              value={this.state.username}
+            >
             </TextInput>
             <TextInput
               style={styles.inputLogin}
@@ -108,13 +83,15 @@ class Login extends Component {
               autoCorrect={false}
               autoCapitalize="none"
               enablesReturnKeyAutomatically={true}
-              onChange={this.onPasswordChange}
-              onSubmitEditing={this.loginAuthentification}>
+              onChange={(e) => this.setState({password: e.nativeEvent.text})}
+              onSubmitEditing={this.loginAuthentification}
+              value={this.state.password}
+            >
             </TextInput>
           </View>
         </InputBackgroundLeft>
         )
-      } else if (this.state.formType === 'signup2'){
+      } else if (formType === 'signup2'){
         return (
           <InputBackground>
           <View style={styles.inputView}>
@@ -126,21 +103,25 @@ class Login extends Component {
               autoCapitalize='none'
               enablesReturnKeyAutomatically={true}
               returnKeyType='next'
-              onChange={this.onNewUsernameChange}
+              onChange={(e) => this.setState({newUsername: e.nativeEvent.text})}
               onSubmitEditing={this.moveToNewPasswordField}
-              ref={(c) => this._newUsername = c}>
+              ref={(c) => this._newUsername = c}
+              value={this.state.newUsername}
+            >
             </TextInput>
             <TextInput
               style={styles.inputLogin}
               placeholder="Create password"
-              ref={(c) => this._newPassword= c}
+              ref={(c) => this._newPassword = c}
               returnKeyType='go'
               secureTextEntry={true}
               autoCorrect={false}
               autoCapitalize="none"
               enablesReturnKeyAutomatically={true}
-              onChange={this.onNewPasswordChange}
-              onSubmitEditing={this.signup}>
+              onChange={(e) => this.setState({newPassword: e.nativeEvent.text})}
+              onSubmitEditing={this.signup}
+              value={this.state.newPassword}
+            >
             </TextInput>
             </View>
             </InputBackground>
@@ -158,12 +139,15 @@ class Login extends Component {
               keyboardType = 'email-address'
               enablesReturnKeyAutomatically={true}
               returnKeyType='next'
-              onChange={this.onNewEmailChange}
-              onSubmitEditing={this.showSignUp2Form}
-              ref={(c) => this._newEmail= c}>
+              onChange={(e) => this.setState({newEmail: e.nativeEvent.text})}
+              onSubmitEditing={() => this.setState({formType: 'signup2'})}
+              ref={(c) => this._newEmail = c}
+              value={this.state.newEmail}
+            >
             </TextInput>
             <TouchableHighlight
-              onPress={this.showSignUp2Form} >
+              onPress={this.showSignUp2Form}
+            >
               <Text style={styles.nextSignup}>Next</Text>
             </TouchableHighlight>
         </View>
@@ -182,12 +166,12 @@ class Login extends Component {
         <Text style={styles.tagLine}>Exercise just got personal.</Text>
         <View style={{flexDirection: 'row'}}>
           <TouchableHighlight
-            onPress={this.showLoginForm}
+            onPress={() => this.setState({formType: 'login'})}
           >
           <Text style={styles.tagLineDirectionLeft}>LOG IN</Text>
           </TouchableHighlight>
           <TouchableHighlight
-            onPress={this.showSignUp1Form}
+            onPress={() => this.setState({formType: 'signup1'})}
           >
            <Text style={styles.tagLineDirectionRight}>SIGN UP</Text>
           </TouchableHighlight>
@@ -224,7 +208,7 @@ var styles = StyleSheet.create({
     color: '#e6e6e6',
     letterSpacing: 1,
     fontFamily: 'Raleway',
-    marginTop: 200,
+    marginTop: 70,
     fontSize: 11,
     letterSpacing: 1,
     textAlign: 'center',
@@ -234,7 +218,7 @@ var styles = StyleSheet.create({
     color: '#e6e6e6',
     letterSpacing: 1,
     fontFamily: 'Raleway',
-    marginTop: 200,
+    marginTop: 70,
     fontSize: 11,
     letterSpacing: 1,
     textAlign: 'center',
@@ -248,8 +232,6 @@ var styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     marginTop: 17,
-
-
   },
   inputLogin: {
     height: 40,

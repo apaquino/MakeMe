@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react-native';
 import Button from 'apsl-react-native-button';
-import { Actions } from 'react-native-router-flux';
 import StartLogo from './StartLogo';
+import { Actions } from 'react-native-router-flux';
 
 const {
   StyleSheet,
@@ -59,7 +59,6 @@ var styles = StyleSheet.create({
     resizeMode: 'contain',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    marginTop: -65
   },
   tagLine: {
   	color: '#e6e6e6',

@@ -3,6 +3,7 @@ import LoginSignupLogo from './LoginSignupLogo';
 import Button from 'apsl-react-native-button';
 import InputBackground from './InputBackground';
 import InputBackgroundLeft from './InputBackgroundLeft';
+import { Actions } from 'react-native-router-flux';
 
 const {
   View,
@@ -41,6 +42,7 @@ class LoginSignup extends Component {
 
   signup = () => {
     const { newUsername, newPassword, newEmail } = this.state;
+    Actions.about();
   };
 
   loginAuthentification = () => {

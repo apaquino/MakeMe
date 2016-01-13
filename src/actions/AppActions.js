@@ -2,16 +2,18 @@ import AppDispatcher from '../dispatcher/AppDispatcher';
 import { AppActionTypes } from '../constants/AppActionTypes';
 
 const AppActions = {
-  setName(name) {
+  authenticateUser(user) {
     AppDispatcher.dispatch({
-      actionType: AppActionTypes.SET_NAME,
-      name
+      actionType: AppActionTypes.AUTHENTICATE_USER,
+      user
     });
   },
-  AppDispatcher.dispatch({
-    actionType: AppActionTypes.AUTHENTICATE_USER,
-    user
-  })
+  createNewUser(newuser){
+    AppDispatcher.dispatch({
+      actionType: AppActionTypes.CREATE_NEWUSER,
+      newuser
+    });
+  }
 };
 
 export default AppActions;

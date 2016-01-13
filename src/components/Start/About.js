@@ -1,6 +1,7 @@
 import React, { Component } from 'react-native';
 import Button from 'apsl-react-native-button';
 import UseMe from './UseMe';
+import { Actions } from 'react-native-router-flux';
 
 const {
   View,

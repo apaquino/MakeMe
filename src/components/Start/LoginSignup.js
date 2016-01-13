@@ -4,6 +4,10 @@ import Button from 'apsl-react-native-button';
 import InputBackground from './InputBackground';
 import InputBackgroundLeft from './InputBackgroundLeft';
 import { Actions } from 'react-native-router-flux';
+import AppActions from '../../actions/AppActions';
+import AppStore from '../../stores/AppStore';
+import { EVENTS } from "../../constants/EVENT_CONSTANTS";
+
 
 const {
   View,
@@ -18,7 +22,7 @@ const {
 class LoginSignup extends Component {
   constructor(props){
     super(props);
-    // NOT binding props to state.  It is to initialize on firt load from router.
+    // NOT binding props to state.  It is to initialize on firt load from the router.
     this.state = {
       formType: this.props.startform,
       password: '',
@@ -26,8 +30,19 @@ class LoginSignup extends Component {
       newUsername: '',
       newPassword: '',
       newEmail: '',
-      msg: ''
+      msg: '',
+      isLoggedIn:''
     };
+  }
+
+  componentWillMount() {
+    AppStore.startListening(EVENTS.USER_AUTHENTICATED, this._fluxCb_UserAuth);
+    AppStore.startListening(EVENTS.USER_CREATED, this._fluxCb_UserCreated);
+  }
+
+  componentWillUnmount() {
+    AppStore.stopListening(EVENTS.USER_AUTHENTICATED, this._fluxCb_UserAuth);
+    AppStore.stopListening(EVENTS.USER_CREATED, this._fluxCb_UserCreated);
   }
 
   moveToPasswordField = () => {
@@ -40,15 +55,31 @@ class LoginSignup extends Component {
 
   signup = () => {
     const { newUsername, newPassword, newEmail } = this.state;
-    Actions.about();
+    const newUser = {
+      username: newUsername,
+      email: newEmail,
+      password: newPassword
+    };
+    AppActions.createNewUser(newUser);
   };
 
   loginAuthentification = () => {
-    console.log("loginAuthentification pressed");
+    const { username, password } = this.state;
+    const user = {
+      username,
+      password
+    };
+
+    AppActions.authenticateUser(user);
+    this.setState({
+      username: "",
+      password: ""
+    });
   };
 
+  // TODO: break up into separate components
   _renderLoginSignUpForm() {
-    const { formType } = this.state;
+    const { formType, isLoggedIn } = this.state;
 
     if(formType === 'login') {
       return (
@@ -149,6 +180,37 @@ class LoginSignup extends Component {
       )
     };
   }
+
+  _fluxCb_UserCreated = () => {
+    const userid = AppStore.getCurentUserId();
+    console.log("You new id is", userid);
+    console.log("new user created dispatch cb callled", AppStore.getDBUsers());
+    if (userid) {
+      Actions.about();
+
+    }
+    console.log("your user account was not created");
+    this.setState({
+      formType: 'signup1',
+      newUsername: '',
+      newPassword: '',
+      newEmail: '',
+    });
+  };
+
+  _fluxCb_UserAuth = () => {
+    const result = AppStore.getIsLoggedIn();
+    const userid = AppStore.getCurentUserId();
+    if (!result) {
+        // For prod release or demo, not for dev
+        // AlertIOS.alert('The Creditionals You Provided Are Invalid', 'Please try again',
+        //   [{text: 'Okay', onPress: () => console.log('Log failed logged attempt')}]
+        // );
+      console.log('The Creditionals You Provided Are Invalid');
+    } else {
+      console.log("You have logged in and I'll transition you soon", userid);
+    }
+  };
 
   render() {
     return (

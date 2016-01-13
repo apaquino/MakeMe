@@ -2,11 +2,7 @@
 
 import React, { Component } from 'react-native';
 import Button from 'apsl-react-native-button';
-import AppActions from '../../src/actions/AppActions';
-import AppStore from '../../src/stores/AppStore';
 import { Actions } from 'react-native-router-flux';
-
-
 import StartLogo from './StartLogo';
 
 const {
@@ -36,14 +32,14 @@ class Launch extends Component {
             style={styles.loginStyleButton}
             textStyle={styles.loginStyleText}
           >
-                LOG IN
+            LOG IN
           </Button>
           <Button
             onPress={() => Actions.loginsignup({startform: 'signup1'})}
             style={styles.signupStyleButton}
             textStyle={styles.loginStyleText}
           >
-                SIGN UP
+            SIGN UP
           </Button>
 				</Image>
 			</View>

@@ -17,41 +17,9 @@ const {
   StatusBarIOS,
 } = React;
 
-const _getNameState = () => {
-  return AppStore.getName();
-};
-
 class Launch extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      name: _getNameState(),
-      inputValue: ""
-    };
-  }
-
   componentDidMount () {
     StatusBarIOS.setStyle(1);
-    AppStore.startListening(this._onFluxChange.bind(this));
-  }
-
-  componentWillUnmount() {
-    AppStore.stopListening(this._onFluxChange.bind(this));
-  }
-
-  _onFluxChange(){
-    this.setState({name: _getNameState()});
-  }
-
-  onInputSubmit() {
-    const { inputValue } = this.state;
-    AppActions.setName(inputValue);
-    this.setState({inputValue: ""});
-  }
-
-  onLoginPress(){
-    console.log("Login button was pressed");
-    Actions.login();
   }
 
   render() {
@@ -64,14 +32,17 @@ class Launch extends Component {
 					<StartLogo/>
 					<Text style={styles.tagLine}>Exercise just got personal.</Text>
 					<Button
-            onPress={Actions.login}
+            onPress={() => Actions.loginsignup({startform: 'login'})}
             style={styles.loginStyleButton}
-            textStyle={styles.loginStyleText}>
+            textStyle={styles.loginStyleText}
+          >
                 LOG IN
           </Button>
           <Button
+            onPress={() => Actions.loginsignup({startform: 'signup1'})}
             style={styles.signupStyleButton}
-            textStyle={styles.loginStyleText}>
+            textStyle={styles.loginStyleText}
+          >
                 SIGN UP
           </Button>
 				</Image>

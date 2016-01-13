@@ -14,11 +14,11 @@ const {
   TouchableHighlight
 } = React;
 
-class Login extends Component {
+class LoginSignup extends Component {
   constructor(props){
     super(props);
     this.state = {
-      formType: 'login',
+      formType: this.props.startform,
       password: '',
       username: '',
       newUsername: '',
@@ -41,12 +41,6 @@ class Login extends Component {
 
   signup = () => {
     const { newUsername, newPassword, newEmail } = this.state;
-    console.log("username", newUsername);
-    console.log("password", newPassword);
-    console.log("email", newEmail);
-    this._newUsername.setNativeProps({text: ''});
-    this._newPassword.setNativeProps({text: ''});
-    // this._newEmail.setNativeProps({text: ''});
   };
 
   loginAuthentification = () => {
@@ -252,4 +246,4 @@ var styles = StyleSheet.create({
   }
 });
 
-export default Login;
+export default LoginSignup;

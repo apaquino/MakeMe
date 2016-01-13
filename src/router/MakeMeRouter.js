@@ -10,15 +10,15 @@ const {
 
 class MakeMeRouter extends Component {
   render() {
-          return (
-              <Router hideNavBar={true}>
-                  <Schema name="default" sceneConfig={Navigator.SceneConfigs.FloatFromRight}/>
-                  <Schema name="withoutAnimation"/>
-                  <Route name="launch" component={Launch} initial={true} />
-                  <Route name="loginsignup" component={LoginSignup} />
-                  <Route name="about" component={About} />
-              </Router>
-          );
+    return (
+      <Router hideNavBar={true}>
+        <Schema name="default" sceneConfig={Navigator.SceneConfigs.FloatFromRight}/>
+        <Schema name="withoutAnimation"/>
+        <Route name="launch" component={Launch} initial={true} />
+        <Route name="loginsignup" component={LoginSignup} />
+        <Route name="about" component={About} />
+      </Router>
+    );
   }
 };
 

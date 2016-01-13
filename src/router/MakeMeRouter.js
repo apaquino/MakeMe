@@ -1,8 +1,8 @@
 import React, { Component } from 'react-native';
 import { Router, Route, Schema, Animations, TabBar } from 'react-native-router-flux';
-import Launch from './src/components/Start/Launch';
-import LoginSignup from './src/components/Start/LoginSignup';
-import About from './src/components/Start/About';
+import Launch from '../components/Start/Launch';
+import LoginSignup from '../components/Start/LoginSignup';
+import About from '../components/Start/About';
 
 const {
   Navigator

@@ -7,7 +7,11 @@ const AppActions = {
       actionType: AppActionTypes.SET_NAME,
       name
     });
-  }
+  },
+  AppDispatcher.dispatch({
+    actionType: AppActionTypes.AUTHENTICATE_USER,
+    user
+  })
 };
 
 export default AppActions;

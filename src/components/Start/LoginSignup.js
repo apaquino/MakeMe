@@ -18,13 +18,15 @@ const {
 class LoginSignup extends Component {
   constructor(props){
     super(props);
+    // NOT binding props to state.  It is to initialize on firt load from router.
     this.state = {
       formType: this.props.startform,
       password: '',
       username: '',
       newUsername: '',
       newPassword: '',
-      newEmail: ''
+      newEmail: '',
+      msg: ''
     };
   }
 
@@ -86,37 +88,37 @@ class LoginSignup extends Component {
       } else if (formType === 'signup2'){
         return (
           <InputBackground key={'signup2'}>
-          <View style={styles.inputView}>
-            <TextInput
-              style={styles.inputLogin}
-              placeholder="Create username"
-              autoCorrect={false}
-              autoCapitalize='none'
-              enablesReturnKeyAutomatically={true}
-              returnKeyType='next'
-              onChange={(e) => this.setState({newUsername: e.nativeEvent.text})}
-              onSubmitEditing={this.moveToNewPasswordField}
-              ref={(c) => this._newUsername = c}
-              value={this.state.newUsername}
-              autoFocus={true}
-            >
-            </TextInput>
-            <TextInput
-              style={styles.inputLogin}
-              placeholder="Create password"
-              ref={(c) => this._newPassword = c}
-              returnKeyType='go'
-              secureTextEntry={true}
-              autoCorrect={false}
-              autoCapitalize="none"
-              enablesReturnKeyAutomatically={true}
-              onChange={(e) => this.setState({newPassword: e.nativeEvent.text})}
-              onSubmitEditing={this.signup}
-              value={this.state.newPassword}
-            >
-            </TextInput>
+            <View style={styles.inputView}>
+              <TextInput
+                style={styles.inputLogin}
+                placeholder="Create username"
+                autoCorrect={false}
+                autoCapitalize='none'
+                enablesReturnKeyAutomatically={true}
+                returnKeyType='next'
+                onChange={(e) => this.setState({newUsername: e.nativeEvent.text})}
+                onSubmitEditing={this.moveToNewPasswordField}
+                ref={(c) => this._newUsername = c}
+                value={this.state.newUsername}
+                autoFocus={true}
+              >
+              </TextInput>
+              <TextInput
+                style={styles.inputLogin}
+                placeholder="Create password"
+                ref={(c) => this._newPassword = c}
+                returnKeyType='go'
+                secureTextEntry={true}
+                autoCorrect={false}
+                autoCapitalize="none"
+                enablesReturnKeyAutomatically={true}
+                onChange={(e) => this.setState({newPassword: e.nativeEvent.text})}
+                onSubmitEditing={this.signup}
+                value={this.state.newPassword}
+              >
+              </TextInput>
             </View>
-            </InputBackground>
+          </InputBackground>
         )
       } else {
         return (
@@ -142,7 +144,7 @@ class LoginSignup extends Component {
             >
               <Text style={styles.nextSignup}>Next</Text>
             </TouchableHighlight>
-        </View>
+          </View>
         </InputBackground>
       )
     };

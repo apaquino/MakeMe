@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react-native';
-import MakeMeRouter from './MakeMeRouter';
+import MakeMeRouter from './src/router/MakeMeRouter';
 
 const {
   AppRegistry

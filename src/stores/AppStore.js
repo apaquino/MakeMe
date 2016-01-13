@@ -4,7 +4,14 @@ import { EventEmitter } from "events";
 
 const CHANGE_EVENT = 'CHANGE_EVENT';
 
+// MOCK Data.  Normally from a database but will mock/mimick JSON results from a DB
+import { mockUsers as users } from '../../data/mockUsers';
+
+// Application state
 let _name = "Armand";
+let _isLoggedIn = false;
+let _currentUserId = "";
+
 
 class AppStore extends EventEmitter {
   constructor(props) {

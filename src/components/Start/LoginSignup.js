@@ -8,7 +8,6 @@ import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import { EVENTS } from "../../constants/EVENT_CONSTANTS";
 
-
 const {
   View,
   StyleSheet,
@@ -180,7 +179,7 @@ class LoginSignup extends Component {
       )
     };
   }
-
+  // callbacks for flux.  Has this so I included in class
   _fluxCb_UserCreated = () => {
     const userid = AppStore.getCurentUserId();
     console.log("You new id is", userid);
@@ -216,7 +215,7 @@ class LoginSignup extends Component {
     return (
       <View style={styles.container}>
         <Image
-          source={require('image!Backdrop_sample')}
+          source={require('../../img/backgrounds/Backdrop_sample.png')}
           style={styles.backgroundImage}
         >
         <LoginSignupLogo />

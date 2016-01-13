@@ -12,7 +12,7 @@ class LoginSignupLogo extends Component {
 			<View>
 				<Image
 	        style={styles.icon}
-	        source={require('image!login_signup_logo')}
+	        source={require('../../img/logos/login_signup_logo.png')}
         />
       </View>
 		)

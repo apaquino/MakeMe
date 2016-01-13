@@ -36,10 +36,6 @@ class LoginSignup extends Component {
     this._newPassword.focus();
   };
 
-  onNewEmailChange = (e) =>{
-    this.setState({newEmail: e.nativeEvent.text});
-  };
-
   signup = () => {
     const { newUsername, newPassword, newEmail } = this.state;
     Actions.about();
@@ -54,13 +50,11 @@ class LoginSignup extends Component {
 
     if(formType === 'login') {
       return (
-        <InputBackgroundLeft>
+        <InputBackgroundLeft key={'login'}>
           <View style={styles.inputView}>
             <TextInput
               style={styles.inputLogin}
               placeholder="Username"
-              autoFocus={true}
-              autoCorrect={false}
               autoCapitalize='none'
               enablesReturnKeyAutomatically={true}
               returnKeyType='next'
@@ -68,6 +62,8 @@ class LoginSignup extends Component {
               onSubmitEditing={this.moveToPasswordField}
               ref={(c) => this._username = c}
               value={this.state.username}
+              autoCorrect={false}
+              autoFocus={true}
             >
             </TextInput>
             <TextInput
@@ -89,12 +85,11 @@ class LoginSignup extends Component {
         )
       } else if (formType === 'signup2'){
         return (
-          <InputBackground>
+          <InputBackground key={'signup2'}>
           <View style={styles.inputView}>
             <TextInput
               style={styles.inputLogin}
               placeholder="Create username"
-              autoFocus={true}
               autoCorrect={false}
               autoCapitalize='none'
               enablesReturnKeyAutomatically={true}
@@ -103,6 +98,7 @@ class LoginSignup extends Component {
               onSubmitEditing={this.moveToNewPasswordField}
               ref={(c) => this._newUsername = c}
               value={this.state.newUsername}
+              autoFocus={true}
             >
             </TextInput>
             <TextInput
@@ -124,12 +120,11 @@ class LoginSignup extends Component {
         )
       } else {
         return (
-        <InputBackground>
+        <InputBackground key={'signup1'}>
           <View style={styles.inputView}>
             <TextInput
               style={styles.inputLogin}
               placeholder="Email"
-              autoFocus={true}
               autoCorrect={false}
               autoCapitalize='none'
               keyboardType = 'email-address'
@@ -139,16 +134,18 @@ class LoginSignup extends Component {
               onSubmitEditing={() => this.setState({formType: 'signup2'})}
               ref={(c) => this._newEmail = c}
               value={this.state.newEmail}
+              autoFocus={true}
             >
             </TextInput>
             <TouchableHighlight
-              onPress={this.showSignUp2Form}
+              onPress={() => this.setState({formType: 'signup2'})}
             >
               <Text style={styles.nextSignup}>Next</Text>
             </TouchableHighlight>
         </View>
         </InputBackground>
-      )};
+      )
+    };
   }
 
   render() {

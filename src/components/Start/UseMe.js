@@ -12,7 +12,7 @@ class UseMe extends Component {
 			<View>
 				<Image
 	        style={styles.icon}
-	        source={require('image!useMe')}
+	        source={require('../../img/logos/useMe.png')}
         />
       </View>
 		)

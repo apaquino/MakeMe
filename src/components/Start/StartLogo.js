@@ -12,7 +12,7 @@ class StartLogo extends Component {
 			<View>
 				<Image
 	        style={styles.icon}
-	        source={require('image!start_logo')}
+	        source={require('../../img/logos/start_logo.png')}
 				/>
       </View>
 		)

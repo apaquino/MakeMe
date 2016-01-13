@@ -22,7 +22,7 @@ class Launch extends Component {
     return (
       <View style={styles.container}>
 				<Image
-          source={require('image!Backdrop_sample')}
+          source={require('../../img/backgrounds/Backdrop_sample.png')}
           style={styles.backgroundImage}
         >
 					<StartLogo/>

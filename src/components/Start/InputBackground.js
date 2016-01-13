@@ -12,7 +12,7 @@ class InputBackground extends Component {
 			<View>
 				<Image
 	        style={styles.icon}
-          source={require('image!inputBackground')}
+          source={require('../../img/backgrounds/inputBackground.png')}
         >
 	        {this.props.children}
 	      </Image>

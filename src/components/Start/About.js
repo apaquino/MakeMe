@@ -7,29 +7,29 @@ const {
   StyleSheet,
   Image,
   Text,
-  StatusBarIOS,
-  TouchableHighlight
 } = React;
 
 
 class About extends Component {
 	render(){
 		return (
-			<View style={styles.tester}>
+			<View style={styles.container}>
 				<Image
-          source={require('image!Backdrop_sample')}
+          source={require('../../img/backgrounds/Backdrop_sample.png')}
           style={styles.backgroundImage}>
 					<UseMe />
-					<View style={{marginLeft: 252, marginRight: 252}}>
+					<View style={{paddingLeft: 18, paddingRight: 18}}>
 					<Text style={styles.tagLine}>
-						Make Me brings the very best talent in personal training straight to your mobile device. Discover new routines uploaded daily and customize your favorite trainers and work outs plans, Our trainers will virtually track your progress and push you to your limits.
+						Make Me brings the very best talent in personal training straight to your mobile device.
+            Discover new routines uploaded daily and customize your favorite trainers and work outs plans,
+            Our trainers will virtually track your progress and push you to your limits.
 					</Text>
 					</View>
 					<Text style={styles.underTagline}>Make Me an athlete.</Text>
           <Button
-            onPress={this.goToPlaylistPage}
-            style={styles.signupStyleButton}
-            textStyle={styles.loginStyleText}
+            onPress={() => console.log("continue clicked")}
+            style={styles.continueStyleButton}
+            textStyle={styles.continueStyleText}
           >
             CONTINUE
           </Button>
@@ -40,7 +40,7 @@ class About extends Component {
 };
 
 const styles = StyleSheet.create({
-  tester: {
+  container: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
@@ -51,8 +51,7 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'contain',
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    marginTop: -65
+    justifyContent: 'flex-start'
   },
   tagLine: {
     color: '#e6e6e6',
@@ -62,8 +61,8 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'justify'
    },
-    signupStyleButton: {
-  	marginTop: 243,
+    continueStyleButton: {
+  	marginTop: 200,
   	backgroundColor: 'transparent',
   	width: 185,
   	alignSelf: 'center',
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
   	borderColor: '#e6e6e6',
   	borderWidth: .5
   },
-   loginStyleText: {
+   continueStyleText: {
   	color: '#e6e6e6',
   	fontFamily: 'Raleway',
   	fontSize: 14,

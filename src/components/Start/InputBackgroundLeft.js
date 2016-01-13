@@ -12,7 +12,7 @@ class InputBackgroundLeft extends Component {
 			<View>
 				<Image
 	        style={styles.icon}
-          source={require('image!inputBackgroundLeft')}
+          source={require('../../img/backgrounds/inputBackgroundLeft.png')}
         >
 	        {this.props.children}
 	      </Image>

@@ -3,7 +3,6 @@ import { AppActionTypes } from '../constants/AppActionTypes';
 import { EventEmitter } from "events";
 import { EVENTS } from "../constants/EVENT_CONSTANTS";
 
-
 const CHANGE_EVENT = 'CHANGE_EVENT';
 
 // MOCK Data.  Normally from a database but will mock/mimick JSON results from a DB
@@ -15,7 +14,7 @@ let _currentUserId = "";
 
 // helper functions
 const _verifyUser = ({username, password}) => {
-  const user = users.find(user => user.username === username);
+  const user = users.find(user => user.username.toLowerCase() === username.toLowerCase());
   if(!user || user.password !== password) {
     return false;
   } else {
@@ -24,8 +23,8 @@ const _verifyUser = ({username, password}) => {
 };
 
 const _createUser = ({username, email, password}) => {
-  const duplicateEmail = users.findIndex(user => user.email === email);
-  const duplicateUsername = users.findIndex(user => user.username === username);
+  const duplicateEmail = users.findIndex(user => user.email.toLowerCase() === email.toLowerCase()),
+        duplicateUsername = users.findIndex(user => user.username.toLowerCase() === username.toLowerCase());
 
   if (duplicateEmail < 0 && duplicateUsername < 0) {
     users = users.concat({
@@ -40,10 +39,6 @@ const _createUser = ({username, email, password}) => {
     return true;
   }
   return false;
-}
-
-const createUser = () => {
-
 };
 
 class AppStore extends EventEmitter {

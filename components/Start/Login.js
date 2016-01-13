@@ -27,59 +27,59 @@ class Login extends Component {
     };
   }
 
-  onUsernameChange(e) {
+  onUsernameChange = (e) => {
     this.setState({username: e.nativeEvent.text});
-  }
+  };
 
-  moveToPasswordField() {
+  moveToPasswordField = () => {
     this._password.focus();
-  }
+  };
 
-  onPasswordChange(e) {
+  onPasswordChange = (e) => {
     this.setState({password: e.nativeEvent.text});
-  }
+  };
 
-  onNewUsernameChange(e) {
+  onNewUsernameChange = (e) => {
     this.setState({newUsername: e.nativeEvent.text});
-  }
+  };
 
-  moveToNewPasswordField() {
+  moveToNewPasswordField = () => {
     this._newPassword.focus();
-  }
+  };
 
-  onNewPasswordChange(e) {
+  onNewPasswordChange = (e) => {
     this.setState({newPassword: e.nativeEvent.text});
-  }
+  };
 
-  onNewEmailChange(e) {
+  onNewEmailChange = (e) =>{
     this.setState({newEmail: e.nativeEvent.text});
-  }
+  };
 
-  signup() {
+  signup = () => {
     var newUsername = this.state.newUsername;
     var newPassword = this.state.newPassword;
     var newEmail = this.state.newEmail;
     this._newUsername.setNativeProps({text: ''});
     this._newPassword.setNativeProps({text: ''});
     // this._newEmail.setNativeProps({text: ''});
-  }
+  };
 
-  showLoginForm(){
+  showLoginForm = () => {
     this.setState({formType: 'login'});
-  }
+  };
 
-  showSignUp1Form(){
+  showSignUp1Form = () => {
     this.setState({formType: 'signup1'});
-  }
+  };
 
-  showSignUp2Form(){
+  showSignUp2Form = () => {
     this.setState({formType: 'signup2'});
-    this._newEmail.setNativeProps({text: ''});
-  }
+    // this._newEmail.setNativeProps({text: ''});
+  };
 
-  loginAuthentification(){
+  loginAuthentification = () => {
     console.log("loginAuthentification pressed");
-  }
+  };
 
   _renderLoginSignUpForm(){
 
@@ -95,8 +95,8 @@ class Login extends Component {
               autoCapitalize='none'
               enablesReturnKeyAutomatically={true}
               returnKeyType='next'
-              onChange={this.onUsernameChange.bind(this)}
-              onSubmitEditing={this.moveToPasswordField.bind(this)}
+              onChange={this.onUsernameChange}
+              onSubmitEditing={this.moveToPasswordField}
               ref={(c) => this._username = c}>
             </TextInput>
             <TextInput
@@ -108,8 +108,8 @@ class Login extends Component {
               autoCorrect={false}
               autoCapitalize="none"
               enablesReturnKeyAutomatically={true}
-              onChange={this.onPasswordChange.bind(this)}
-              onSubmitEditing={this.loginAuthentification.bind(this)}>
+              onChange={this.onPasswordChange}
+              onSubmitEditing={this.loginAuthentification}>
             </TextInput>
           </View>
         </InputBackgroundLeft>
@@ -126,8 +126,8 @@ class Login extends Component {
               autoCapitalize='none'
               enablesReturnKeyAutomatically={true}
               returnKeyType='next'
-              onChange={this.onNewUsernameChange.bind(this)}
-              onSubmitEditing={this.moveToNewPasswordField.bind(this)}
+              onChange={this.onNewUsernameChange}
+              onSubmitEditing={this.moveToNewPasswordField}
               ref={(c) => this._newUsername = c}>
             </TextInput>
             <TextInput
@@ -139,8 +139,8 @@ class Login extends Component {
               autoCorrect={false}
               autoCapitalize="none"
               enablesReturnKeyAutomatically={true}
-              onChange={this.onNewPasswordChange.bind(this)}
-              onSubmitEditing={this.signup.bind(this)}>
+              onChange={this.onNewPasswordChange}
+              onSubmitEditing={this.signup}>
             </TextInput>
             </View>
             </InputBackground>
@@ -163,7 +163,7 @@ class Login extends Component {
               ref={(c) => this._newEmail= c}>
             </TextInput>
             <TouchableHighlight
-              onPress={this.showSignUp2Form.bind(this)} >
+              onPress={this.showSignUp2Form} >
               <Text style={styles.nextSignup}>Next</Text>
             </TouchableHighlight>
         </View>
@@ -182,12 +182,12 @@ class Login extends Component {
         <Text style={styles.tagLine}>Exercise just got personal.</Text>
         <View style={{flexDirection: 'row'}}>
           <TouchableHighlight
-            onPress={this.showLoginForm.bind(this)}
+            onPress={this.showLoginForm}
           >
           <Text style={styles.tagLineDirectionLeft}>LOG IN</Text>
           </TouchableHighlight>
           <TouchableHighlight
-            onPress={this.showSignUp1Form.bind(this)}
+            onPress={this.showSignUp1Form}
           >
            <Text style={styles.tagLineDirectionRight}>SIGN UP</Text>
           </TouchableHighlight>
@@ -248,7 +248,7 @@ var styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     marginTop: 17,
-    
+
 
   },
   inputLogin: {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react-native';
+import React from 'react-native';
 
 const {
 	View,
@@ -6,19 +6,17 @@ const {
 	StyleSheet
 } = React;
 
-class InputBackground extends Component {
-	render(){
-		return (
-			<View>
-				<Image
-	        style={styles.icon}
-          source={require('../../img/backgrounds/inputBackground.png')}
-        >
-	        {this.props.children}
-	      </Image>
-      </View>
-		)
-	}
+const InputBackground = (props) => {
+	return (
+		<View>
+			<Image
+        style={styles.icon}
+        source={require('../../img/backgrounds/inputBackground.png')}
+      >
+        {props.children}
+      </Image>
+    </View>
+	)
 };
 
 const styles = StyleSheet.create({

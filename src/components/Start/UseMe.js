@@ -1,4 +1,4 @@
-import React, { Component } from 'react-native';
+import React from 'react-native';
 
 const {
 	View,
@@ -6,17 +6,15 @@ const {
 	StyleSheet
 } = React;
 
-class UseMe extends Component {
-	render(){
-		return (
-			<View>
-				<Image
-	        style={styles.icon}
-	        source={require('../../img/logos/useMe.png')}
-        />
-      </View>
-		)
-	}
+const UseMe = () => {
+	return (
+		<View>
+			<Image
+        style={styles.icon}
+        source={require('../../img/logos/useMe.png')}
+      />
+    </View>
+	)
 };
 
 const styles = StyleSheet.create({

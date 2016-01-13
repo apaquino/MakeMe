@@ -12,7 +12,7 @@ let users = require('../../data/mockUsers').mockUsers;
 let _isLoggedIn = false;
 let _currentUserId = "";
 
-// helper functions
+// helper functions, usually will call a ORM or other API (e.g parse).  For POC purposes only.
 const _verifyUser = ({username, password}) => {
   const user = users.find(user => user.username.toLowerCase() === username.toLowerCase());
   if(!user || user.password !== password) {
@@ -79,11 +79,6 @@ class AppStore extends EventEmitter {
   getIsLoggedIn() {
     return _isLoggedIn;
   }
-
-  // for testing only
-  // getDBUsers() {
-  //   return users;
-  // }
 
   // listeners
   startListening(event, callback) {

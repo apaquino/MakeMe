@@ -15,9 +15,7 @@ let _currentUserId = "";
 
 // helper functions
 const _verifyUser = ({username, password}) => {
-  console.log("app store called")
   const user = users.find(user => user.username === username);
-  console.log(user)
   if(!user || user.password !== password) {
     return false;
   } else {
@@ -39,12 +37,9 @@ const _createUser = ({username, email, password}) => {
       favoriteRoutines: [],
       favoriteTrainers: []
     });
-
     return true;
   }
-
   return false;
-
 }
 
 const createUser = () => {
@@ -90,9 +85,10 @@ class AppStore extends EventEmitter {
     return _isLoggedIn;
   }
 
-  getDBUsers() {
-    return users;
-  }
+  // for testing only
+  // getDBUsers() {
+  //   return users;
+  // }
 
   // listeners
   startListening(event, callback) {

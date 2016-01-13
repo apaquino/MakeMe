@@ -10,7 +10,6 @@ const {
   Text,
 } = React;
 
-
 class About extends Component {
 	render(){
 		return (
@@ -28,7 +27,7 @@ class About extends Component {
 					</View>
 					<Text style={styles.underTagline}>Make Me an athlete.</Text>
           <Button
-            onPress={() => console.log("continue clicked")}
+            onPress={() => console.log("continue clicked will real functionality later")}
             style={styles.continueStyleButton}
             textStyle={styles.continueStyleText}
           >

@@ -179,22 +179,20 @@ class LoginSignup extends Component {
       )
     };
   }
-  // callbacks for flux.  Has this so I included in class
+  // callbacks for flux.  Has this so I included in the class
   _fluxCb_UserCreated = () => {
     const userid = AppStore.getCurentUserId();
-    console.log("You new id is", userid);
-    console.log("new user created dispatch cb callled", AppStore.getDBUsers());
     if (userid) {
       Actions.about();
-
+    } else {
+      // TODO Make alert before demo and prod
+      this.setState({
+        formType: 'signup1',
+        newUsername: '',
+        newPassword: '',
+        newEmail: '',
+      });
     }
-    console.log("your user account was not created");
-    this.setState({
-      formType: 'signup1',
-      newUsername: '',
-      newPassword: '',
-      newEmail: '',
-    });
   };
 
   _fluxCb_UserAuth = () => {

@@ -1,3 +1,4 @@
+// This can be updated so new user can be added.
 export let mockUsers = [
   {
     id: 1,
@@ -8,4 +9,4 @@ export let mockUsers = [
     favoriteRoutines: [3,5],
     favoriteTrainers: [1,4]
   }
-]
+];

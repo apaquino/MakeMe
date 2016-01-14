@@ -33,6 +33,7 @@
 	<array>
 		<string>Raleway-Bold.ttf</string>
 		<string>Raleway-Regular.ttf</string>
+		<string>BebasNeue.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

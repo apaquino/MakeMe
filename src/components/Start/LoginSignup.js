@@ -206,6 +206,7 @@ class LoginSignup extends Component {
       console.log('The Creditionals You Provided Are Invalid');
     } else {
       console.log("You have logged in and I'll transition you soon", userid);
+      Actions.tabbar();
     }
   };
 

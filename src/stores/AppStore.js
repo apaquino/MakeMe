@@ -8,6 +8,9 @@ const CHANGE_EVENT = 'CHANGE_EVENT';
 // MOCK Data.  Normally from a database but will mock/mimick JSON results from a DB
 let users = require('../../data/mockUsers').mockUsers;
 
+// Mock Data.  Using import to make it read-only
+import { MOCK_ROUTINE_DATABASE, TRAINER_MOCK_DATABASE } from '../../data/mockDatabase';
+
 // Application state
 let _isLoggedIn = false;
 let _currentUserId = "";
@@ -66,6 +69,11 @@ class AppStore extends EventEmitter {
         }
         this.emit(EVENTS.USER_CREATED);
         break;
+      case AppActionTypes.GET_PLAYLIST_ROUTINES:
+        console.log("GET_PLAYLIST_ROUTINES AppStore Called");
+        console.log("here just in case we need in the future.  will remove if needed");
+        this.emit(EVENTS.PLAYLIST_ROUTINES_RECEIVED);
+        break;
       default:
         break;
       }
@@ -78,6 +86,14 @@ class AppStore extends EventEmitter {
 
   getIsLoggedIn() {
     return _isLoggedIn;
+  }
+
+  getPlaylistRoutines() {
+    // get user playlist
+    const playlistIds = users.find(user => user.id === _currentUserId).playlist
+                             .map(routine => routine.playlistId);
+    // get routines
+    return MOCK_ROUTINE_DATABASE.filter( routine => playlistIds.includes(routine.id));
   }
 
   // listeners

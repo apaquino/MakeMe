@@ -13,6 +13,11 @@ const AppActions = {
       actionType: AppActionTypes.CREATE_NEWUSER,
       newuser
     });
+  },
+  getPlaylistRoutines(){
+    AppDispatcher.dispatch({
+      actionType: AppActionTypes.CREATE_NEWUSER
+    });
   }
 };
 

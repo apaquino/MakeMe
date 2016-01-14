@@ -4,6 +4,9 @@ import React, { Component } from 'react-native';
 import Button from 'apsl-react-native-button';
 import StartLogo from './StartLogo';
 import { Actions } from 'react-native-router-flux';
+import AppActions from '../../actions/AppActions';
+import AppStore from '../../stores/AppStore';
+import { EVENTS } from "../../constants/EVENT_CONSTANTS";
 
 const {
   StyleSheet,

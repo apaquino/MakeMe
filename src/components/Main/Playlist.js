@@ -6,57 +6,6 @@ import { EVENTS } from "../../constants/EVENT_CONSTANTS";
 
 import Button from 'apsl-react-native-button';
 
-var MOCK_ROUTINE_PLAYLIST_RESULTS = [{
-																				name: "V - Core 1.2",
-																				trainer: "Val Pherson",
-																				level: "2",
-																				category: "core",
-																				categoryPic: require('../../img/backgrounds/core.png')
-																		 },
-																		 {
-																				name: "HIIT",
-																				trainer: "Chris Reede",
-																				level: "3",
-																				category: "conditioning",
-	  																		categoryPic: require('../../img/backgrounds/conditioning.png'),
-
-																		 },
-																		 {
-																				name: "Purgatory 11",
-																				trainer: "Angel Alicea",
-																				level: "3",
-																				category: "strength",
-																				categoryPic: require('../../img/backgrounds/strength.png')
-																		 },
-																		 {
-																				name: "Powerstrike 2.0",
-																				trainer: "Ilaria Montague",
-																				level: "3",
-																				category: "kickbox",
-																				categoryPic: require('../../img/backgrounds/kickbox.png'),
-																		 },
-																		 {
-																				name: "V - Core 1.3",
-																				trainer: "Val Pherson",
-																				level: "2",
-																				category: "core",
-																				categoryPic: require('../../img/backgrounds/core.png')
-																		 },
-																		 // {
-																			// 	name: "Fit to Fight",
-																			// 	trainer: "James Park",
-																			// 	level: "2",
-																			// 	category: "boxing"
-																		 // },
-																		];
-	// var images = {
-	//   core: require('../../img/backgrounds/core.png'),
-	//   conditioning: require('../../img/backgrounds/conditioning.png'),
-	//   boxing: require('../../img/backgrounds/boxing.png'),
-	//   kickbox: require('../../img/backgrounds/kickbox.png'),
-	//   strength: require('../../img/backgrounds/strength.png')
-	// };
-
 const {
   View,
   Text,
@@ -71,12 +20,13 @@ class Playlist extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(MOCK_ROUTINE_PLAYLIST_RESULTS),
+      dataSource: ds.cloneWithRows(AppStore.getPlaylistRoutines()),
     };
   }
 
   renderRoutine(routine) {
-    // const image = images[routine.category];
+		const testList = AppStore.getPlaylistRoutines();
+		console.log(testList)
     return (
       <View style={styles.listContainer}>
         <Image source={routine.categoryPic} style={styles.backgroundImage}>

@@ -133,49 +133,55 @@ export const MOCK_ROUTINE_DATABASE = [
      name: "Definitions",
      trainer: "Ilaria Montague",
      level: "3",
-     category: "boxing"
+     category: "boxing",
+     categoryPic: require('../src/img/backgrounds/boxing.png')
   },
   {
      id: "1",
      name: "HIIT",
      trainer: "Chris Reede",
      level: "3",
-     category: "conditioning"
+     category: "conditioning",
+     categoryPic: require('../src/img/backgrounds/conditioning.png')
   },
   {
      id: "2",
      name: "Athletica",
      trainer: "Ilaria Montague",
      level: "2",
-     category: "strength"
+     category: "strength",
+     categoryPic: require('../src/img/backgrounds/strength.png')
   },
   {
      id: "3",
      name: "Powerstrike",
      trainer: "Ilaria Montague",
      level: "3",
-     category: "kickbox"
+     category: "kickbox",
+     categoryPic: require('../src/img/backgrounds/kickbox.png')
   },
   {
      id: "4",
      name: "V - Core 1.3",
      trainer: "Val Pherson",
      level: "2",
-     category: "core"
+     category: "core",
+     categoryPic: require('../src/img/backgrounds/core.png')
   },
   {
      id: "5",
      name: "Powerstrike 2.0",
      trainer: "Ilaria Montague",
      level: "3",
-     category: "kickbox"
+     category: "kickbox",
+     categoryPic: require('../src/img/backgrounds/kickbox.png')
   },
 ];
 
-export const  routineImages = {
-	  core: require('image!core'),
-	  conditioning: require('image!conditioning'),
-	  boxing: require('image!boxing'),
-	  kickbox: require('image!kickbox'),
-	  strength: require('image!strength')
-	};
+// export const  routineImages = {
+// 	  core: require('image!core'),
+// 	  conditioning: require('image!conditioning'),
+// 	  boxing: require('image!boxing'),
+// 	  kickbox: require('image!kickbox'),
+// 	  strength: require('image!strength')
+// 	};

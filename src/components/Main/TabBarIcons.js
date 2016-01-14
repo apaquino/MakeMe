@@ -29,7 +29,13 @@ export class FavoritesTabIcon extends Component {
 export class GoTabIcon extends Component {
   render(){
     return (
-      <Image source={require('../../img/tabIcons/go_icon.png')} style={styles.icon} />
+      <Image
+        source={require('../../img/tabIcons/go_icon.png')}
+        style={{  height: 30,
+                  width: 30,
+                  backgroundColor: "#1c1c1c"
+              }}
+      />
     );
   }
 }
@@ -56,8 +62,8 @@ export class SuggestedTabIcon extends Component {
 
 const styles = StyleSheet.create({
   icon: {
-    height: 30,
-    width: 30,
+    height: 28,
+    width: 28,
     backgroundColor: "#1c1c1c"
   }
 });

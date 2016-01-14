@@ -13,7 +13,10 @@ import {
   FavoritesTabIcon,
   PlaylistTabIcon,
   GoTabIcon,
-  SuggestedTabIcon } from '../components/Main/TabBarIcons';
+  SuggestedTabIcon, } from '../components/Main/TabBarIcons';
+
+import {
+  renderTitle, } from '../components/Main/NavBarIcons';
 
 const {
   Navigator,
@@ -22,17 +25,6 @@ const {
   Image,
   StyleSheet
 } = React;
-
-const renderTitle = () => {
-  return (
-    <View>
-      <Image
-        style={styles.icon}
-        source={require('../img/logos/NavLogo.png')}
-      />
-    </View>
-  )
-}
 
 class MakeMeRouter extends Component {
   render() {
@@ -63,15 +55,5 @@ class MakeMeRouter extends Component {
     );
   }
 };
-
-const styles = StyleSheet.create({
-	icon: {
-		width: 90,
-		height: 28,
-		alignItems: 'center',
-		justifyContent: 'center',
-		marginBottom: 5
-	}
-});
 
 export default MakeMeRouter;

@@ -10,31 +10,37 @@ var MOCK_ROUTINE_PLAYLIST_RESULTS = [{
 																				name: "V - Core 1.2",
 																				trainer: "Val Pherson",
 																				level: "2",
-																				category: "core"
+																				category: "core",
+																				categoryPic: require('../../img/backgrounds/core.png')
 																		 },
 																		 {
 																				name: "HIIT",
 																				trainer: "Chris Reede",
 																				level: "3",
-																				category: "conditioning"
+																				category: "conditioning",
+	  																		categoryPic: require('../../img/backgrounds/conditioning.png'),
+
 																		 },
 																		 {
 																				name: "Purgatory 11",
 																				trainer: "Angel Alicea",
 																				level: "3",
-																				category: "strength"
+																				category: "strength",
+																				categoryPic: require('../../img/backgrounds/strength.png')
 																		 },
 																		 {
 																				name: "Powerstrike 2.0",
 																				trainer: "Ilaria Montague",
 																				level: "3",
-																				category: "kickbox"
+																				category: "kickbox",
+																				categoryPic: require('../../img/backgrounds/kickbox.png'),
 																		 },
 																		 {
 																				name: "V - Core 1.3",
 																				trainer: "Val Pherson",
 																				level: "2",
-																				category: "core"
+																				category: "core",
+																				categoryPic: require('../../img/backgrounds/core.png')
 																		 },
 																		 // {
 																			// 	name: "Fit to Fight",
@@ -43,13 +49,13 @@ var MOCK_ROUTINE_PLAYLIST_RESULTS = [{
 																			// 	category: "boxing"
 																		 // },
 																		];
-	var images = {
-	  core: require('../../img/backgrounds/core.png'),
-	  conditioning: require('../../img/backgrounds/conditioning.png'),
-	  boxing: require('../../img/backgrounds/boxing.png'),
-	  kickbox: require('../../img/backgrounds/kickbox.png'),
-	  strength: require('../../img/backgrounds/strength.png')
-	};
+	// var images = {
+	//   core: require('../../img/backgrounds/core.png'),
+	//   conditioning: require('../../img/backgrounds/conditioning.png'),
+	//   boxing: require('../../img/backgrounds/boxing.png'),
+	//   kickbox: require('../../img/backgrounds/kickbox.png'),
+	//   strength: require('../../img/backgrounds/strength.png')
+	// };
 
 const {
   View,
@@ -70,10 +76,10 @@ class Playlist extends Component {
   }
 
   renderRoutine(routine) {
-    const image = images[routine.category];
+    // const image = images[routine.category];
     return (
-      <View style={styles.container}>
-        <Image source={image} style={styles.backgroundImage}>
+      <View style={styles.listContainer}>
+        <Image source={routine.categoryPic} style={styles.backgroundImage}>
           <TouchableHighlight onPress={Actions.routineshow}>
             <Text style={styles.routineName}>{routine.name}</Text>
           </TouchableHighlight>
@@ -95,21 +101,27 @@ class Playlist extends Component {
 
   render() {
       return (
-  			<ListView
-  				automaticallyAdjustContentInsets={false}
-  				dataSource={this.state.dataSource}
-  				renderRow={this.renderRoutine}
-  				style={styles.listView}
-        />
+				<View style={styles.container}>
+	  			<ListView
+	  				automaticallyAdjustContentInsets={false}
+	  				dataSource={this.state.dataSource}
+	  				renderRow={this.renderRoutine}
+	  				style={styles.listView}
+	        />
+				</View>
       )
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+	container: {
+		flex: 1,
+		backgroundColor: '#1c1c1c'
+	},
+	listContainer: {
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
   },
     backgroundImage: {
     height: 135,
@@ -137,7 +149,8 @@ const styles = StyleSheet.create({
 		color: '#b3b3b3',
 		fontSize: 10,
 		letterSpacing: 1,
-  	marginTop: 5
+  	marginTop: 5,
+		backgroundColor: 'transparent'
   },
   playlistButton: {
   	marginLeft: 23,

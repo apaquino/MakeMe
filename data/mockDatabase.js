@@ -5,7 +5,7 @@
 
 export const TRAINER_MOCK_DATABASE = [
   {
-    id:"0",
+    id: 0,
     name:"Ilaria Montague",
     numFavorites:"11",
     numComments: "81",
@@ -20,7 +20,7 @@ export const TRAINER_MOCK_DATABASE = [
     specialties: "Martial arts"
   },
   {
-    id:"1",
+    id: 1,
     name:"Chris Reede",
     numFavorites:"3",
     numComments: "17",
@@ -35,7 +35,7 @@ export const TRAINER_MOCK_DATABASE = [
     specialties: "Interval training"
   },
   {
-    id:"2",
+    id: 2,
     name:"Val Pherson",
     numFavorites:"13",
     numComments: "36",
@@ -50,7 +50,7 @@ export const TRAINER_MOCK_DATABASE = [
     specialties: "Elite Performance"
   },
   {
-    id:"3",
+    id: 3,
     name:"Angel Alicea",
     numFavorites:"22",
     numComments: "88",
@@ -65,7 +65,7 @@ export const TRAINER_MOCK_DATABASE = [
     specialties: "Bootcamp, VIPR"
   },
   {
-    id:"4",
+    id: 4,
     name:"Omar Sandoval",
     numFavorites:"9",
     numComments: "630",
@@ -80,7 +80,7 @@ export const TRAINER_MOCK_DATABASE = [
     specialties: "Boxing, Combat"
   },
   {
-    id:"5",
+    id: 5,
     name:"Jilian Michaels",
     numFavorites:"30",
     numComments: "890",
@@ -95,7 +95,7 @@ export const TRAINER_MOCK_DATABASE = [
     specialties: "Weight Loss"
   },
   {
-    id:"6",
+    id: 6,
     name:"James Park",
     numFavorites:"3",
     numComments: "79",
@@ -110,7 +110,7 @@ export const TRAINER_MOCK_DATABASE = [
     specialties: "MMA"
   },
   {
-    id:"7",
+    id: 7,
     name:"Greg James",
     numFavorites:"90",
     numComments: "972",
@@ -129,59 +129,57 @@ export const TRAINER_MOCK_DATABASE = [
 // Users cannot edit this but add it to their playlist
 export const MOCK_ROUTINE_DATABASE = [
   {
-     id: "0",
+     id: 0,
      name: "Definitions",
      trainer: "Ilaria Montague",
      level: "3",
      category: "boxing",
-     categoryPic: require('../src/img/backgrounds/boxing.png')
+     categoryPic: require('../src/img/backgrounds/boxing.png'),
+     trainerPic: require('../src/img/profile/ilaria_profile.png')
   },
   {
-     id: "1",
+     id: 1,
      name: "HIIT",
      trainer: "Chris Reede",
      level: "3",
      category: "conditioning",
-     categoryPic: require('../src/img/backgrounds/conditioning.png')
+     categoryPic: require('../src/img/backgrounds/conditioning.png'),
+     trainerPic: require('../src/img/profile/chris_profile.png'),
   },
   {
-     id: "2",
+     id: 2,
      name: "Athletica",
      trainer: "Ilaria Montague",
      level: "2",
      category: "strength",
-     categoryPic: require('../src/img/backgrounds/strength.png')
+     categoryPic: require('../src/img/backgrounds/strength.png'),
+     trainerPic: require('../src/img/profile/ilaria_profile.png')
   },
   {
-     id: "3",
+     id: 3,
      name: "Powerstrike",
      trainer: "Ilaria Montague",
      level: "3",
      category: "kickbox",
-     categoryPic: require('../src/img/backgrounds/kickbox.png')
+     categoryPic: require('../src/img/backgrounds/kickbox.png'),
+     trainerPic: require('../src/img/profile/ilaria_profile.png')
   },
   {
-     id: "4",
+     id: 4,
      name: "V - Core 1.3",
      trainer: "Val Pherson",
      level: "2",
      category: "core",
-     categoryPic: require('../src/img/backgrounds/core.png')
+     categoryPic: require('../src/img/backgrounds/core.png'),
+     trainerPic: require('../src/img/profile/val_profile.png')
   },
   {
-     id: "5",
+     id: 5,
      name: "Powerstrike 2.0",
      trainer: "Ilaria Montague",
      level: "3",
      category: "kickbox",
-     categoryPic: require('../src/img/backgrounds/kickbox.png')
+     categoryPic: require('../src/img/backgrounds/kickbox.png'),
+     trainerPic: require('../src/img/profile/ilaria_profile.png')
   },
 ];
-
-// export const  routineImages = {
-// 	  core: require('image!core'),
-// 	  conditioning: require('image!conditioning'),
-// 	  boxing: require('image!boxing'),
-// 	  kickbox: require('image!kickbox'),
-// 	  strength: require('image!strength')
-// 	};

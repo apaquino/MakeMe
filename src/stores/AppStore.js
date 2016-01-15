@@ -93,7 +93,11 @@ class AppStore extends EventEmitter {
     const playlistIds = users.find(user => user.id === _currentUserId).playlist
                              .map(routine => routine.playlistId);
     // get routines
-    return MOCK_ROUTINE_DATABASE.filter( routine => playlistIds.includes(routine.id));
+    return MOCK_ROUTINE_DATABASE.filter(routine => playlistIds.includes(routine.id));
+  }
+
+  getRoutineDetails(id) {
+    return MOCK_ROUTINE_DATABASE.find(routine => routine.id === id);
   }
 
   // listeners

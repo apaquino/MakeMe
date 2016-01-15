@@ -5,7 +5,7 @@ export let mockUsers = [
     username: "valentina",
     email: "valpherson@gmail.com",
     password: "rainbow4",
-    playlist: [{id: 1, playlistId: 0},
+    playlist: [{id: 1, playlistId: 4},
                {id: 2, playlistId: 3},
                {id: 3, playlistId: 5},
                {id: 4, playlistId: 2}],

@@ -18,6 +18,12 @@ const AppActions = {
     AppDispatcher.dispatch({
       actionType: AppActionTypes.CREATE_NEWUSER
     });
+  },
+  getRoutineDetails(id){
+    AppDispatcher.dispatch({
+      actionType: AppActionTypes.GET_ROUTINE_DETAILS,
+      id
+    });
   }
 };
 

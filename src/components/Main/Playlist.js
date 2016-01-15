@@ -25,12 +25,10 @@ class Playlist extends Component {
   }
 
   renderRoutine(routine) {
-		const testList = AppStore.getPlaylistRoutines();
-		console.log(testList)
     return (
       <View style={styles.listContainer}>
         <Image source={routine.categoryPic} style={styles.backgroundImage}>
-          <TouchableHighlight onPress={Actions.routineshow}>
+          <TouchableHighlight onPress={() => Actions.routineshow({routineId: routine.id})}>
             <Text style={styles.routineName}>{routine.name}</Text>
           </TouchableHighlight>
           <TouchableHighlight onPress={Actions.trainershow}>

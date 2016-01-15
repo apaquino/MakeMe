@@ -6,7 +6,6 @@ import { EVENTS } from "../../constants/EVENT_CONSTANTS";
 
 import Button from 'apsl-react-native-button';
 
-
 const {
   View,
   Text,
@@ -19,30 +18,42 @@ class RoutineShow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      routineAdd: ""
+      routineAdd: "",
+      routine: AppStore.getRoutineDetails(this.props.routineId)
     };
   }
 
+  componentWillMount() {
+
+  }
+
+  componentWillUnmount() {
+
+  }
+
   render() {
+    const { routine } = this.state;
     return (
 			<View style={styles.container}>
-        <Image source={image} style={styles.coverImage}>
-          <Image source={profileImage} style={styles.profileImage}/>
+         <Image source={routine.categoryPic} style={styles.coverImage} >
+          <Image source={routine.trainerPic} style={styles.profileImage}/>
 
-           <TouchableHighlight
-              style={styles.highlightButton}
-              onPress={() => console.log("do later")}
+          <TouchableHighlight
+            style={styles.highlightButton}
+            onPress={() => console.log("do later")}
           >
-          {this.state.routineAdded ? <Image source={require('image!added_icon_button')} style={styles.playlistButtonIcon}/> : <Image source={require('image!add_icon_button')} style={styles.playlistButtonIcon}/>}
-           </TouchableHighlight>
+          {this.state.routineAdded ?
+              <Image source={require('../../img/buttons/added_icon_button.png')} style={styles.playlistButtonIcon}/> :
+              <Image source={require('../../img/buttons/add_icon_button.png')} style={styles.playlistButtonIcon}/>
+          }
+          </TouchableHighlight>
           <Text style={styles.trainerName1}>{routine.name}</Text>
-
           <TouchableHighlight>
             <Text style={styles.location}>{routine.trainer}</Text>
           </TouchableHighlight>
         </Image>
 
-
+{/*
         <Image source={require('image!triple_red_bar')} style={styles.redBar}>
           <View style={styles.parent}>
             <Text style={styles.child}>{routine.numFav}</Text>
@@ -83,7 +94,7 @@ class RoutineShow extends Component {
             <Text style={styles.childBottomRight}>{routine.category}</Text>
           </View>
 
-        </View>
+        </View> */}
 
       </View>
 		)
@@ -96,9 +107,10 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: 'transparent',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    alignItems: 'flex-start'
   },
-coverImage: {
+  coverImage: {
     width: 375,
     height: 200,
     justifyContent: 'flex-end'

@@ -22,6 +22,15 @@ class Suggested extends Component {
       dataSource: ds.cloneWithRows(AppStore.getSuggestedRoutines()),
     };
   }
+
+  componentWillMount() {
+    AppStore.startListening(EVENTS.ROUTINE_ADDED_TO_PLAYLIST, this._fluxCb_SugAdd);
+  }
+
+  componentWillUnmount() {
+    AppStore.stopListening(EVENTS.ROUTINE_ADDED_TO_PLAYLIST, this._fluxCb_SugAdd);
+  }
+
   renderRoutine(routine) {
 		return (
       <View style={styles.container}>
@@ -34,7 +43,7 @@ class Suggested extends Component {
           </TouchableHighlight>
             <Text style={styles.routineLevel}>Level {routine.level}</Text>
           <Button
-            onPress={Actions.tab1}
+            onPress={() => AppActions.addRoutineToPlaylist(routine.id)}
             style={styles.playlistButton}
             textStyle={styles.playlistButtonText}
           >
@@ -45,7 +54,26 @@ class Suggested extends Component {
 		)
 	}
 
+  _fluxCb_SugAdd = () => {
+    const { dataSource } = this.state;
+    // Issue with ListView but leaving here.  If there is a setState, there will
+    // be a re-render.  See render function.
+    this.setState = ({
+      dataSource: dataSource.cloneWithRows(AppStore.getPlaylistRoutines()),
+    });
+    // Issue calling function in onPress in listview. function undefined.
+    // Temp workaround to make it redirect after adding playlist
+    Actions.tab1()
+  };
+
   render() {
+    /*  Current issue with list view (update with GitHub issue # later)
+     *  This will always get the current data as long as there is a re-render
+     *  The flux cb will trigger a re-render on setState and this will run.
+     */
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
+          newSuggestedList = ds.cloneWithRows(AppStore.getSuggestedRoutines());
+
     return (
       <View style={[styles.container, {marginTop: 60}]}>
         <Image source={require('../../img/buttons/suggested_bar.png')} style={styles.suggestedBar}>
@@ -53,7 +81,7 @@ class Suggested extends Component {
         </Image>
         <ListView
           automaticallyAdjustContentInsets={false}
-          dataSource={this.state.dataSource}
+          dataSource={newSuggestedList}
           renderRow={this.renderRoutine}
           style={styles.listView}
         />

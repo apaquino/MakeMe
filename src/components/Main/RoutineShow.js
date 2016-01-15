@@ -25,13 +25,14 @@ class RoutineShow extends Component {
   }
 
   onPressAdd = () => {
-    const { routineAdd } =this.state;
+    const { routineAdd } = this.state;
     if (!routineAdd) {
       this.setState({
         routineAdd: true
       });
 
       AppActions.addRoutineToPlaylist(this.props.routineId);
+      Actions.playlist();
     } else {
       console.log("You already added this");
       //Add alert before demo after development
@@ -76,7 +77,7 @@ class RoutineShow extends Component {
             <Text style={styles.childBottomLeft}>Level</Text>
             <Text style={styles.childBottomRight}>{routine.level}</Text>
           </View>
-          
+
           <View style={styles.childBottom}>
             <Text style={styles.childBottomLeft}>Space</Text>
             <Text style={styles.childBottomRight}>{routine.space}</Text>

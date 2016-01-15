@@ -7,8 +7,7 @@ export let mockUsers = [
     password: "rainbow4",
     playlist: [{id: 1, playlistId: 4},
                {id: 2, playlistId: 3},
-               {id: 3, playlistId: 5},
-               {id: 4, playlistId: 2}],
+               {id: 3, playlistId: 2}],
     favoriteRoutines: [3,5],
     favoriteTrainers: [1,4]
   }

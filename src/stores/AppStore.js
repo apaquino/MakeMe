@@ -52,7 +52,7 @@ const _addToUserPlaylist = (id) => {
           id: Date.now(),
           playlistId: routineId
         };
-
+  // get user playlist and concat new routine
   users[userIdIndex].playlist = users[userIdIndex].playlist.concat(newRoutineToAdd);
   return true;
 };
@@ -83,9 +83,8 @@ class AppStore extends EventEmitter {
         this.emit(EVENTS.USER_CREATED);
         break;
       case AppActionTypes.ADD_ROUTINE_TO_PLAYLIST:
-        // TODO more error checking since returns a boolean.
+        // TODO more error checking since functions returns a boolean.
         _addToUserPlaylist(action.id);
-
         this.emit(EVENTS.ROUTINE_ADDED_TO_PLAYLIST);
         break;
       default:
@@ -104,10 +103,21 @@ class AppStore extends EventEmitter {
 
   getPlaylistRoutines() {
     // get user playlist
-    const playlist = users.find(user => user.id === _currentUserId).playlist
+    const playlist = users.find(user => user.id === _currentUserId).playlist;
     // get routines in order
-    return playlist.map(routineObj => MOCK_ROUTINE_DATABASE.find(routine => routine.id === routineObj.playlistId));
+    return playlist.map(routineObj =>
+      MOCK_ROUTINE_DATABASE.find(routine =>
+        routine.id === routineObj.playlistId
+      )
+    );
+  }
 
+  getSuggestedRoutines() {
+    // get user playlist and get keys.
+    const playlist = users.find(user => user.id === _currentUserId).playlist,
+          playlistKeys = playlist.map(playlistObj => playlistObj.playlistId);
+    // get up to 5 routines NOT in playlist
+    return MOCK_ROUTINE_DATABASE.filter(routine => !playlistKeys.includes(routine.id)).slice(0,5);
   }
 
   getRoutineDetails(id) {

@@ -41,18 +41,18 @@ class MakeMeRouter extends Component {
         <Route name="about" component={About} />
         <Route name="tabbar" >
           <Router footer={TabBar} style={{backgroundColor: '#1c1c1c'}} showNavigationBar={false}>
-              <Route name="tab1" schema="tab" title="Playlist" icon={PlaylistTabIcon} >
-                <Router>
-                  <Route name="playlist" title="playlist" component={Playlist} renderTitle={renderTitle}/>
-                  <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
-                  <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
-                </Router>
-              </Route>
-              <Route name="tab2" schema="tab" title="Suggested" icon={SuggestedTabIcon}>
-                <Router>
-                  <Route name="suggested" title="suggested" component={Suggested} renderTitle={renderTitle}/>
-                  <Route name="routineshow2" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
-                  <Route name="trainershow2" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
+            <Route name="tab1" schema="tab" title="Playlist" icon={PlaylistTabIcon} >
+              <Router>
+                <Route name="playlist" title="playlist" component={Playlist} renderTitle={renderTitle}/>
+                <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
+                <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
+              </Router>
+            </Route>
+            <Route name="tab2" schema="tab" title="Suggested" icon={SuggestedTabIcon}>
+              <Router>
+                <Route name="suggested" title="suggested" component={Suggested} renderTitle={renderTitle}/>
+                <Route name="routineshow2" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
+                <Route name="trainershow2" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
                 </Router>
               </Route>
               <Route name="tab3" schema="tab" title="Tab #3" component={TabView} icon={GoTabIcon}/>

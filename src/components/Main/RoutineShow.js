@@ -132,7 +132,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     letterSpacing: 2,
     fontWeight: 'bold',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    backgroundColor: 'transparent'
   },
   location: {
     fontFamily: 'Raleway',

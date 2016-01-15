@@ -1,6 +1,6 @@
 // This is meant to be a static read-only database
 
-// All trainers in the database.  Users cannot edit this but can have links
+// All trainers in the database.  Users cannot edit this but can have links to
 // this in their favorites.
 
 export const TRAINER_MOCK_DATABASE = [

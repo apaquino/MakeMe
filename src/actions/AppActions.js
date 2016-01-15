@@ -13,6 +13,12 @@ const AppActions = {
       actionType: AppActionTypes.CREATE_NEWUSER,
       newuser
     });
+  },
+  addRoutineToPlaylist(id){
+    AppDispatcher.dispatch({
+      actionType: AppActionTypes.ADD_ROUTINE_TO_PLAYLIST,
+      id
+    });
   }
 };
 

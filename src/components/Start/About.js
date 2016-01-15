@@ -21,9 +21,9 @@ class About extends Component {
     		<UseMe />
     		<View style={{paddingLeft: 18, paddingRight: 18}}>
     		<Text style={styles.tagLine}>
-    		Make Me brings the very best talent in personal training straight to your mobile device.
-    	    	Discover new routines uploaded daily and customize your favorite trainers and work outs plans,
-    	    	Our trainers will virtually track your progress and push you to your limits.
+      		Make Me brings the very best talent in personal training straight to your mobile device.
+  	    	Discover new routines uploaded daily and customize your favorite trainers and work outs plans,
+  	    	Our trainers will virtually track your progress and push you to your limits.
     		</Text>
     		</View>
     		<Text style={styles.underTagline}>Make Me an athlete.</Text>

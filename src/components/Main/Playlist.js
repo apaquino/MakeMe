@@ -24,6 +24,23 @@ class Playlist extends Component {
     };
   }
 
+  componentWillMount() {
+    AppStore.startListening(EVENTS.ROUTINE_ADDED_TO_PLAYLIST, this._fluxCb_UserAdd);
+  }
+
+  componentWillUnmount() {
+    AppStore.stopListening(EVENTS.ROUTINE_ADDED_TO_PLAYLIST, this._fluxCb_UserAdd);
+  }
+
+  _fluxCb_UserAdd = () => {
+    const { dataSource } = this.state;
+    // Issue with ListView but leaving here.  If there is a setState, there will
+    // be a re-render.  See render function.
+    this.setState = ({
+      dataSource: dataSource.cloneWithRows(AppStore.getPlaylistRoutines()),
+    });
+  };
+
   renderRoutine(routine) {
     return (
       <View style={styles.listContainer}>
@@ -50,11 +67,18 @@ class Playlist extends Component {
   }
 
   render() {
+    /*  Current issue with list view (update with GitHub issue # later)
+     *  This will always get the current data as long as there is a re-render
+     *  The flux cb will trigger a re-render on setState and this will run.
+     */
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
+          newPlayList = ds.cloneWithRows(AppStore.getPlaylistRoutines());
+
       return (
 				<View style={styles.container}>
 	  			<ListView
 	  				automaticallyAdjustContentInsets={false}
-	  				dataSource={this.state.dataSource}
+	  				dataSource={newPlayList}
 	  				renderRow={this.renderRoutine}
 	  				style={styles.listView}
 	        />

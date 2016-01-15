@@ -6,6 +6,7 @@ import { EVENTS } from "../constants/EVENT_CONSTANTS";
 const CHANGE_EVENT = 'CHANGE_EVENT';
 
 // MOCK Data.  Normally from a database but will mock/mimick JSON results from a DB
+// Mutations/side-effects will be allowed in this data structure
 let users = require('../../data/mockUsers').mockUsers;
 
 // Mock Data.  Using import to make it read-only
@@ -44,6 +45,18 @@ const _createUser = ({username, email, password}) => {
   return false;
 };
 
+const _addToUserPlaylist = (id) => {
+  const userIdIndex = users.findIndex(user => user.id === _currentUserId),
+        routineId = MOCK_ROUTINE_DATABASE.find(routine => routine.id === id).id,
+        newRoutineToAdd = {
+          id: Date.now(),
+          playlistId: routineId
+        };
+
+  users[userIdIndex].playlist = users[userIdIndex].playlist.concat(newRoutineToAdd);
+  return true;
+};
+
 class AppStore extends EventEmitter {
   constructor(props) {
     super(props);
@@ -69,6 +82,12 @@ class AppStore extends EventEmitter {
         }
         this.emit(EVENTS.USER_CREATED);
         break;
+      case AppActionTypes.ADD_ROUTINE_TO_PLAYLIST:
+        // TODO more error checking since returns a boolean.
+        _addToUserPlaylist(action.id);
+
+        this.emit(EVENTS.ROUTINE_ADDED_TO_PLAYLIST);
+        break;
       default:
         break;
       }
@@ -85,18 +104,16 @@ class AppStore extends EventEmitter {
 
   getPlaylistRoutines() {
     // get user playlist
-    const playlistIds = users.find(user => user.id === _currentUserId).playlist
-                             .map(routine => routine.playlistId);
-    // return MOCK_ROUTINE_DATABASE.filter(routine => playlistIds.includes(routine.id));
+    const playlist = users.find(user => user.id === _currentUserId).playlist
     // get routines in order
-    return playlistIds.map(id => MOCK_ROUTINE_DATABASE.find(routine => routine.id === id));
+    return playlist.map(routineObj => MOCK_ROUTINE_DATABASE.find(routine => routine.id === routineObj.playlistId));
 
   }
 
   getRoutineDetails(id) {
     return MOCK_ROUTINE_DATABASE.find(routine => routine.id === id);
   }
-  
+
   getTrainerDetails(id) {
     return TRAINER_MOCK_DATABASE.find(trainer => trainer.id === id);
   }

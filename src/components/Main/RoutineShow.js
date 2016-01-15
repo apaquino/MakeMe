@@ -24,25 +24,31 @@ class RoutineShow extends Component {
     };
   }
 
-  componentWillMount() {
+  onPressAdd = () => {
+    const { routineAdd } =this.state;
+    if (!routineAdd) {
+      this.setState({
+        routineAdd: true
+      });
 
-  }
-
-  componentWillUnmount() {
-
-  }
+      AppActions.addRoutineToPlaylist(this.props.routineId);
+    } else {
+      console.log("You already added this");
+      //Add alert before demo after development
+    }
+  };
 
   render() {
-    const { routine, trainer } = this.state;
+    const { routine, trainer, routineAdd } = this.state;
     return (
 			<View style={styles.container}>
          <Image source={routine.categoryCoverPic} style={styles.coverImage} >
           <Image source={routine.trainerPic} style={styles.profileImage}/>
           <TouchableHighlight
             style={styles.highlightButton}
-            onPress={() => console.log("do later")}
+            onPress={this.onPressAdd}
           >
-          {this.state.routineAdded ?
+          {routineAdd ?
               <Image source={require('../../img/buttons/added_icon_button.png')} style={styles.playlistButtonIcon}/> :
               <Image source={require('../../img/buttons/add_icon_button.png')} style={styles.playlistButtonIcon}/>
           }

@@ -76,6 +76,7 @@ class RoutineShow extends Component {
             <Text style={styles.childBottomLeft}>Level</Text>
             <Text style={styles.childBottomRight}>{routine.level}</Text>
           </View>
+          
           <View style={styles.childBottom}>
             <Text style={styles.childBottomLeft}>Space</Text>
             <Text style={styles.childBottomRight}>{routine.space}</Text>

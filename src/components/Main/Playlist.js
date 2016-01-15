@@ -1,10 +1,9 @@
 import React, { Component } from 'react-native';
+import Button from 'apsl-react-native-button';
 import { Actions } from 'react-native-router-flux';
 import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import { EVENTS } from "../../constants/EVENT_CONSTANTS";
-
-import Button from 'apsl-react-native-button';
 
 const {
   View,
@@ -73,7 +72,7 @@ class Playlist extends Component {
      */
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
           newPlayList = ds.cloneWithRows(AppStore.getPlaylistRoutines());
-  
+
       return (
 				<View style={styles.container}>
 	  			<ListView

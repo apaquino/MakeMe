@@ -69,11 +69,6 @@ class AppStore extends EventEmitter {
         }
         this.emit(EVENTS.USER_CREATED);
         break;
-      case AppActionTypes.GET_PLAYLIST_ROUTINES:
-        console.log("GET_PLAYLIST_ROUTINES AppStore Called");
-        console.log("here just in case we need in the future.  will remove if needed");
-        this.emit(EVENTS.PLAYLIST_ROUTINES_RECEIVED);
-        break;
       default:
         break;
       }
@@ -100,6 +95,10 @@ class AppStore extends EventEmitter {
 
   getRoutineDetails(id) {
     return MOCK_ROUTINE_DATABASE.find(routine => routine.id === id);
+  }
+  
+  getTrainerDetails(id) {
+    return TRAINER_MOCK_DATABASE.find(trainer => trainer.id === id);
   }
 
   // listeners

@@ -28,7 +28,9 @@ class Playlist extends Component {
     return (
       <View style={styles.listContainer}>
         <Image source={routine.categoryPic} style={styles.backgroundImage}>
-          <TouchableHighlight onPress={() => Actions.routineshow({routineId: routine.id})}>
+          <TouchableHighlight
+            onPress={() => Actions.routineshow({routineId: routine.id, trainerId: routine.trainerId})}
+          >
             <Text style={styles.routineName}>{routine.name}</Text>
           </TouchableHighlight>
           <TouchableHighlight onPress={Actions.trainershow}>

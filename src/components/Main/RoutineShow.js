@@ -18,8 +18,9 @@ class RoutineShow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      routineAdd: "",
-      routine: AppStore.getRoutineDetails(this.props.routineId)
+      routineAdd: false,
+      routine: AppStore.getRoutineDetails(this.props.routineId),
+      trainer: AppStore.getTrainerDetails(this.props.trainerId)
     };
   }
 
@@ -32,12 +33,11 @@ class RoutineShow extends Component {
   }
 
   render() {
-    const { routine } = this.state;
+    const { routine, trainer } = this.state;
     return (
 			<View style={styles.container}>
-         <Image source={routine.categoryPic} style={styles.coverImage} >
+         <Image source={routine.categoryCoverPic} style={styles.coverImage} >
           <Image source={routine.trainerPic} style={styles.profileImage}/>
-
           <TouchableHighlight
             style={styles.highlightButton}
             onPress={() => console.log("do later")}
@@ -52,15 +52,12 @@ class RoutineShow extends Component {
             <Text style={styles.location}>{routine.trainer}</Text>
           </TouchableHighlight>
         </Image>
-
-{/*
-        <Image source={require('image!triple_red_bar')} style={styles.redBar}>
+        <Image source={require('../../img/buttons/triple_red_bar.png')} style={styles.redBar}>
           <View style={styles.parent}>
-            <Text style={styles.child}>{routine.numFav}</Text>
+            <Text style={styles.child}>{trainer.numFavorites}</Text>
             <Text style={styles.child}>{routine.duration}</Text>
-            <Text style={styles.child}>{routine.numComments}</Text>
+            <Text style={styles.child}>{trainer.numComments}</Text>
           </View>
-
           <View style={styles.parent}>
           <Text style={styles.childLow}>Favorited</Text>
           <Text style={styles.childLow}>Minutes</Text>
@@ -73,7 +70,6 @@ class RoutineShow extends Component {
             <Text style={styles.childBottomLeft}>Level</Text>
             <Text style={styles.childBottomRight}>{routine.level}</Text>
           </View>
-
           <View style={styles.childBottom}>
             <Text style={styles.childBottomLeft}>Space</Text>
             <Text style={styles.childBottomRight}>{routine.space}</Text>
@@ -93,9 +89,7 @@ class RoutineShow extends Component {
             <Text style={styles.childBottomLeft}>Category</Text>
             <Text style={styles.childBottomRight}>{routine.category}</Text>
           </View>
-
-        </View> */}
-
+        </View>
       </View>
 		)
   }
@@ -106,9 +100,10 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: 'transparent',
+    backgroundColor: 'black',
     flexWrap: 'wrap',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    marginTop: 60
   },
   coverImage: {
     width: 375,

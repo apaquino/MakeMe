@@ -71,12 +71,12 @@ class TrainerShow extends Component {
     const favIcon = isFavorite ?
                     require('../../img/buttons/star_fav_true.png') :
                     require('../../img/buttons/star_fav_false.png');
-    const bioArrow = showBio ?
-                    require('../../img/buttons/drop_arrow_true.png') :
-                    require('../../img/buttons/drop_arrow_false.png');
-    const routineArrow = routineArrow ?
-                    require('../../img/buttons/drop_arrow_true.png') :
-                    require('../../img/buttons/drop_arrow_false.png');
+    const bioArrow =  showBio ?
+                      require('../../img/buttons/drop_arrow_true.png') :
+                      require('../../img/buttons/drop_arrow_false.png');
+    const routineArrow =  routineArrow ?
+                          require('../../img/buttons/drop_arrow_true.png') :
+                          require('../../img/buttons/drop_arrow_false.png');
     return (
 			<View style={styles.container}>
         <Image source={trainer.coverPic} style={styles.coverImage}>

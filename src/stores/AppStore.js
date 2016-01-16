@@ -63,7 +63,6 @@ const _toggleFavoriteTrainer = (trainerId) => {
         isFavorite = favTrainerIds.includes(trainerId);
 
   if (isFavorite) {
-    // remove
     // find index of routineId, practice immutable.
     const favTrnIdx = favTrainerIds.indexOf(trainerId);
     users[userIdIndex].favoriteTrainers = [...favTrainerIds.slice(0, favTrnIdx),...favTrainerIds.slice(favTrnIdx + 1)];

@@ -73,16 +73,16 @@ class Playlist extends Component {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
           newPlayList = ds.cloneWithRows(AppStore.getPlaylistRoutines());
 
-      return (
-				<View style={styles.container}>
-	  			<ListView
-	  				automaticallyAdjustContentInsets={false}
-	  				dataSource={newPlayList}
-	  				renderRow={this.renderRoutine}
-	  				style={styles.listView}
-	        />
-				</View>
-      )
+    return (
+			<View style={styles.container}>
+  			<ListView
+  				automaticallyAdjustContentInsets={false}
+  				dataSource={newPlayList}
+  				renderRow={this.renderRoutine}
+  				style={styles.listView}
+        />
+			</View>
+    )
   }
 }
 

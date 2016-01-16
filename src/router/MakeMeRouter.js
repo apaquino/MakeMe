@@ -8,6 +8,7 @@ import Playlist from '../components/Main/Playlist';
 import RoutineShow from '../components/Main/RoutineShow';
 import TrainerShow from '../components/Main/TrainerShow';
 import Suggested from '../components/Main/Suggested';
+import Favorites from '../components/Main/Favorites';
 
 import {
   ProfileTabIcon,
@@ -50,8 +51,8 @@ class MakeMeRouter extends Component {
                 <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
                 <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
               </Router>
-            </Route>
-            <Route name="tab2" schema="tab" title="Suggested" icon={SuggestedTabIcon}>
+              </Route>
+              <Route name="tab2" schema="tab" title="Suggested" icon={SuggestedTabIcon}>
               <Router>
                 <Route name="suggested" title="suggested" component={Suggested} renderTitle={renderTitleTryMe}/>
                 <Route name="routineshow2" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
@@ -59,7 +60,11 @@ class MakeMeRouter extends Component {
                 </Router>
               </Route>
               <Route name="tab3" schema="tab" title="Tab #3" component={TabView} icon={GoTabIcon}/>
-              <Route name="tab4" schema="tab" title="Tab #4" component={TabView} icon={FavoritesTabIcon}/>
+              <Route name="tab4" schema="tab" title="Favorites" icon={FavoritesTabIcon}>
+                <Router>
+                  <Route name="favorites" title="favorites" component={Favorites} renderTitle={renderTitle}/>
+                </Router>
+              </Route>
               <Route name="tab5" schema="tab" title="Tab #5" component={TabView} icon={ProfileTabIcon}/>
           </Router>
         </Route>

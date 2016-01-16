@@ -273,8 +273,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
   listView: {
-    marginBottom: -50,
-    marginTop: -20
+    marginBottom: -50
   },
   childBottomRight: {
     flex: 1,

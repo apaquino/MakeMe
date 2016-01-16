@@ -7,5 +7,4 @@ const {
   AppRegistry
 } = React;
 
-
 AppRegistry.registerComponent('MakeMe', () => MakeMeRouter);

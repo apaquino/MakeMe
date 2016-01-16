@@ -12,7 +12,7 @@ let users = require('../../data/mockUsers').mockUsers;
 // Mock Data.  Using import to make it read-only
 import { MOCK_ROUTINE_DATABASE, TRAINER_MOCK_DATABASE } from '../../data/mockDatabase';
 
-// Application state
+// Application state, most things can be looked up from _currentUserId
 let _isLoggedIn = false;
 let _currentUserId = "";
 
@@ -149,13 +149,11 @@ class AppStore extends EventEmitter {
   }
 
   getTrainerRoutines(id) {
-    // get trainer routines
     const routineIds = TRAINER_MOCK_DATABASE.find(trainer => trainer.id === id).routines;
     return MOCK_ROUTINE_DATABASE.filter(routine => routineIds.includes(routine.id));
   }
 
   isTrainerFavorite(trainerId) {
-    // get favorite trainer ids
     const favTrainerIds = users.find(user => user.id === _currentUserId).favoriteTrainers;
     return favTrainerIds.includes(trainerId);
   }

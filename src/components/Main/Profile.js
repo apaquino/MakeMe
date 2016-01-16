@@ -22,7 +22,8 @@ const {
  *  Many opportunities to refactor and create new components
 */
 
-const MOCK_CALENDAR = [ "Oct 05 - Oct 11", "Sept 28 - Oct 4", "Sept 21 - Sep 27"];
+const MOCK_CALENDAR = [ "Oct 05 - Oct 11", "Sept 28 - Oct 4", "Sept 21 - Sep 27"],
+      calenderArrLen = MOCK_CALENDAR.length;
 
 class Profile extends Component {
   constructor(props) {
@@ -68,7 +69,6 @@ class Profile extends Component {
     const completedRoutinesArrow =  showCompletedRoutines ?
                           require('../../img/buttons/drop_arrow_true.png') :
                           require('../../img/buttons/drop_arrow_false.png');
-
     return (
       <View style={styles.container}>
         <Image
@@ -102,8 +102,31 @@ class Profile extends Component {
           automaticallyAdjustContentInsets={false}
           contentContainerStyle={styles.parentBottom}
         >
-
-          {/* need to add calender carousel function here*/}
+          <View style={styles.childBottomArrows}>
+            {showWeekId === 0 ? <View /> : (
+              <TouchableHighlight
+                style={styles.redArrowLeftHighlight}
+                onPress={() => this.setState({showWeekId: showWeekId - 1})}
+              >
+                <Image
+                  source={require('../../img/buttons/redarrow_left.png')}
+                  style={styles.redArrowLeft}
+                />
+              </TouchableHighlight>)
+            }
+            <Text style={styles.childBottomDate}>{MOCK_CALENDAR[showWeekId]}</Text>
+            {showWeekId === calenderArrLen - 1 ? <View /> : (
+              <TouchableHighlight
+                style={styles.redArrowRightHighlight}
+                onPress={() => this.setState({showWeekId: showWeekId + 1})}
+              >
+                <Image
+                  source={require('../../img/buttons/redarrow_right.png')}
+                  style={styles.redArrowRight}
+                />
+              </TouchableHighlight>)
+            }
+          </View>
 
           <TouchableHighlight
             onPress={() => this.setState({showCompletedRoutines: !showCompletedRoutines})}

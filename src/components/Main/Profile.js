@@ -40,6 +40,9 @@ class Profile extends Component {
     const minutesArrow =  showMinutes ?
                           require('../../img/buttons/drop_arrow_true.png') :
                           require('../../img/buttons/drop_arrow_false.png');
+    const completedRoutinesArrow =  showCompletedRoutines ?
+                          require('../../img/buttons/drop_arrow_true.png') :
+                          require('../../img/buttons/drop_arrow_false.png');
 
     return (
       <View style={styles.container}>
@@ -82,7 +85,7 @@ class Profile extends Component {
           >
             <View style={styles.childBottom}>
               <Text style={styles.childBottomLeft}>Completed</Text>
-              {/*this.dropDownArrow(this.state.showCompletedRoutines) show arrow func later */}
+              <Image source={completedRoutinesArrow} style={styles.childBottomRightImageTrue}/>
             </View>
           </TouchableHighlight>
 

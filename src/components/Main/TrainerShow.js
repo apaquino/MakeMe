@@ -85,7 +85,7 @@ class TrainerShow extends Component {
             style={styles.TouchableHighlight}
             underlayColor={"transparent"}
           >
-            <Image source={favIcon} style={styles.childBottomRightImage}/>
+            <Image source={favIcon} style={styles.favStar}/>
           </TouchableHighlight>
           <Image source={trainer.profilePic} style={styles.profileImage}/>
           <Text style={styles.trainerName1}>{trainer.name} </Text>
@@ -114,22 +114,23 @@ class TrainerShow extends Component {
           <TouchableHighlight onPress={() => this.setState({showRoutines: !showRoutines})}>
             <View style={styles.childBottom}>
               <Text style={styles.childBottomLeft}>Routines</Text>
-                <Image
-                  source={routineArrow}
-                  style={styles.childBottomRightImage}
-                />
+              <Image
+                source={routineArrow}
+                style={styles.childBottomRightImage}
+              />
             </View>
           </TouchableHighlight>
 
-          {showRoutines && (<View style={styles.spacer}></View>)}
-
           {showRoutines && (
-          <ListView
-            dataSource={this.state.dataSource}
-            renderRow={this.renderRoutine}
-            style={styles.listView}
-            contentInset={{top: 64}}
-          />
+            <View>
+              <View style={styles.spacer}></View>
+              <ListView
+                dataSource={this.state.dataSource}
+                renderRow={this.renderRoutine}
+                style={styles.listView}
+                contentInset={{top: 64}}
+              />
+            </View>
           )}
 
           <TouchableHighlight onPress={() => this.setState({showBio: !showBio})}>

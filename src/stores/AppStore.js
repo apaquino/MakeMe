@@ -107,6 +107,18 @@ class AppStore extends EventEmitter {
         _toggleFavoriteTrainer(action.trainerId);
         this.emit(EVENTS.TRAINER_FAVORITE_TOGGLED);
         break;
+      case AppActionTypes.ADD_ROUTINE_TO_FAVORITES:
+        // STILL WORK IN PROGRESS
+        const userIdIndex = users.findIndex(user => user.id === _currentUserId),
+              favRoutineIds = users[userIdIndex].favoriteRoutines,
+              isFavorite = favRoutineIds.includes(action.id);
+        // add only if not in favorites.  No dup favorites
+        if (!isFavorite) {
+          users[userIdIndex].favoriteRoutines = favRoutineIds.concat(action.id);
+        }
+        console.log(users[userIdIndex].favoriteRoutines);
+        this.emit(EVENTS.ROUTINE_ADDED_TO_FAVORITES);
+        break;
       default:
         break;
       }

@@ -25,7 +25,13 @@ const AppActions = {
       actionType: AppActionTypes.TOGGLE_TRAINER_FAVORITE,
       trainerId
     });
-  }
+  },
+  addRoutineToFavorites(id){
+    AppDispatcher.dispatch({
+      actionType: AppActionTypes.ADD_ROUTINE_TO_FAVORITES,
+      id
+    });
+  },
 };
 
 export default AppActions;

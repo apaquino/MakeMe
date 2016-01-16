@@ -26,11 +26,11 @@ class Favorites extends Component {
   }
 
   componentWillMount() {
-
+    AppStore.startListening(EVENTS.ROUTINE_ADDED_TO_PLAYLIST, this._fluxCb_FavAdd);
   }
 
   componentWillUnmount() {
-
+    AppStore.stopListening(EVENTS.ROUTINE_ADDED_TO_PLAYLIST, this._fluxCb_FavAdd);
   }
 
   renderRoutine(routine) {
@@ -45,7 +45,7 @@ class Favorites extends Component {
           </TouchableHighlight>
           <Text style={styles.routineLevel}>Level {routine.level}</Text>
           <Button
-            onPress={console.log("PRESSED")}
+            onPress={() => AppActions.addRoutineToPlaylist(routine.id)}
             style={styles.playlistButton} textStyle={styles.playlistButtonText}
           >
             +
@@ -91,6 +91,10 @@ class Favorites extends Component {
       />
     );
   }
+
+  _fluxCb_FavAdd = () => {
+    Actions.tab1()
+  };
 
   render() {
     const { isTrainerTabSelected, favRoutines } = this.state;

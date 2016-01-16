@@ -57,6 +57,22 @@ const _addToUserPlaylist = (id) => {
   return true;
 };
 
+const _toggleFavoriteTrainer = (trainerId) => {
+  const userIdIndex = users.findIndex(user => user.id === _currentUserId),
+        favTrainerIds = users[userIdIndex].favoriteTrainers,
+        isFavorite = favTrainerIds.includes(trainerId);
+
+  if (isFavorite) {
+    // remove
+    // find index of routineId, practice immutable.
+    const favTrnIdx = favTrainerIds.indexOf(trainerId);
+    users[userIdIndex].favoriteTrainers = [...favTrainerIds.slice(0, favTrnIdx),...favTrainerIds.slice(favTrnIdx + 1)];
+  } else {
+    // concat into array
+    users[userIdIndex].favoriteTrainers = favTrainerIds.concat(trainerId);
+  }
+};
+
 class AppStore extends EventEmitter {
   constructor(props) {
     super(props);
@@ -86,6 +102,11 @@ class AppStore extends EventEmitter {
         // TODO more error checking since functions returns a boolean.
         _addToUserPlaylist(action.id);
         this.emit(EVENTS.ROUTINE_ADDED_TO_PLAYLIST);
+        break;
+      case AppActionTypes.TOGGLE_TRAINER_FAVORITE:
+        // TODO error checking
+        _toggleFavoriteTrainer(action.trainerId);
+        this.emit(EVENTS.TRAINER_FAVORITE_TOGGLED);
         break;
       default:
         break;

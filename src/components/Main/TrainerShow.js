@@ -29,6 +29,14 @@ class TrainerShow extends Component {
     };
   }
 
+  componentWillMount() {
+    AppStore.startListening(EVENTS.TRAINER_FAVORITE_TOGGLED, this._fluxCb_FavToggled);
+  }
+
+  componentWillUnmount() {
+    AppStore.stopListening(EVENTS.TRAINER_FAVORITE_TOGGLED, this._fluxCb_FavToggled);
+  }
+
   renderRoutine(routine) {
     return (
       <View style={styles.tester}>
@@ -52,6 +60,12 @@ class TrainerShow extends Component {
     )
   }
 
+  _fluxCb_FavToggled = () => {
+    this.setState({
+      isFavorite: AppStore.isTrainerFavorite(this.props.trainerId)
+    });
+  };
+
   render() {
     const { trainer, isFavorite, showBio, showRoutines, dataSource } = this.state;
     const favIcon = isFavorite ?
@@ -67,7 +81,7 @@ class TrainerShow extends Component {
 			<View style={styles.container}>
         <Image source={trainer.coverPic} style={styles.coverImage}>
           <TouchableHighlight
-            onPress={() => this.setState({ isFavorite: !isFavorite })}
+            onPress={() => AppActions.toggleTrainerFavorite(trainer.id)}
             style={styles.TouchableHighlight}
             underlayColor={"transparent"}
           >

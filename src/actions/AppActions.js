@@ -19,6 +19,12 @@ const AppActions = {
       actionType: AppActionTypes.ADD_ROUTINE_TO_PLAYLIST,
       id
     });
+  },
+  toggleTrainerFavorite(trainerId){
+    AppDispatcher.dispatch({
+      actionType: AppActionTypes.TOGGLE_TRAINER_FAVORITE,
+      trainerId
+    });
   }
 };
 

@@ -17,6 +17,17 @@ export const renderTitle = () => {
   )
 }
 
+export const renderTitleTryMe = () => {
+  return (
+    <View>
+      <Image
+        style={styles.icon}
+        source={require('../../img/logos/NavLogoTryMe.png')}
+      />
+    </View>
+  )
+}
+
 const styles = StyleSheet.create({
 	icon: {
 		width: 90,

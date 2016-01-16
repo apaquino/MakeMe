@@ -14,10 +14,13 @@ import {
   FavoritesTabIcon,
   PlaylistTabIcon,
   GoTabIcon,
-  SuggestedTabIcon, } from '../components/Main/TabBarIcons';
+  SuggestedTabIcon,
+} from '../components/Main/TabBarIcons';
 
 import {
-  renderTitle, } from '../components/Main/NavBarIcons';
+  renderTitle,
+  renderTitleTryMe,
+} from '../components/Main/NavBarIcons';
 
 const {
   Navigator,
@@ -50,7 +53,7 @@ class MakeMeRouter extends Component {
             </Route>
             <Route name="tab2" schema="tab" title="Suggested" icon={SuggestedTabIcon}>
               <Router>
-                <Route name="suggested" title="suggested" component={Suggested} renderTitle={renderTitle}/>
+                <Route name="suggested" title="suggested" component={Suggested} renderTitle={renderTitleTryMe}/>
                 <Route name="routineshow2" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
                 <Route name="trainershow2" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
                 </Router>

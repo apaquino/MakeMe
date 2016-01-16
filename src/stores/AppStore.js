@@ -76,6 +76,14 @@ const _toggleFavoriteTrainer = (trainerId) => {
   }
 };
 
+const _createRoutineDetailsObj = (routine) => {
+  let routineObj = {
+    completedDate: routine.completedDate,
+    routine: MOCK_ROUTINE_DATABASE.find( r => r.id === routine.playlistId)
+  };
+  return routineObj;
+};
+
 class AppStore extends EventEmitter {
   constructor(props) {
     super(props);
@@ -189,14 +197,7 @@ class AppStore extends EventEmitter {
   getCompletedRoutineDetails() {
     const userIdIndex = _getCurrentUserIndex(),
           completedRoutineDetails = users[userIdIndex]
-                                      .completedRoutines.map(routine => {
-                                          let routineObj = {
-                                            completedDate: routine.completedDate,
-                                            routine: MOCK_ROUTINE_DATABASE.find( r => r.id === routine.playlistId)
-                                          };
-                                          return routineObj;
-                                      });
-          // TODO make map function into a helper function
+                                      .completedRoutines.map(_createRoutineDetailsObj);
     return completedRoutineDetails;
   }
 

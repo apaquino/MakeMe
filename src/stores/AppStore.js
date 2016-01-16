@@ -45,8 +45,12 @@ const _createUser = ({username, email, password}) => {
   return false;
 };
 
+const _getCurrentUserIndex = () => {
+  return users.findIndex(user => user.id === _currentUserId);
+};
+
 const _addToUserPlaylist = (id) => {
-  const userIdIndex = users.findIndex(user => user.id === _currentUserId),
+  const userIdIndex = _getCurrentUserIndex(),
         routineId = MOCK_ROUTINE_DATABASE.find(routine => routine.id === id).id,
         newRoutineToAdd = {
           id: Date.now(),
@@ -58,7 +62,7 @@ const _addToUserPlaylist = (id) => {
 };
 
 const _toggleFavoriteTrainer = (trainerId) => {
-  const userIdIndex = users.findIndex(user => user.id === _currentUserId),
+  const userIdIndex = _getCurrentUserIndex(),
         favTrainerIds = users[userIdIndex].favoriteTrainers,
         isFavorite = favTrainerIds.includes(trainerId);
 
@@ -109,7 +113,7 @@ class AppStore extends EventEmitter {
         break;
       case AppActionTypes.ADD_ROUTINE_TO_FAVORITES:
         // STILL WORK IN PROGRESS
-        const userIdIndex = users.findIndex(user => user.id === _currentUserId),
+        const userIdIndex = _getCurrentUserIndex(),
               favRoutineIds = users[userIdIndex].favoriteRoutines,
               isFavorite = favRoutineIds.includes(action.id);
         // add only if not in favorites.  No dup favorites
@@ -171,19 +175,19 @@ class AppStore extends EventEmitter {
   }
 
   getUserFavoriteRoutines() {
-    const userIdIndex = users.findIndex(user => user.id === _currentUserId),
+    const userIdIndex = _getCurrentUserIndex(),
           favRoutineIds = users[userIdIndex].favoriteRoutines;
     return MOCK_ROUTINE_DATABASE.filter(routine => favRoutineIds.includes(routine.id));
   }
 
   getUserFavoriteTrainers() {
-    const userIdIndex = users.findIndex(user => user.id === _currentUserId),
+    const userIdIndex = _getCurrentUserIndex(),
           favTrainerIds = users[userIdIndex].favoriteTrainers;
     return TRAINER_MOCK_DATABASE.filter(trainer => favTrainerIds.includes(trainer.id));
   }
 
   getCompletedRoutineDetails() {
-    const userIdIndex = users.findIndex(user => user.id === _currentUserId),
+    const userIdIndex = _getCurrentUserIndex(),
           completedRoutineDetails = users[userIdIndex]
                                       .completedRoutines.map(routine => {
                                           let routineObj = {

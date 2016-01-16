@@ -38,7 +38,7 @@ class Suggested extends Component {
           <TouchableHighlight onPress={() => Actions.routineshow2({routineId: routine.id, trainerId: routine.trainerId})}>
             <Text style={styles.routineName}>{routine.name}</Text>
           </TouchableHighlight>
-          <TouchableHighlight onPress={Actions.trainershow2}>
+          <TouchableHighlight onPress={() => Actions.trainershow2({trainerId: routine.trainerId})}>
             <Text style={styles.trainerName}>{routine.trainer}</Text>
           </TouchableHighlight>
             <Text style={styles.routineLevel}>Level {routine.level}</Text>

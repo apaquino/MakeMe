@@ -18,13 +18,14 @@ const {
 class TrainerShow extends Component {
   constructor(props) {
     super(props);
+    const { trainerId } = this.props;
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(AppStore.getTrainerRoutines(this.props.trainerId)),
-      trainer: AppStore.getTrainerDetails(this.props.trainerId),
+      dataSource: ds.cloneWithRows(AppStore.getTrainerRoutines(trainerId)),
+      trainer: AppStore.getTrainerDetails(trainerId),
       showRoutines: false,
       showBio: false,
-      isFavorite: false
+      isFavorite: AppStore.isTrainerFavorite(trainerId)
     };
   }
 
@@ -42,6 +43,7 @@ class TrainerShow extends Component {
           <Button
             style={styles.playlistButton}
             textStyle={styles.playlistButtonText}
+            onPress={() => AppActions.addRoutineToPlaylist(routine.id)}
           >
           +
           </Button>
@@ -309,7 +311,8 @@ const styles = StyleSheet.create({
     color: '#b3b3b3',
     fontSize: 10,
     letterSpacing: 1,
-    marginTop: 5
+    marginTop: 5,
+    backgroundColor: 'transparent'
   },
   playlistButton: {
     marginLeft: 23,

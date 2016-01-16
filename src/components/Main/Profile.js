@@ -119,7 +119,6 @@ class Profile extends Component {
                 dataSource={this.state.dataSource}
                 renderRow={this.renderCompletedRoutine}
                 style={styles.listView}
-                contentInset={{top: 64}}
               />
             )
           }

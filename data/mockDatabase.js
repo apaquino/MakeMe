@@ -26,7 +26,7 @@ export const TRAINER_MOCK_DATABASE = [
     numComments: "17",
     numRoutines:"4",
     bio:'"I am here to give you the best workout in the world, hell yeah!"',
-    profilePic:require('../src/img/profile/chris_profile.png'),
+    profilePic: require('../src/img/profile/chris_profile.png'),
     coverPic: require('../src/img/profile/chris_cover.png'),
     routines: [1, 3],
     activeSince: "June 06, 2015",

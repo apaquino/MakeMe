@@ -19,7 +19,7 @@ class Favorites extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      favTrainers: "",
+      favTrainers: ds.cloneWithRows(AppStore.getUserFavoriteTrainers()),
       favRoutines: ds.cloneWithRows(AppStore.getUserFavoriteRoutines()),
       isTrainerTabSelected: true
     };
@@ -37,10 +37,10 @@ class Favorites extends Component {
   	return (
       <View style={styles.listContainer}>
         <Image source={routine.categoryPic} style={styles.backgroundImageRoutine}>
-          <TouchableHighlight onPress={() => console.log("do this later, nav to routine")}>
+          <TouchableHighlight onPress={() => Actions.routineshow3({routineId: routine.id, trainerId: routine.trainerId})}>
             <Text style={styles.routineName}>{routine.name}</Text>
           </TouchableHighlight>
-          <TouchableHighlight onPress={() => console.log("do this later, nav to trainer")}>
+          <TouchableHighlight onPress={() => Actions.trainershow3({trainerId: routine.trainerId})}>
             <Text style={styles.trainerNameRoutine}>{routine.trainer}</Text>
           </TouchableHighlight>
           <Text style={styles.routineLevel}>Level {routine.level}</Text>
@@ -56,10 +56,38 @@ class Favorites extends Component {
 	}
 
   renderRoutineList() {
+    // need key for ListView because of diff algorithm will not render correctly
+    // when switching between routines and trainers
     return (
       <ListView
+        key={"routineList"}
         dataSource={this.state.favRoutines}
         renderRow={this.renderRoutine}
+      />
+    );
+  }
+
+  renderTrainer(trainer) {
+    return (
+      <View style={styles.tester}>
+        <Image source={require('../../img/backgrounds/trainers_background_fav.png')} style={styles.backgroundTrainer}>
+          <Image source={trainer.profilePic} style={styles.profile}/>
+          <Text style={styles.trainerName}>{trainer.name}</Text>
+          <Text style={styles.specialties}>Specialties: {trainer.specialties}</Text>
+          <Text style={styles.completedRoutines}>3 of 8</Text>
+        </Image>
+       </View>
+    )
+  }
+
+  renderTrainerList() {
+    // need key for ListView because of diff algorithm will not render correctly
+    // when switching between routines and trainers.
+    return (
+      <ListView
+        key={"trainerList"}
+        dataSource={this.state.favTrainers}
+        renderRow={this.renderTrainer}
       />
     );
   }
@@ -94,7 +122,7 @@ class Favorites extends Component {
 					</Image>
           </TouchableHighlight>
 				</View>
-        {isTrainerTabSelected ? <View /> : this.renderRoutineList()}
+        {isTrainerTabSelected ? this.renderTrainerList() : this.renderRoutineList()}
 			</View>
     );
   }

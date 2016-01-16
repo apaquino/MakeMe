@@ -9,6 +9,7 @@ import RoutineShow from '../components/Main/RoutineShow';
 import TrainerShow from '../components/Main/TrainerShow';
 import Suggested from '../components/Main/Suggested';
 import Favorites from '../components/Main/Favorites';
+import Profile from '../components/Main/Profile';
 
 import {
   ProfileTabIcon,
@@ -67,7 +68,7 @@ class MakeMeRouter extends Component {
                   <Route name="trainershow3" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
                 </Router>
               </Route>
-              <Route name="tab5" schema="tab" title="Tab #5" component={TabView} icon={ProfileTabIcon}/>
+              <Route name="tab5" schema="tab" title="Profile" component={Profile} icon={ProfileTabIcon}/>
           </Router>
         </Route>
       </Router>

@@ -66,6 +66,8 @@ class TrainerShow extends Component {
     });
   };
 
+  
+
   render() {
     const { trainer, isFavorite, showBio, showRoutines, dataSource } = this.state;
     const favIcon = isFavorite ?
@@ -74,7 +76,7 @@ class TrainerShow extends Component {
     const bioArrow =  showBio ?
                       require('../../img/buttons/drop_arrow_true.png') :
                       require('../../img/buttons/drop_arrow_false.png');
-    const routineArrow =  routineArrow ?
+    const routineArrow =  showRoutines ?
                           require('../../img/buttons/drop_arrow_true.png') :
                           require('../../img/buttons/drop_arrow_false.png');
     return (

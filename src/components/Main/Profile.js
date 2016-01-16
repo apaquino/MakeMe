@@ -37,6 +37,14 @@ class Profile extends Component {
     };
   }
 
+  componentWillMount() {
+    AppStore.startListening(EVENTS.ROUTINE_ADDED_TO_PLAYLIST, this._fluxCb_ProfilePlaylistAdd);
+  }
+
+  componentWillUnmount() {
+    AppStore.stopListening(EVENTS.ROUTINE_ADDED_TO_PLAYLIST, this._fluxCb_ProfilePlaylistAdd);
+  }
+
   renderCompletedRoutine(routineDetails) {
     const { completedDate, routine } = routineDetails;
     return (
@@ -48,8 +56,9 @@ class Profile extends Component {
           <TouchableHighlight>
             <Text style={styles.trainerName}>{routine.trainer}</Text>
           </TouchableHighlight>
-         <Text style={styles.routineLevel}>{completedDate}</Text>
-         <Button
+          <Text style={styles.routineLevel}>{completedDate}</Text>
+          <Button
+            onPress={() => AppActions.addRoutineToPlaylist(routine.id)}
             style={styles.playlistButton}
             textStyle={styles.playlistButtonText}
           >
@@ -59,6 +68,11 @@ class Profile extends Component {
       </View>
     )
   }
+
+  _fluxCb_ProfilePlaylistAdd = () => {
+    Actions.tab1();
+  };
+
 
   render() {
     const { dataSource, showCompletedRoutines, showMinutes, showWeekId } = this.state;

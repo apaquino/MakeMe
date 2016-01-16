@@ -66,13 +66,15 @@ class TrainerShow extends Component {
     });
   };
 
-  
+
 
   render() {
     const { trainer, isFavorite, showBio, showRoutines, dataSource } = this.state;
     const favIcon = isFavorite ?
                     require('../../img/buttons/star_fav_true.png') :
                     require('../../img/buttons/star_fav_false.png');
+
+    // TODO: Make into a function to be DRY
     const bioArrow =  showBio ?
                       require('../../img/buttons/drop_arrow_true.png') :
                       require('../../img/buttons/drop_arrow_false.png');

@@ -17,9 +17,10 @@ const {
 class Favorites extends Component {
   constructor(props){
     super(props);
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       favTrainers: "",
-      favRoutines: "",
+      favRoutines: ds.cloneWithRows(AppStore.getUserFavoriteRoutines()),
       isTrainerTabSelected: true
     };
   }
@@ -32,16 +33,45 @@ class Favorites extends Component {
 
   }
 
+  renderRoutine(routine) {
+  	return (
+      <View style={styles.listContainer}>
+        <Image source={routine.categoryPic} style={styles.backgroundImageRoutine}>
+          <TouchableHighlight onPress={() => console.log("do this later, nav to routine")}>
+            <Text style={styles.routineName}>{routine.name}</Text>
+          </TouchableHighlight>
+          <TouchableHighlight onPress={() => console.log("do this later, nav to trainer")}>
+            <Text style={styles.trainerNameRoutine}>{routine.trainer}</Text>
+          </TouchableHighlight>
+          <Text style={styles.routineLevel}>Level {routine.level}</Text>
+          <Button
+            onPress={console.log("PRESSED")}
+            style={styles.playlistButton} textStyle={styles.playlistButtonText}
+          >
+            +
+          </Button>
+        </Image>
+      </View>
+		)
+	}
+
+  renderRoutineList() {
+    return (
+      <ListView
+        dataSource={this.state.favRoutines}
+        renderRow={this.renderRoutine}
+      />
+    );
+  }
+
   render() {
-    const { isTrainerTabSelected } = this.state;
+    const { isTrainerTabSelected, favRoutines } = this.state;
     const trainerBar =  isTrainerTabSelected ?
                         require('../../img/buttons/active_bar.png') :
                         require('../../img/buttons/inactive_bar.png');
     const routineBar =  isTrainerTabSelected ?
                         require('../../img/buttons/inactive_bar.png') :
                         require('../../img/buttons/active_bar.png');
-
-
     return (
       <View style={styles.container}>
 				<View style={styles.child}>
@@ -64,7 +94,7 @@ class Favorites extends Component {
 					</Image>
           </TouchableHighlight>
 				</View>
-        {/*this.showTabPage()*/}
+        {isTrainerTabSelected ? <View /> : this.renderRoutineList()}
 			</View>
     );
   }
@@ -76,6 +106,11 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-start',
     marginTop: 60
+  },
+  listContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'flex-start'
   },
   child: {
     flexDirection: 'row',
@@ -154,7 +189,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
   listView: {
-  	marginTop: -85
+  	marginTop: 0
   },
   profile: {
     width: 62,

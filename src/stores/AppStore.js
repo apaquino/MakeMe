@@ -158,6 +158,12 @@ class AppStore extends EventEmitter {
     return favTrainerIds.includes(trainerId);
   }
 
+  getUserFavoriteRoutines() {
+    const userIdIndex = users.findIndex(user => user.id === _currentUserId),
+          favRoutineIds = users[userIdIndex].favoriteRoutines;
+    return MOCK_ROUTINE_DATABASE.filter(routine => favRoutineIds.includes(routine.id));
+  }
+
   // listeners
   startListening(event, callback) {
     this.on(event, callback);

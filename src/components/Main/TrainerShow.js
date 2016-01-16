@@ -11,7 +11,8 @@ const {
   StyleSheet,
   Image,
   ListView,
-  TouchableHighlight
+  TouchableHighlight,
+  ScrollView
 } = React;
 
 class TrainerShow extends Component {
@@ -19,7 +20,7 @@ class TrainerShow extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: [],
+      dataSource: ds.cloneWithRows(AppStore.getTrainerRoutines(this.props.trainerId)),
       trainer: AppStore.getTrainerDetails(this.props.trainerId),
       showRoutines: false,
       showBio: false,
@@ -27,11 +28,39 @@ class TrainerShow extends Component {
     };
   }
 
+  renderRoutine(routine) {
+    return (
+      <View style={styles.tester}>
+        <Image source={routine.categoryPic} style={styles.backgroundImage}>
+          <TouchableHighlight >
+            <Text style={styles.routineName}>{routine.name}</Text>
+          </TouchableHighlight>
+          <TouchableHighlight>
+            <Text style={styles.trainerName}>{routine.trainer}</Text>
+          </TouchableHighlight>
+          <Text style={styles.routineLevel}>Level {routine.level}</Text>
+          <Button
+            style={styles.playlistButton}
+            textStyle={styles.playlistButtonText}
+          >
+          +
+          </Button>
+        </Image>
+      </View>
+    )
+  }
+
   render() {
-    const { trainer, isFavorite } = this.state;
+    const { trainer, isFavorite, showBio, showRoutines, dataSource } = this.state;
     const favIcon = isFavorite ?
                     require('../../img/buttons/star_fav_true.png') :
                     require('../../img/buttons/star_fav_false.png');
+    const bioArrow = showBio ?
+                    require('../../img/buttons/drop_arrow_true.png') :
+                    require('../../img/buttons/drop_arrow_false.png');
+    const routineArrow = routineArrow ?
+                    require('../../img/buttons/drop_arrow_true.png') :
+                    require('../../img/buttons/drop_arrow_false.png');
     return (
 			<View style={styles.container}>
         <Image source={trainer.coverPic} style={styles.coverImage}>
@@ -61,18 +90,70 @@ class TrainerShow extends Component {
             <Text style={styles.childLow}>Comments</Text>
           </View>
         </Image>
+        <ScrollView
+          style={styles.parentBottom}
+          automaticallyAdjustContentInsets={false}
+          contentContainerStyle={styles.parentBottom}
+        >
+          <TouchableHighlight onPress={() => this.setState({showRoutines: !showRoutines})}>
+            <View style={styles.childBottom}>
+              <Text style={styles.childBottomLeft}>Routines</Text>
+                <Image
+                  source={routineArrow}
+                  style={styles.childBottomRightImage}
+                />
+            </View>
+          </TouchableHighlight>
+
+          {showRoutines && (<View style={styles.spacer}></View>)}
+
+          {showRoutines && (
+          <ListView
+            dataSource={this.state.dataSource}
+            renderRow={this.renderRoutine}
+            style={styles.listView}
+            contentInset={{top: 64}}
+          />
+          )}
+
+          <TouchableHighlight onPress={() => this.setState({showBio: !showBio})}>
+            <View style={styles.childBottom}>
+              <Text style={styles.childBottomLeft}>Bio</Text>
+              <Image
+                source={bioArrow}
+                style={styles.childBottomRightImage}
+              />
+            </View>
+          </TouchableHighlight>
+
+          {showBio && (<Text style={styles.childBottomBio}>{trainer.bio}</Text>)}
+
+          <View style={styles.childBottom}>
+            <Text style={styles.childBottomLeft}>Active Since</Text>
+            <Text style={styles.childBottomRight}>{trainer.activeSince}</Text>
+          </View>
+          <View style={styles.childBottom}>
+            <Text style={styles.childBottomLeft}>Specialties</Text>
+            <Text style={styles.childBottomRight}>{trainer.specialties}</Text>
+          </View>
+          <View style={styles.childBottom}>
+            <Text style={styles.childBottomLeft}>Contact</Text>
+            <Text style={styles.childBottomRight}>{trainer.contact}</Text>
+          </View>
+        </ScrollView>
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  tester: {
+  container: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: 'transparent',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    marginTop: 60
   },
   coverImage: {
     width: 375,
@@ -206,13 +287,13 @@ const styles = StyleSheet.create({
     height: 135,
     width: 375
   },
-    routineName: {
-    marginLeft: 23,
-    marginTop: 22,
-    fontFamily: 'Raleway',
-    fontSize: 19,
-    letterSpacing: 1.5,
-    color: '#ce3c3c'
+  routineName: {
+  marginLeft: 23,
+  marginTop: 22,
+  fontFamily: 'Raleway',
+  fontSize: 19,
+  letterSpacing: 1.5,
+  color: '#ce3c3c'
   },
   trainerName: {
     marginLeft: 23,

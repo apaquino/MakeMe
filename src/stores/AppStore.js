@@ -128,6 +128,13 @@ class AppStore extends EventEmitter {
     return TRAINER_MOCK_DATABASE.find(trainer => trainer.id === id);
   }
 
+  getTrainerRoutines(id) {
+    // get trainer routines
+    const routineIds = TRAINER_MOCK_DATABASE.find(trainer => trainer.id === id).routines;
+    console.log(MOCK_ROUTINE_DATABASE.filter(routine => routineIds.includes(routine.id)));
+    return MOCK_ROUTINE_DATABASE.filter(routine => routineIds.includes(routine.id));
+  }
+
   // listeners
   startListening(event, callback) {
     this.on(event, callback);

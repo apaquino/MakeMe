@@ -182,6 +182,20 @@ class AppStore extends EventEmitter {
     return TRAINER_MOCK_DATABASE.filter(trainer => favTrainerIds.includes(trainer.id));
   }
 
+  getCompletedRoutineDetails() {
+    const userIdIndex = users.findIndex(user => user.id === _currentUserId),
+          completedRoutineDetails = users[userIdIndex]
+                                      .completedRoutines.map(routine => {
+                                          let routineObj = {
+                                            completedDate: routine.completedDate,
+                                            routine: MOCK_ROUTINE_DATABASE.find( r => r.id === routine.playlistId)
+                                          };
+                                          return routineObj;
+                                      });
+          // TODO make map function into a helper function
+    return completedRoutineDetails;
+  }
+
   // listeners
   startListening(event, callback) {
     this.on(event, callback);

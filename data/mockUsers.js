@@ -5,9 +5,11 @@ export let mockUsers = [
     username: "mjones",
     email: "mjone@gmail.com",
     password: "mjones",
-    playlist: [{id: 1, playlistId: 4},
-               {id: 2, playlistId: 3},
-               {id: 3, playlistId: 2}],
+    playlist: [
+                {id: 1, playlistId: 4},
+                {id: 2, playlistId: 3},
+                {id: 3, playlistId: 2}
+              ],
     completedRoutines: [
                           { id: 1,
                             playlistId: 5,

@@ -27,16 +27,41 @@ const MOCK_CALENDAR = [ "Oct 05 - Oct 11", "Sept 28 - Oct 4", "Sept 21 - Sep 27"
 class Profile extends Component {
   constructor(props) {
     super(props);
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: [],
+      dataSource: ds.cloneWithRows(AppStore.getCompletedRoutineDetails()),
       showCompletedRoutines: false,
       showMinutes: false,
       showWeekId: 0
     };
   }
 
+  renderCompletedRoutine(routineDetails) {
+    const { completedDate, routine } = routineDetails;
+    return (
+      <View style={styles.container}>
+        <Image source={routine.categoryPic} style={styles.backgroundImage}>
+          <TouchableHighlight >
+            <Text style={styles.routineName}>{routine.name}</Text>
+          </TouchableHighlight>
+          <TouchableHighlight>
+            <Text style={styles.trainerName}>{routine.trainer}</Text>
+          </TouchableHighlight>
+         <Text style={styles.routineLevel}>{completedDate}</Text>
+         <Button
+            style={styles.playlistButton}
+            textStyle={styles.playlistButtonText}
+          >
+            +
+          </Button>
+       </Image>
+      </View>
+    )
+  }
+
   render() {
     const { dataSource, showCompletedRoutines, showMinutes, showWeekId } = this.state;
+    // TODO: Make into a function to be DRY
     const minutesArrow =  showMinutes ?
                           require('../../img/buttons/drop_arrow_true.png') :
                           require('../../img/buttons/drop_arrow_false.png');
@@ -90,7 +115,12 @@ class Profile extends Component {
           </TouchableHighlight>
 
           {showCompletedRoutines && (
-            <View />
+              <ListView
+                dataSource={this.state.dataSource}
+                renderRow={this.renderCompletedRoutine}
+                style={styles.listView}
+                contentInset={{top: 64}}
+              />
             )
           }
 

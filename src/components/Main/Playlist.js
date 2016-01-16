@@ -49,7 +49,7 @@ class Playlist extends Component {
           >
             <Text style={styles.routineName}>{routine.name}</Text>
           </TouchableHighlight>
-          <TouchableHighlight onPress={Actions.trainershow}>
+          <TouchableHighlight onPress={() => Actions.trainershow({trainerId: routine.trainerId})}>
             <Text style={styles.trainerName}>{routine.trainer}</Text>
           </TouchableHighlight>
           <Text style={styles.routineLevel}>Level {routine.level}</Text>

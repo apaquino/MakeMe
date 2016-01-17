@@ -23,6 +23,7 @@ import {
   renderTitle,
   renderTitleTryMe,
   renderTitleLikeMe,
+  renderRightButtonGear,
 } from '../components/Main/NavBarIcons';
 
 const {
@@ -49,7 +50,7 @@ class MakeMeRouter extends Component {
           <Router footer={TabBar} style={{backgroundColor: '#1c1c1c'}} showNavigationBar={false}>
             <Route name="tab1" schema="tab" title="Playlist" icon={PlaylistTabIcon} >
               <Router>
-                <Route name="playlist" title="playlist" component={Playlist} renderTitle={renderTitle}/>
+                <Route name="playlist" title="playlist" component={Playlist} renderTitle={renderTitle} renderRightButton={renderRightButtonGear}/>
                 <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
                 <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
               </Router>

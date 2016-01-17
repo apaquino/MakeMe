@@ -22,6 +22,7 @@ import {
 import {
   renderTitle,
   renderTitleTryMe,
+  renderTitleLikeMe,
 } from '../components/Main/NavBarIcons';
 
 const {
@@ -63,7 +64,7 @@ class MakeMeRouter extends Component {
               <Route name="tab3" schema="tab" title="Tab #3" component={TabView} icon={GoTabIcon}/>
               <Route name="tab4" schema="tab" title="Favorites" icon={FavoritesTabIcon}>
                 <Router>
-                  <Route name="favorites" title="favorites" component={Favorites} renderTitle={renderTitle}/>
+                  <Route name="favorites" title="favorites" component={Favorites} renderTitle={renderTitleLikeMe}/>
                   <Route name="routineshow3" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
                   <Route name="trainershow3" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
                 </Router>

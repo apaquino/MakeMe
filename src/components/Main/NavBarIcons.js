@@ -28,6 +28,17 @@ export const renderTitleTryMe = () => {
   )
 }
 
+export const renderTitleLikeMe = () => {
+  return (
+    <View>
+      <Image
+        style={styles.icon}
+        source={require('../../img/logos/like_me.png')}
+      />
+    </View>
+  )
+}
+
 const styles = StyleSheet.create({
 	icon: {
 		width: 90,
@@ -35,5 +46,12 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		marginBottom: 5
+	},
+  filter: {
+		width: 21,
+		height: 21,
+		alignItems: 'flex-start',
+		marginTop: 31,
+		marginLeft: 15
 	}
 });

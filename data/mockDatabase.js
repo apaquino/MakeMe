@@ -2,7 +2,10 @@
 
 // All trainers in the database.  Users cannot edit this but can have links to
 // this in their favorites.
-
+/* consider using objects and use the id as the key
+ * to make getting the information easier with get, and use set has to to
+ * make operations easier.  Will need to refactor the store
+ */
 export const TRAINER_MOCK_DATABASE = [
   {
     id: 0,

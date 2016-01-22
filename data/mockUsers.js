@@ -1,4 +1,8 @@
 // This can be updated so new user can be added.
+/* TODO make playlist and completedRoutines objects and use the id as the key
+ * to make getting the information easier with get, and use set has to to
+ * make operations easier.  Will need to refactor the store
+*/
 export let mockUsers = [
   {
     id: 1,

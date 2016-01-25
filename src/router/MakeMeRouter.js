@@ -37,7 +37,6 @@ const {
 class MakeMeRouter extends Component {
   render() {
 
-    // nested router backbutton pop https://github.com/aksonov/react-native-router-flux/issues/110
     return (
       <Router hideNavBar={true}>
         <Schema name="default" sceneConfig={Navigator.SceneConfigs.FloatFromRight}/>

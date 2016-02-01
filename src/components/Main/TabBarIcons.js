@@ -8,8 +8,8 @@ const {
 export class ProfileTabIcon extends Component {
   render(){
     const icon =  this.props.selected ?
-                require('../../img/tabIcons/profile_icon_b.png') :
-                require('../../img/tabIcons/profile_icon.png');
+                  require('../../img/tabIcons/profile_icon_b.png') :
+                  require('../../img/tabIcons/profile_icon.png');
     return (
       <Image source={icon} style={styles.icon} />
     );

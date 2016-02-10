@@ -43,10 +43,14 @@ class Go extends Component {
             source={routine.trainerPic}
             style={styles.profileImage}
           />
-            <TouchableHighlight onPress={() => console.log("routine name")}>
+            <TouchableHighlight
+              onPress={() => Actions.routineshow4({routineId: routine.id, trainerId: routine.trainerId})}
+            >
               <Text style={styles.routineName}>{routine.name}</Text>
             </TouchableHighlight>
-            <TouchableHighlight onPress={() => console.log("routine trainer")}>
+            <TouchableHighlight
+              onPress={() => Actions.trainershow4({trainerId: routine.trainerId})}
+            >
               <Text style={styles.trainerName}>{routine.trainer}</Text>
             </TouchableHighlight>
             <View style={styles.playText}>

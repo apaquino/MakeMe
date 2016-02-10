@@ -64,8 +64,8 @@ class MakeMeRouter extends Component {
             <Route name="tab3" schema="tab" title="Go" icon={GoTabIcon}>
               <Router>
                 <Route name="go" title="go" component={Go} renderTitle={renderTitle}/>
-                <Route name="routineshow2" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
-                <Route name="trainershow2" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
+                <Route name="routineshow4" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
+                <Route name="trainershow4" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
               </Router>
             </Route>
             <Route name="tab4" schema="tab" title="Favorites" icon={FavoritesTabIcon}>

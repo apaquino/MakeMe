@@ -30,7 +30,8 @@ class Go extends Component {
   }
 
   render() {
-    const routine = this.state.playlistRoutines[this.state.routineIndex];
+    const { routineIndex, playlistRoutines } = this.state;
+    const routine = this.state.playlistRoutines[routineIndex];
 
     return (
       <View style={styles.container}>
@@ -55,12 +56,14 @@ class Go extends Component {
               <TouchableHighlight onPress={() => console.log("Ready")}>
                 <Text style={styles.readyText}>Ready.</Text>
               </TouchableHighlight>
-              <TouchableHighlight onPress={() => console.log("Next")}>
+            { routineIndex < playlistRoutines.length - 1 ? (
+              <TouchableHighlight onPress={() => this.setState({routineIndex: routineIndex + 1})}>
                 <Image
                   source={require('../../img/buttons/next_go.png')}
                   style={styles.nextGo}
                 />
-              </TouchableHighlight>
+              </TouchableHighlight> ) : <View />
+            }
             </View>
         </Image>
       </View>

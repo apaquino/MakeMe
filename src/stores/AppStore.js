@@ -61,6 +61,17 @@ const _addToUserPlaylist = (id) => {
   return true;
 };
 
+const _deleteFromUserPlaylist = (id) => {
+  const userIdIndex = _getCurrentUserIndex(),
+        playlist = users[userIdIndex].playlist;
+  // returns the postion of the playlist of where to delete.
+  // Cannot just delete by playlist id because it can repeat
+
+  users[userIdIndex].playlist = [...playlist.slice(0, id), ...playlist.slice(id + 1)];
+  console.log(users[userIdIndex].playlist);
+  return true;
+};
+
 const _toggleFavoriteTrainer = (trainerId) => {
   const userIdIndex = _getCurrentUserIndex(),
         favTrainerIds = users[userIdIndex].favoriteTrainers,
@@ -113,6 +124,11 @@ class AppStore extends EventEmitter {
         // TODO more error checking since functions returns a boolean.
         _addToUserPlaylist(action.id);
         this.emit(EVENTS.ROUTINE_ADDED_TO_PLAYLIST);
+        break;
+      case AppActionTypes.DELETE_ROUTINE_FROM_PLAYLIST:
+        // TODO more error checking since functions returns a boolean.
+        _deleteFromUserPlaylist(action.id);
+        this.emit(EVENTS.ROUTINE_DELETED_FROM_PLAYLIST);
         break;
       case AppActionTypes.TOGGLE_TRAINER_FAVORITE:
         // TODO error checking

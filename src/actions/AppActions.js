@@ -20,6 +20,12 @@ const AppActions = {
       id
     });
   },
+  deleteRoutineFromPlaylist(id){
+    AppDispatcher.dispatch({
+      actionType: AppActionTypes.DELETE_ROUTINE_FROM_PLAYLIST,
+      id
+    });
+  },
   toggleTrainerFavorite(trainerId){
     AppDispatcher.dispatch({
       actionType: AppActionTypes.TOGGLE_TRAINER_FAVORITE,

@@ -16,7 +16,6 @@ const {
 class Go extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       playlistRoutines: AppStore.getPlaylistRoutines(),
       routineIndex: 0
@@ -24,15 +23,27 @@ class Go extends Component {
   }
 
   componentWillMount() {
+    AppStore.startListening(EVENTS.ROUTINE_DELETED_FROM_PLAYLIST, this._fluxCb_DeleteFromPlaylist);
   }
 
   componentWillUnmount() {
+    AppStore.stopListening(EVENTS.ROUTINE_DELETED_FROM_PLAYLIST, this._fluxCb_DeleteFromPlaylist);
   }
+
+  _fluxCb_DeleteFromPlaylist = () => {
+    const { routineIndex } = this.state;
+    this.setState({
+      playlistRoutines: AppStore.getPlaylistRoutines(),
+      routineIndex: Math.max(0, routineIndex - 1),
+    })
+  };
 
   render() {
     const { routineIndex, playlistRoutines } = this.state;
     const routine = this.state.playlistRoutines[routineIndex];
-
+     /*
+      * NEED A View if there is the user playlist is empty
+      */
     return (
       <View style={styles.container}>
         <Image
@@ -54,7 +65,7 @@ class Go extends Component {
               <Text style={styles.trainerName}>{routine.trainer}</Text>
             </TouchableHighlight>
             <View style={styles.playText}>
-              <TouchableHighlight onPress={() => console.log("X")}>
+              <TouchableHighlight onPress={() => AppActions.deleteRoutineFromPlaylist(routineIndex)}>
                 <Text style={styles.xText}>X</Text>
               </TouchableHighlight>
               <TouchableHighlight onPress={() => console.log("Ready")}>

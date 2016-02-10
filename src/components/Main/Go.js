@@ -56,14 +56,15 @@ class Go extends Component {
               <TouchableHighlight onPress={() => console.log("Ready")}>
                 <Text style={styles.readyText}>Ready.</Text>
               </TouchableHighlight>
-            { routineIndex < playlistRoutines.length - 1 ? (
-              <TouchableHighlight onPress={() => this.setState({routineIndex: routineIndex + 1})}>
-                <Image
-                  source={require('../../img/buttons/next_go.png')}
-                  style={styles.nextGo}
-                />
-              </TouchableHighlight> ) : <View />
-            }
+              {/* do not show button if on the last routine */}
+              { routineIndex < playlistRoutines.length - 1 ? (
+                <TouchableHighlight onPress={() => this.setState({routineIndex: routineIndex + 1})}>
+                  <Image
+                    source={require('../../img/buttons/next_go.png')}
+                    style={styles.nextGo}
+                  />
+                </TouchableHighlight> ) : <View />
+              }
             </View>
         </Image>
       </View>

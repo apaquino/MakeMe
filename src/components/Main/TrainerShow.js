@@ -39,7 +39,7 @@ class TrainerShow extends Component {
 
   renderRoutine(routine) {
     return (
-      <View style={styles.tester}>
+      <View>
         <Image source={routine.categoryPic} style={styles.backgroundImage}>
           <TouchableHighlight
             onPress={() => Actions.routineshow({routineId: routine.id, trainerId: routine.trainerId})}
@@ -127,11 +127,9 @@ class TrainerShow extends Component {
 
           {showRoutines && (
             <View>
-              <View style={styles.spacer}></View>
               <ListView
                 dataSource={this.state.dataSource}
                 renderRow={this.renderRoutine}
-                style={styles.listView}
               />
             </View>
           )}
@@ -250,6 +248,7 @@ const styles = StyleSheet.create({
   childBottom: {
     flexDirection: 'row',
     borderColor: '#333333',
+    backgroundColor: 'black',
     borderWidth: .5,
     height: 60
   },
@@ -308,12 +307,12 @@ const styles = StyleSheet.create({
     width: 375
   },
   routineName: {
-  marginLeft: 23,
-  marginTop: 22,
-  fontFamily: 'Raleway',
-  fontSize: 19,
-  letterSpacing: 1.5,
-  color: '#ce3c3c'
+    marginLeft: 23,
+    marginTop: 22,
+    fontFamily: 'Raleway',
+    fontSize: 19,
+    letterSpacing: 1.5,
+    color: '#ce3c3c'
   },
   trainerName: {
     marginLeft: 23,

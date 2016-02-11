@@ -18,22 +18,22 @@ class About extends Component {
 	        source={require('../../img/backgrounds/Backdrop_sample.png')}
 	  	    style={styles.backgroundImage}
 	      >
-    		<UseMe />
-    		<View style={{paddingLeft: 18, paddingRight: 18}}>
-    		<Text style={styles.tagLine}>
-      		Make Me brings the very best talent in personal training straight to your mobile device.
-  	    	Discover new routines uploaded daily and customize your favorite trainers and work outs plans,
-  	    	Our trainers will virtually track your progress and push you to your limits.
-    		</Text>
-    		</View>
-    		<Text style={styles.underTagline}>Make Me an athlete.</Text>
-    		<Button
-    		  onPress={() => Actions.tabbar()}
-    		  style={styles.continueStyleButton}
-    		  textStyle={styles.continueStyleText}
-    		>
-	    	  CONTINUE
-	      </Button>
+      		<UseMe />
+      		<View style={styles.aboutText}>
+        		<Text style={styles.tagLine}>
+          		Make Me brings the very best talent in personal training straight to your mobile device.
+      	    	Discover new routines uploaded daily and customize your favorite trainers and work outs plans,
+      	    	Our trainers will virtually track your progress and push you to your limits.
+        		</Text>
+      		</View>
+      		<Text style={styles.underTagline}>Make Me an athlete.</Text>
+      		<Button
+      		  onPress={() => Actions.tabbar()}
+      		  style={styles.continueStyleButton}
+      		  textStyle={styles.continueStyleText}
+      		>
+  	    	  CONTINUE
+  	      </Button>
 	      </Image>
 	    </View>
 	  )
@@ -83,6 +83,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Raleway',
     marginTop: 19,
     fontSize: 12
+  },
+  aboutText: {
+    paddingLeft: 50,
+    paddingRight: 50
   }
 });
 

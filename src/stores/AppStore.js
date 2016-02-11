@@ -68,7 +68,6 @@ const _deleteFromUserPlaylist = (id) => {
   // Cannot just delete by playlist id because it can repeat
 
   users[userIdIndex].playlist = [...playlist.slice(0, id), ...playlist.slice(id + 1)];
-  console.log(users[userIdIndex].playlist);
   return true;
 };
 
@@ -144,7 +143,6 @@ class AppStore extends EventEmitter {
         if (!isFavorite) {
           users[userIdIndex].favoriteRoutines = favRoutineIds.concat(action.id);
         }
-        console.log(users[userIdIndex].favoriteRoutines);
         this.emit(EVENTS.ROUTINE_ADDED_TO_FAVORITES);
         break;
       default:

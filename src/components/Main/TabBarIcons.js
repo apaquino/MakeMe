@@ -8,8 +8,8 @@ const {
 export class ProfileTabIcon extends Component {
   render(){
     const icon =  this.props.selected ?
-                  require('../../img/tabIcons/profile_icon_b.png') :
-                  require('../../img/tabIcons/profile_icon.png');
+                  require('../../img/tabIcons/profile_icon.png') :
+                  require('../../img/tabIcons/profile_icon_b.png');
     return (
       <Image source={icon} style={styles.icon} />
     );
@@ -19,8 +19,8 @@ export class ProfileTabIcon extends Component {
 export class FavoritesTabIcon extends Component {
   render(){
     const icon =  this.props.selected ?
-                  require('../../img/tabIcons/favorites_icon_b.png') :
-                  require('../../img/tabIcons/favorites_icon.png');
+                  require('../../img/tabIcons/favorites_icon.png') :
+                  require('../../img/tabIcons/favorites_icon_b.png');
     return (
       <Image source={icon} style={styles.icon} />
     );
@@ -42,8 +42,8 @@ export class GoTabIcon extends Component {
 export class PlaylistTabIcon extends Component {
   render(){
     const icon =  this.props.selected ?
-                  require('../../img/tabIcons/playlist_icon_b.png') :
-                  require('../../img/tabIcons/playlist_icon.png');
+                  require('../../img/tabIcons/playlist_icon.png') :
+                  require('../../img/tabIcons/playlist_icon_b.png');
     return (
       <Image source={icon} style={styles.icon} />
     );
@@ -52,8 +52,8 @@ export class PlaylistTabIcon extends Component {
 export class SuggestedTabIcon extends Component {
   render(){
     const icon =  this.props.selected ?
-                  require('../../img/tabIcons/suggested_icon_b.png') :
-                  require('../../img/tabIcons/suggested_icon.png');
+                  require('../../img/tabIcons/suggested_icon.png') :
+                  require('../../img/tabIcons/suggested_icon_b.png');
     return (
       <Image source={icon} style={styles.icon} />
     );

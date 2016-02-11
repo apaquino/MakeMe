@@ -25,6 +25,8 @@ import {
   renderTitleTryMe,
   renderTitleLikeMe,
   renderRightButtonGear,
+  renderLeftBackButton,
+  renderLeftFilter,
 } from '../components/Main/NavBarIcons';
 
 const {
@@ -39,7 +41,8 @@ class MakeMeRouter extends Component {
   render() {
     return (
       <Router hideNavBar={true}>
-        <Schema name="default" sceneConfig={Navigator.SceneConfigs.FloatFromRight}/>
+        <Schema name="default" sceneConfig={Navigator.SceneConfigs.FloatFromRight} renderRightButton={renderRightButtonGear}/>
+        <Schema name="backbutton" renderTitle={renderTitle} renderLeftButton={renderLeftBackButton}/>
         <Schema name="withoutAnimation"/>
         <Schema name="tab" type="switch" navigationBarStyle={{backgroundColor: '#1c1c1c'}} renderTitle={renderTitle}/>
         <Route name="launch" component={Launch} initial={true} />
@@ -49,40 +52,40 @@ class MakeMeRouter extends Component {
           <Router footer={TabBar} style={{backgroundColor: '#1c1c1c'}} showNavigationBar={false}>
             <Route name="tab1" schema="tab" title="Playlist" icon={PlaylistTabIcon} >
               <Router>
-                <Route name="playlist" title="playlist" component={Playlist} renderTitle={renderTitle} renderRightButton={renderRightButtonGear}/>
-                <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
-                <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
-                <Route name="go" title="go" component={Go} renderTitle={renderTitle}/>
-                <Route name="workout" title="workout" component={Workout} renderTitle={renderTitle}/>
-            </Router>
+                <Route name="playlist" title="playlist" component={Playlist} renderTitle={renderTitle} />
+                <Route name="routineshow" title="routineshow" component={RoutineShow} schema="backbutton"/>
+                <Route name="trainershow" title="trainershow" component={TrainerShow} schema="backbutton"/>
+                <Route name="go" title="go" component={Go} schema="backbutton"/>
+                <Route name="workout" title="workout" component={Workout} schema="backbutton"/>
+              </Router>
             </Route>
             <Route name="tab2" schema="tab" title="Suggested" icon={SuggestedTabIcon}>
               <Router>
-                <Route name="suggested" title="suggested" component={Suggested} renderTitle={renderTitleTryMe}/>
-                <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
-                <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
+                <Route name="suggested" title="suggested" component={Suggested} renderTitle={renderTitleTryMe} renderLeftButton={renderLeftFilter}/>
+                <Route name="routineshow" title="routineshow" component={RoutineShow} schema="backbutton"/>
+                <Route name="trainershow" title="trainershow" component={TrainerShow} schema="backbutton"/>
               </Router>
             </Route>
             <Route name="tab3" schema="tab" title="Go" icon={GoTabIcon}>
               <Router>
                 <Route name="go" title="go" component={Go} renderTitle={renderTitle}/>
-                <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
-                <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
-                <Route name="workout" title="workout" component={Workout} renderTitle={renderTitle}/>
+                <Route name="routineshow" title="routineshow" component={RoutineShow} schema="backbutton"/>
+                <Route name="trainershow" title="trainershow" component={TrainerShow} schema="backbutton"/>
+                <Route name="workout" title="workout" component={Workout} schema="backbutton"/>
               </Router>
             </Route>
             <Route name="tab4" schema="tab" title="Favorites" icon={FavoritesTabIcon}>
               <Router>
                 <Route name="favorites" title="favorites" component={Favorites} renderTitle={renderTitleLikeMe}/>
-                <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
-                <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
+                <Route name="routineshow" title="routineshow" component={RoutineShow} schema="backbutton"/>
+                <Route name="trainershow" title="trainershow" component={TrainerShow} schema="backbutton"/>
               </Router>
             </Route>
             <Route name="tab5" schema="tab" title="Profile" icon={ProfileTabIcon}>
               <Router>
                 <Route name="profile" title="profile" component={Profile} renderTitle={renderTitle}/>
-                <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
-                <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
+                <Route name="routineshow" title="routineshow" component={RoutineShow} schema="backbutton"/>
+                <Route name="trainershow" title="trainershow" component={TrainerShow} schema="backbutton"/>
               </Router>
             </Route>
           </Router>

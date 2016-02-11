@@ -204,7 +204,8 @@ const styles = StyleSheet.create({
 		color: '#b3b3b3',
 		fontSize: 10,
 		letterSpacing: 1,
-  	marginTop: 5
+  	marginTop: 5,
+    backgroundColor: 'transparent'
   },
   playlistButton: {
   	marginLeft: 23,

@@ -69,10 +69,13 @@ class Favorites extends Component {
 
   renderTrainer(trainer) {
     return (
-      <View style={styles.tester}>
+      // TODO styles for View
+      <View style={styles.needToReplace}>
         <Image source={require('../../img/backgrounds/trainers_background_fav.png')} style={styles.backgroundTrainer}>
           <Image source={trainer.profilePic} style={styles.profile}/>
-          <Text style={styles.trainerName}>{trainer.name}</Text>
+          <TouchableHighlight onPress={() => Actions.trainershow({trainerId: trainer.id})}>
+            <Text style={styles.trainerName}>{trainer.name}</Text>
+          </TouchableHighlight>
           <Text style={styles.specialties}>Specialties: {trainer.specialties}</Text>
           <Text style={styles.completedRoutines}>3 of 8</Text>
         </Image>

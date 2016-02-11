@@ -66,8 +66,6 @@ class TrainerShow extends Component {
     });
   };
 
-
-
   render() {
     const { trainer, isFavorite, showBio, showRoutines, dataSource } = this.state;
     const favIcon = isFavorite ?

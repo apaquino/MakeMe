@@ -173,9 +173,10 @@ class AppStore extends EventEmitter {
   getSuggestedRoutines() {
     // get user playlist and get keys.
     const playlist = users.find(user => user.id === _currentUserId).playlist,
-          playlistKeys = playlist.map(playlistObj => playlistObj.playlistId);
-    // get up to 10 routines NOT in playlist
-    return MOCK_ROUTINE_DATABASE.filter(routine => !playlistKeys.includes(routine.id)).slice(0,10);
+          playlistKeys = playlist.map(playlistObj => playlistObj.playlistId),
+          filteredMockRoutineDB = MOCK_ROUTINE_DATABASE.filter(routine => !playlistKeys.includes(routine.id));
+    // get up to 10 routines NOT in playlist, from a shuffled routine database
+    return filteredMockRoutineDB.sort(function(a, b) {return Math.random() - 0.5;}).slice(0,10);
   }
 
   getRoutineDetails(id) {

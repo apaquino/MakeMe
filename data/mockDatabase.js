@@ -405,7 +405,7 @@ export const MOCK_ROUTINE_DATABASE = [
   },
   {
      id: 16,
-     name: "Titan Mathod 2",
+     name: "Titan Method 2",
      trainer: "Omar Sandoval",
      trainerId: 4,
      level: "2",

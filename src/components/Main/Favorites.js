@@ -70,7 +70,7 @@ class Favorites extends Component {
   renderTrainer(trainer) {
     // TODO styles for View
     return (
-      <View style={styles.needToReplace}>
+      <View>
         <Image source={require('../../img/backgrounds/trainers_background_fav.png')} style={styles.backgroundTrainer}>
           <Image source={trainer.profilePic} style={styles.profile}/>
           <TouchableHighlight onPress={() => Actions.trainershow({trainerId: trainer.id})}>

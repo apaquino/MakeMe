@@ -149,7 +149,10 @@ class Profile extends Component {
           >
             <View style={styles.childBottom}>
               <Text style={styles.childBottomLeft}>Completed</Text>
-              <Image source={completedRoutinesArrow} style={styles.childBottomRightImageTrue}/>
+              <Image
+                source={completedRoutinesArrow}
+                style={showCompletedRoutines ? styles.childBottomRightImageTrue : styles.childBottomRightImage}
+              />
             </View>
           </TouchableHighlight>
 
@@ -157,7 +160,6 @@ class Profile extends Component {
               <ListView
                 dataSource={this.state.dataSource}
                 renderRow={this.renderCompletedRoutine}
-                style={styles.listView}
               />
             )
           }
@@ -167,7 +169,10 @@ class Profile extends Component {
           >
             <View style={styles.childBottom}>
               <Text style={styles.childBottomLeft}>Stats</Text>
-              <Image source={minutesArrow} style={styles.childBottomRightImageTrue}/>
+              <Image
+                source={minutesArrow}
+                style={showMinutes ? styles.childBottomRightImageTrue : styles.childBottomRightImage}
+              />
             </View>
           </TouchableHighlight>
 
@@ -214,7 +219,8 @@ const styles = StyleSheet.create({
   coverImage: {
     width: 375,
     height: 200,
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
+    marginTop: 60
   },
   profileImage: {
     width: 95,

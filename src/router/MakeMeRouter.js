@@ -11,6 +11,7 @@ import Suggested from '../components/Main/Suggested';
 import Favorites from '../components/Main/Favorites';
 import Profile from '../components/Main/Profile';
 import Go from '../components/Main/Go';
+import Workout from '../components/Main/Workout';
 
 import {
   ProfileTabIcon,
@@ -53,6 +54,7 @@ class MakeMeRouter extends Component {
                 <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
                 <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
                 <Route name="go" title="go" component={Go} renderTitle={renderTitle}/>
+                <Route name="workout" title="go" component={Workout} renderTitle={renderTitle}/>
             </Router>
             </Route>
             <Route name="tab2" schema="tab" title="Suggested" icon={SuggestedTabIcon}>
@@ -67,6 +69,7 @@ class MakeMeRouter extends Component {
                 <Route name="go" title="go" component={Go} renderTitle={renderTitle}/>
                 <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
                 <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
+                <Route name="workout" title="go" component={Workout} renderTitle={renderTitle}/>
               </Router>
             </Route>
             <Route name="tab4" schema="tab" title="Favorites" icon={FavoritesTabIcon}>

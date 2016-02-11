@@ -71,7 +71,7 @@ class Go extends Component {
               <TouchableHighlight onPress={() => AppActions.deleteRoutineFromPlaylist(routineIndex)}>
                 <Text style={styles.xText}>X</Text>
               </TouchableHighlight>
-              <TouchableHighlight onPress={() => console.log("Ready")}>
+              <TouchableHighlight onPress={() => Actions.workout()}>
                 <Text style={styles.readyText}>Ready.</Text>
               </TouchableHighlight>
               {/* do not show button if on the last routine */}

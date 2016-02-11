@@ -46,9 +46,7 @@ class TrainerShow extends Component {
           >
             <Text style={styles.routineName}>{routine.name}</Text>
           </TouchableHighlight>
-          <TouchableHighlight onPress={() => Actions.trainershow({trainerId: routine.trainerId})}>
-            <Text style={styles.trainerName}>{routine.trainer}</Text>
-          </TouchableHighlight>
+          <Text style={styles.trainerName}>{routine.trainer}</Text>
           <Text style={styles.routineLevel}>Level {routine.level}</Text>
           <Button
             style={styles.playlistButton}
@@ -318,7 +316,8 @@ const styles = StyleSheet.create({
     color: '#b3b3b3',
     fontSize: 11,
     marginTop: 7,
-    letterSpacing: 1
+    letterSpacing: 1,
+    backgroundColor: 'transparent'
   },
   routineLevel: {
     marginLeft: 23,

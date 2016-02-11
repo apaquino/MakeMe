@@ -25,6 +25,6 @@ export let mockUsers = [
                           },
                        ],
     favoriteRoutines: [3, 5, 1],
-    favoriteTrainers: [1, 4]
+    favoriteTrainers: [1, 4, 2]
   }
 ];

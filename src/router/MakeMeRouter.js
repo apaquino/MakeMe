@@ -79,7 +79,13 @@ class MakeMeRouter extends Component {
                 <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
               </Router>
             </Route>
-            <Route name="tab5" schema="tab" title="Profile" component={Profile} icon={ProfileTabIcon}/>
+            <Route name="tab5" schema="tab" title="Profile" icon={ProfileTabIcon}>
+              <Router>
+                <Route name="profile" title="profile" component={Profile} renderTitle={renderTitle}/>
+                <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
+                <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
+              </Router>
+            </Route>
           </Router>
         </Route>
       </Router>

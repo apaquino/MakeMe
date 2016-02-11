@@ -50,10 +50,12 @@ class Profile extends Component {
     return (
       <View style={styles.container}>
         <Image source={routine.categoryPic} style={styles.backgroundImage}>
-          <TouchableHighlight >
+          <TouchableHighlight
+            onPress={() => Actions.routineshow({routineId: routine.id, trainerId: routine.trainerId})}
+          >
             <Text style={styles.routineName}>{routine.name}</Text>
           </TouchableHighlight>
-          <TouchableHighlight>
+          <TouchableHighlight onPress={() => Actions.trainershow({trainerId: routine.trainerId})}>
             <Text style={styles.trainerName}>{routine.trainer}</Text>
           </TouchableHighlight>
           <Text style={styles.routineLevel}>{completedDate}</Text>

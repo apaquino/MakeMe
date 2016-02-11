@@ -58,8 +58,8 @@ class MakeMeRouter extends Component {
             <Route name="tab2" schema="tab" title="Suggested" icon={SuggestedTabIcon}>
               <Router>
                 <Route name="suggested" title="suggested" component={Suggested} renderTitle={renderTitleTryMe}/>
-                <Route name="routineshow2" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
-                <Route name="trainershow2" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
+                <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
+                <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
               </Router>
             </Route>
             <Route name="tab3" schema="tab" title="Go" icon={GoTabIcon}>
@@ -72,8 +72,8 @@ class MakeMeRouter extends Component {
             <Route name="tab4" schema="tab" title="Favorites" icon={FavoritesTabIcon}>
               <Router>
                 <Route name="favorites" title="favorites" component={Favorites} renderTitle={renderTitleLikeMe}/>
-                <Route name="routineshow3" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
-                <Route name="trainershow3" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
+                <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
+                <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
               </Router>
             </Route>
             <Route name="tab5" schema="tab" title="Profile" component={Profile} icon={ProfileTabIcon}/>

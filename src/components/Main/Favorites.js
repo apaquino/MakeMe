@@ -37,10 +37,10 @@ class Favorites extends Component {
   	return (
       <View style={styles.listContainer}>
         <Image source={routine.categoryPic} style={styles.backgroundImageRoutine}>
-          <TouchableHighlight onPress={() => Actions.routineshow3({routineId: routine.id, trainerId: routine.trainerId})}>
+          <TouchableHighlight onPress={() => Actions.routineshow({routineId: routine.id, trainerId: routine.trainerId})}>
             <Text style={styles.routineName}>{routine.name}</Text>
           </TouchableHighlight>
-          <TouchableHighlight onPress={() => Actions.trainershow3({trainerId: routine.trainerId})}>
+          <TouchableHighlight onPress={() => Actions.trainershow({trainerId: routine.trainerId})}>
             <Text style={styles.trainerNameRoutine}>{routine.trainer}</Text>
           </TouchableHighlight>
           <Text style={styles.routineLevel}>Level {routine.level}</Text>

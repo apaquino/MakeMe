@@ -35,10 +35,10 @@ class Suggested extends Component {
 		return (
       <View style={styles.container}>
         <Image source={routine.categoryPic} style={styles.backgroundImage}>
-          <TouchableHighlight onPress={() => Actions.routineshow2({routineId: routine.id, trainerId: routine.trainerId})}>
+          <TouchableHighlight onPress={() => Actions.routineshow({routineId: routine.id, trainerId: routine.trainerId})}>
             <Text style={styles.routineName}>{routine.name}</Text>
           </TouchableHighlight>
-          <TouchableHighlight onPress={() => Actions.trainershow2({trainerId: routine.trainerId})}>
+          <TouchableHighlight onPress={() => Actions.trainershow({trainerId: routine.trainerId})}>
             <Text style={styles.trainerName}>{routine.trainer}</Text>
           </TouchableHighlight>
             <Text style={styles.routineLevel}>Level {routine.level}</Text>

@@ -16,9 +16,12 @@ const {
 class Go extends Component {
   constructor(props) {
     super(props);
+    // will have rowIdx props if coming from playlist
+    // if from go tab, initialize to 0
+    const routineIndex = this.props.rowIdx || 0;
     this.state = {
       playlistRoutines: AppStore.getPlaylistRoutines(),
-      routineIndex: 0
+      routineIndex
     };
   }
 
@@ -42,7 +45,7 @@ class Go extends Component {
     const { routineIndex, playlistRoutines } = this.state;
     const routine = this.state.playlistRoutines[routineIndex];
      /*
-      * NEED A View if there is the user playlist is empty
+      * NEED A View if the user playlist is empty
       */
     return (
       <View style={styles.container}>
@@ -55,12 +58,12 @@ class Go extends Component {
             style={styles.profileImage}
           />
             <TouchableHighlight
-              onPress={() => Actions.routineshow4({routineId: routine.id, trainerId: routine.trainerId})}
+              onPress={() => Actions.routineshow({routineId: routine.id, trainerId: routine.trainerId})}
             >
               <Text style={styles.routineName}>{routine.name}</Text>
             </TouchableHighlight>
             <TouchableHighlight
-              onPress={() => Actions.trainershow4({trainerId: routine.trainerId})}
+              onPress={() => Actions.trainershow({trainerId: routine.trainerId})}
             >
               <Text style={styles.trainerName}>{routine.trainer}</Text>
             </TouchableHighlight>

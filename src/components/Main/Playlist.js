@@ -40,7 +40,9 @@ class Playlist extends Component {
     });
   };
 
-  renderRoutine(routine) {
+  renderRoutine(routine, _, idx) {
+    // idx is the array index.  Need that to keep track when deleting
+    // because playlist can have repeating routines.  Need to delete base on order
     return (
       <View style={styles.listContainer}>
         <Image source={routine.categoryPic} style={styles.backgroundImage}>
@@ -54,7 +56,7 @@ class Playlist extends Component {
           </TouchableHighlight>
           <Text style={styles.routineLevel}>Level {routine.level}</Text>
           <Button
-            onPress={Actions.tab3}
+            onPress={() => Actions.go({rowIdx: idx})}
             style={styles.playlistButton}
             textStyle={styles.playlistButtonText}
           >

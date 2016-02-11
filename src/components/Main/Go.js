@@ -4,6 +4,7 @@ import { Actions } from 'react-native-router-flux';
 import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import { EVENTS } from "../../constants/EVENT_CONSTANTS";
+import EmptyMessage from './EmptyMessage';
 
 const {
   View,
@@ -26,14 +27,16 @@ class Go extends Component {
   }
 
   componentWillMount() {
-    AppStore.startListening(EVENTS.ROUTINE_DELETED_FROM_PLAYLIST, this._fluxCb_DeleteFromPlaylist);
+    AppStore.startListening(EVENTS.ROUTINE_DELETED_FROM_PLAYLIST, this._fluxCb_ChangePlaylist);
+    AppStore.startListening(EVENTS.ROUTINE_ADDED_TO_PLAYLIST, this._fluxCb_ChangePlaylist);
   }
 
   componentWillUnmount() {
-    AppStore.stopListening(EVENTS.ROUTINE_DELETED_FROM_PLAYLIST, this._fluxCb_DeleteFromPlaylist);
+    AppStore.stopListening(EVENTS.ROUTINE_DELETED_FROM_PLAYLIST, this._fluxCb_ChangePlaylist);
+    AppStore.stopListening(EVENTS.ROUTINE_ADDED_TO_PLAYLIST, this._fluxCb_ChangePlaylist);
   }
 
-  _fluxCb_DeleteFromPlaylist = () => {
+  _fluxCb_ChangePlaylist = () => {
     const { routineIndex } = this.state;
     this.setState({
       playlistRoutines: AppStore.getPlaylistRoutines(),
@@ -44,9 +47,16 @@ class Go extends Component {
   render() {
     const { routineIndex, playlistRoutines } = this.state;
     const routine = this.state.playlistRoutines[routineIndex];
-     /*
-      * NEED A View if the user playlist is empty
-      */
+
+    if (playlistRoutines.length === 0) {
+      console.log(playlistRoutines.length);
+      return (
+        <View style={styles.emptyContainer}>
+          <EmptyMessage />
+        </View>
+      )
+    }
+
     return (
       <View style={styles.container}>
         <Image
@@ -149,7 +159,13 @@ const styles = StyleSheet.create({
     height: 20,
     width: 32,
     marginLeft: 22
-  }
+  },
+  emptyContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    backgroundColor: 'black'
+  },
 });
 
 export default Go;

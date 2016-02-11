@@ -28,7 +28,7 @@ class About extends Component {
     		</View>
     		<Text style={styles.underTagline}>Make Me an athlete.</Text>
     		<Button
-    		  onPress={() => console.log("continue clicked will real functionality later")}
+    		  onPress={() => Actions.tabbar()}
     		  style={styles.continueStyleButton}
     		  textStyle={styles.continueStyleText}
     		>

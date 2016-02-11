@@ -75,8 +75,9 @@ class Go extends Component {
                 <Text style={styles.readyText}>Ready.</Text>
               </TouchableHighlight>
               {/* do not show button if on the last routine */}
+              {/* +routineIndex is to convert to number if came in as a prop */}
               { routineIndex < playlistRoutines.length - 1 ? (
-                <TouchableHighlight onPress={() => this.setState({routineIndex: routineIndex + 1})}>
+                <TouchableHighlight onPress={() => this.setState({routineIndex: +routineIndex + 1})}>
                   <Image
                     source={require('../../img/buttons/next_go.png')}
                     style={styles.nextGo}

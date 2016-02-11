@@ -3,7 +3,6 @@ import { Router, Route, Schema, Animations, TabBar } from 'react-native-router-f
 import Launch from '../components/Start/Launch';
 import LoginSignup from '../components/Start/LoginSignup';
 import About from '../components/Start/About';
-import TabView from '../components/Main/TabView';
 import Playlist from '../components/Main/Playlist';
 import RoutineShow from '../components/Main/RoutineShow';
 import TrainerShow from '../components/Main/TrainerShow';
@@ -54,7 +53,7 @@ class MakeMeRouter extends Component {
                 <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
                 <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
                 <Route name="go" title="go" component={Go} renderTitle={renderTitle}/>
-                <Route name="workout" title="go" component={Workout} renderTitle={renderTitle}/>
+                <Route name="workout" title="workout" component={Workout} renderTitle={renderTitle}/>
             </Router>
             </Route>
             <Route name="tab2" schema="tab" title="Suggested" icon={SuggestedTabIcon}>
@@ -69,7 +68,7 @@ class MakeMeRouter extends Component {
                 <Route name="go" title="go" component={Go} renderTitle={renderTitle}/>
                 <Route name="routineshow" title="routineshow" component={RoutineShow} renderTitle={renderTitle}/>
                 <Route name="trainershow" title="trainershow" component={TrainerShow} renderTitle={renderTitle}/>
-                <Route name="workout" title="go" component={Workout} renderTitle={renderTitle}/>
+                <Route name="workout" title="workout" component={Workout} renderTitle={renderTitle}/>
               </Router>
             </Route>
             <Route name="tab4" schema="tab" title="Favorites" icon={FavoritesTabIcon}>

@@ -20,13 +20,6 @@ class Workout extends Component {
     };
   }
 
-  toggleOptions() {
-    this.setState({
-      showOptions: !this.state.showOptions,
-      playAudio: true
-    });
-  }
-
   componentDidMount() {
     if (this.state.playingAudio) {
       AudioPlayer.play('MakeMeWorkOut.mp3');
@@ -67,6 +60,13 @@ class Workout extends Component {
     AudioPlayer.stop();
     AudioPlayer.play('WorkoutQuit.mp3');
     Actions.pop();
+  }
+
+  toggleOptions() {
+    this.setState({
+      showOptions: !this.state.showOptions,
+      playAudio: true
+    });
   }
 
   showOptions() {

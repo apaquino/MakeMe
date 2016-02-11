@@ -126,12 +126,10 @@ class TrainerShow extends Component {
           </TouchableHighlight>
 
           {showRoutines && (
-            <View>
-              <ListView
-                dataSource={this.state.dataSource}
-                renderRow={this.renderRoutine}
-              />
-            </View>
+            <ListView
+              dataSource={this.state.dataSource}
+              renderRow={this.renderRoutine}
+            />
           )}
 
           <TouchableHighlight onPress={() => this.setState({showBio: !showBio})}>

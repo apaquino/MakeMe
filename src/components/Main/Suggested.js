@@ -94,7 +94,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    backgroundColor: 'black'
   },
     backgroundImage: {
     height: 135,
@@ -122,7 +123,8 @@ const styles = StyleSheet.create({
 		color: '#b3b3b3',
 		fontSize: 10,
 		letterSpacing: 1,
-  	marginTop: 5
+  	marginTop: 5,
+    backgroundColor: 'transparent'
   },
   playlistButton: {
   	marginLeft: 23,
@@ -155,7 +157,8 @@ const styles = StyleSheet.create({
   	fontSize: 11,
   	marginTop: 4,
   	letterSpacing: 1,
-  	alignSelf: 'center'
+  	alignSelf: 'center',
+    backgroundColor: 'transparent'
   }
 });
 

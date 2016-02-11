@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'flex-start',
+    backgroundColor: 'black',
     marginTop: 60
   },
   listContainer: {

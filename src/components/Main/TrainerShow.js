@@ -120,7 +120,7 @@ class TrainerShow extends Component {
               <Text style={styles.childBottomLeft}>Routines</Text>
               <Image
                 source={routineArrow}
-                style={styles.childBottomRightImage}
+                style={showRoutines ? styles.childBottomRightImageTrue : styles.childBottomRightImage}
               />
             </View>
           </TouchableHighlight>
@@ -137,7 +137,7 @@ class TrainerShow extends Component {
               <Text style={styles.childBottomLeft}>Bio</Text>
               <Image
                 source={bioArrow}
-                style={styles.childBottomRightImage}
+                style={showBio ? styles.childBottomRightImageTrue : styles.childBottomRightImage}
               />
             </View>
           </TouchableHighlight>

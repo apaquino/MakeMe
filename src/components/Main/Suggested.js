@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   	fontFamily: 'Raleway',
   	color: '#b3b3b3',
   	fontSize: 11,
-  	marginTop: 4,
+  	marginTop: 6,
   	letterSpacing: 1,
   	alignSelf: 'center',
     backgroundColor: 'transparent'

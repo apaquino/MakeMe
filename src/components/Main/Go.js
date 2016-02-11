@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     flex: 1,
-    resizeMode: 'contain',
+    resizeMode: 'cover',
     alignItems: 'center',
     justifyContent: 'flex-start'
   },

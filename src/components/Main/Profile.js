@@ -317,9 +317,6 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     backgroundColor: 'transparent'
   },
-  listView: {
-    marginBottom: -50
-  },
   childBottomRight: {
     flex: 1,
     textAlign: 'right',

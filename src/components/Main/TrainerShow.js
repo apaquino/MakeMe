@@ -41,10 +41,12 @@ class TrainerShow extends Component {
     return (
       <View style={styles.tester}>
         <Image source={routine.categoryPic} style={styles.backgroundImage}>
-          <TouchableHighlight >
+          <TouchableHighlight
+            onPress={() => Actions.routineshow({routineId: routine.id, trainerId: routine.trainerId})}
+          >
             <Text style={styles.routineName}>{routine.name}</Text>
           </TouchableHighlight>
-          <TouchableHighlight>
+          <TouchableHighlight onPress={() => Actions.trainershow({trainerId: routine.trainerId})}>
             <Text style={styles.trainerName}>{routine.trainer}</Text>
           </TouchableHighlight>
           <Text style={styles.routineLevel}>Level {routine.level}</Text>
@@ -130,7 +132,6 @@ class TrainerShow extends Component {
                 dataSource={this.state.dataSource}
                 renderRow={this.renderRoutine}
                 style={styles.listView}
-                contentInset={{top: 64}}
               />
             </View>
           )}

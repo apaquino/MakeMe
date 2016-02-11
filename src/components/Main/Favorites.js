@@ -68,8 +68,8 @@ class Favorites extends Component {
   }
 
   renderTrainer(trainer) {
+    // TODO styles for View
     return (
-      // TODO styles for View
       <View style={styles.needToReplace}>
         <Image source={require('../../img/backgrounds/trainers_background_fav.png')} style={styles.backgroundTrainer}>
           <Image source={trainer.profilePic} style={styles.profile}/>

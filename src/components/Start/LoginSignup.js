@@ -199,11 +199,9 @@ class LoginSignup extends Component {
     const result = AppStore.getIsLoggedIn();
     const userid = AppStore.getCurentUserId();
     if (!result) {
-        // For prod release or demo, not for dev
-        // AlertIOS.alert('The Creditionals You Provided Are Invalid', 'Please try again',
-        //   [{text: 'Okay', onPress: () => console.log('Log failed logged attempt')}]
-        // );
-      console.log('The Creditionals You Provided Are Invalid');
+      AlertIOS.alert('The Creditionals You Provided Are Invalid', 'Please try again',
+        [{text: 'Okay', onPress: () => console.log('Log failed logged attempt')}]
+      );
     } else {
       Actions.tabbar();
     }

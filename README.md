@@ -17,6 +17,7 @@ Issues:
 * Currently designed only for iPhone 6.
 * New users will not get their first workout added to their playlist immediately.
 * Only one audio track - future version will feature an audio track unique to each workout.
+* No logout function
 
 This is still an early work in progress and more features and instructions to install will be added later.
 
@@ -30,6 +31,7 @@ npm install
 ```
 
 Please follow the Facebook instructions to open the application on xCode and perform a build.
+NOTE:  The build scheme for this repo in for prod.  You may want to change it to debug if you want to modify.
 
 ## Log In
   To see a sample user with populated data -

@@ -1,5 +1,3 @@
-<img src="https://raw.githubusercontent.com/apaquino/MakeMe/master/screenShot.png" alt="screenshot" style="width: 300px;"/>
-
 # MakeMe
 
 Q: What do you get when you combine a drill sergeant, great music, and a tough workout you can do from anywhere?
@@ -39,3 +37,5 @@ Please follow the Facebook instructions to open the application on xCode and per
   Username: mjones
 
   Password: mjones
+
+<img src="https://raw.githubusercontent.com/apaquino/MakeMe/master/screenShot.png" alt="screenshot" style="width: 300px;"/>

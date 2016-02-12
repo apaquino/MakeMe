@@ -25,7 +25,6 @@
 		C4285D721C477AFC0076F7F2 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4285D711C477AFC0076F7F2 /* BebasNeue.otf */; };
 		C444B6761C45D3F0003A3C3A /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C444B6741C45D3F0003A3C3A /* Raleway-Bold.ttf */; };
 		C444B6771C45D3F0003A3C3A /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C444B6751C45D3F0003A3C3A /* Raleway-Regular.ttf */; };
-		C4500F291C6C1F3B0055278D /* libAudioPlayerManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4500F1E1C6C1EA40055278D /* libAudioPlayerManager.a */; };
 		C4EBE1911C6C255B00DF6691 /* MakeMeWorkOut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C4EBE18F1C6C255B00DF6691 /* MakeMeWorkOut.mp3 */; };
 		C4EBE1921C6C255B00DF6691 /* WorkoutQuit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C4EBE1901C6C255B00DF6691 /* WorkoutQuit.mp3 */; };
 /* End PBXBuildFile section */
@@ -108,9 +107,9 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-		C4500F1D1C6C1EA40055278D /* PBXContainerItemProxy */ = {
+		C451930B1C6E4AAA0078C3E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C4500F191C6C1EA40055278D /* AudioPlayerManager.xcodeproj */;
+			containerPortal = C45193071C6E4AA90078C3E4 /* AudioPlayerManager.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = AudioPlayerManager;
@@ -142,7 +141,7 @@
 		C4285D711C477AFC0076F7F2 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
 		C444B6741C45D3F0003A3C3A /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		C444B6751C45D3F0003A3C3A /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
-		C4500F191C6C1EA40055278D /* AudioPlayerManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AudioPlayerManager.xcodeproj; path = "../node_modules/react-native/Libraries/AudioPlayerManager/AudioPlayerManager.xcodeproj"; sourceTree = "<group>"; };
+		C45193071C6E4AA90078C3E4 /* AudioPlayerManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AudioPlayerManager.xcodeproj; path = ../Libraries/AudioPlayerManager/AudioPlayerManager.xcodeproj; sourceTree = "<group>"; };
 		C4EBE18F1C6C255B00DF6691 /* MakeMeWorkOut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = MakeMeWorkOut.mp3; path = "../../../../../Desktop/MakeMe-gSchool/ios/MakeMeWorkOut.mp3"; sourceTree = "<group>"; };
 		C4EBE1901C6C255B00DF6691 /* WorkoutQuit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = WorkoutQuit.mp3; path = "../../../../../Desktop/MakeMe-gSchool/ios/WorkoutQuit.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,7 +158,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4500F291C6C1F3B0055278D /* libAudioPlayerManager.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -282,7 +280,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				C4500F191C6C1EA40055278D /* AudioPlayerManager.xcodeproj */,
+				C45193071C6E4AA90078C3E4 /* AudioPlayerManager.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -331,10 +329,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C4500F1A1C6C1EA40055278D /* Products */ = {
+		C45193081C6E4AA90078C3E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C4500F1E1C6C1EA40055278D /* libAudioPlayerManager.a */,
+				C451930C1C6E4AAA0078C3E4 /* libAudioPlayerManager.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -409,8 +407,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C4500F1A1C6C1EA40055278D /* Products */;
-					ProjectRef = C4500F191C6C1EA40055278D /* AudioPlayerManager.xcodeproj */;
+					ProductGroup = C45193081C6E4AA90078C3E4 /* Products */;
+					ProjectRef = C45193071C6E4AA90078C3E4 /* AudioPlayerManager.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
@@ -532,11 +530,11 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C4500F1E1C6C1EA40055278D /* libAudioPlayerManager.a */ = {
+		C451930C1C6E4AAA0078C3E4 /* libAudioPlayerManager.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libAudioPlayerManager.a;
-			remoteRef = C4500F1D1C6C1EA40055278D /* PBXContainerItemProxy */;
+			remoteRef = C451930B1C6E4AAA0078C3E4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

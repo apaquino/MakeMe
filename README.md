@@ -1,4 +1,5 @@
-![alt tag](https://raw.githubusercontent.com/apaquino/MakeMe/master/screenShot.png)
+<img src="https://raw.githubusercontent.com/apaquino/MakeMe/master/screenShot.png" alt="Drawing" style="width: 300px;"/>
+
 # MakeMe
 
 Q: What do you get when you combine a drill sergeant, great music, and a tough workout you can do from anywhere?

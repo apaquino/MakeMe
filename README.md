@@ -1,3 +1,4 @@
+![alt tag](https://raw.githubusercontent.com/apaquino/MakeMe/master/screenShot.png)
 # MakeMe
 
 Q: What do you get when you combine a drill sergeant, great music, and a tough workout you can do from anywhere?

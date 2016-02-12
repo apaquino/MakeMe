@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/apaquino/MakeMe/master/screenShot.png" alt="Drawing" style="width: 300px;"/>
+<img src="https://raw.githubusercontent.com/apaquino/MakeMe/master/screenShot.png" alt="screenshot" style="width: 300px;"/>
 
 # MakeMe
 

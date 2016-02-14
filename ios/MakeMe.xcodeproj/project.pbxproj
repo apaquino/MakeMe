@@ -25,8 +25,8 @@
 		C4285D721C477AFC0076F7F2 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4285D711C477AFC0076F7F2 /* BebasNeue.otf */; };
 		C444B6761C45D3F0003A3C3A /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C444B6741C45D3F0003A3C3A /* Raleway-Bold.ttf */; };
 		C444B6771C45D3F0003A3C3A /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C444B6751C45D3F0003A3C3A /* Raleway-Regular.ttf */; };
-		C4EBE1911C6C255B00DF6691 /* MakeMeWorkOut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C4EBE18F1C6C255B00DF6691 /* MakeMeWorkOut.mp3 */; };
-		C4EBE1921C6C255B00DF6691 /* WorkoutQuit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C4EBE1901C6C255B00DF6691 /* WorkoutQuit.mp3 */; };
+		C4A8B46D1C714A080084D7D2 /* MakeMeWorkOut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C4A8B46B1C714A080084D7D2 /* MakeMeWorkOut.mp3 */; };
+		C4A8B46E1C714A080084D7D2 /* WorkoutQuit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C4A8B46C1C714A080084D7D2 /* WorkoutQuit.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,8 +142,8 @@
 		C444B6741C45D3F0003A3C3A /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		C444B6751C45D3F0003A3C3A /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		C45193071C6E4AA90078C3E4 /* AudioPlayerManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AudioPlayerManager.xcodeproj; path = ../Libraries/AudioPlayerManager/AudioPlayerManager.xcodeproj; sourceTree = "<group>"; };
-		C4EBE18F1C6C255B00DF6691 /* MakeMeWorkOut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = MakeMeWorkOut.mp3; path = "../../../../../Desktop/MakeMe-gSchool/ios/MakeMeWorkOut.mp3"; sourceTree = "<group>"; };
-		C4EBE1901C6C255B00DF6691 /* WorkoutQuit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = WorkoutQuit.mp3; path = "../../../../../Desktop/MakeMe-gSchool/ios/WorkoutQuit.mp3"; sourceTree = "<group>"; };
+		C4A8B46B1C714A080084D7D2 /* MakeMeWorkOut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MakeMeWorkOut.mp3; sourceTree = "<group>"; };
+		C4A8B46C1C714A080084D7D2 /* WorkoutQuit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WorkoutQuit.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,8 +306,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				C4EBE18F1C6C255B00DF6691 /* MakeMeWorkOut.mp3 */,
-				C4EBE1901C6C255B00DF6691 /* WorkoutQuit.mp3 */,
+				C4A8B46B1C714A080084D7D2 /* MakeMeWorkOut.mp3 */,
+				C4A8B46C1C714A080084D7D2 /* WorkoutQuit.mp3 */,
 				C4285D711C477AFC0076F7F2 /* BebasNeue.otf */,
 				C444B6741C45D3F0003A3C3A /* Raleway-Bold.ttf */,
 				C444B6751C45D3F0003A3C3A /* Raleway-Regular.ttf */,
@@ -552,11 +552,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				C4EBE1921C6C255B00DF6691 /* WorkoutQuit.mp3 in Resources */,
+				C4A8B46E1C714A080084D7D2 /* WorkoutQuit.mp3 in Resources */,
 				C444B6761C45D3F0003A3C3A /* Raleway-Bold.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				C4285D721C477AFC0076F7F2 /* BebasNeue.otf in Resources */,
-				C4EBE1911C6C255B00DF6691 /* MakeMeWorkOut.mp3 in Resources */,
+				C4A8B46D1C714A080084D7D2 /* MakeMeWorkOut.mp3 in Resources */,
 				C444B6771C45D3F0003A3C3A /* Raleway-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

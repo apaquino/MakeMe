@@ -21,7 +21,7 @@ const {
 class LoginSignup extends Component {
   constructor(props){
     super(props);
-    // NOT binding props to state.  It is to initialize on firt load from the router.
+    // NOT binding props to state.  It is to initialize on first load from the router.
     this.state = {
       formType: this.props.startform,
       password: '',
@@ -200,7 +200,7 @@ class LoginSignup extends Component {
     const userid = AppStore.getCurentUserId();
     if (!result) {
       AlertIOS.alert('The Creditionals You Provided Are Invalid', 'Please try again',
-        [{text: 'Okay', onPress: () => console.log('Log failed logged attempt')}]
+        [{text: 'Okay', onPress: () => this._username.focus()}]
       );
     } else {
       Actions.tabbar();

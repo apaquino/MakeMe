@@ -27,6 +27,7 @@
 		C444B6771C45D3F0003A3C3A /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C444B6751C45D3F0003A3C3A /* Raleway-Regular.ttf */; };
 		C4A8B46D1C714A080084D7D2 /* MakeMeWorkOut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C4A8B46B1C714A080084D7D2 /* MakeMeWorkOut.mp3 */; };
 		C4A8B46E1C714A080084D7D2 /* WorkoutQuit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C4A8B46C1C714A080084D7D2 /* WorkoutQuit.mp3 */; };
+		C4AE03BA1C7C4CF0003F0632 /* libAudioPlayerManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4AE03B91C7C4BAB003F0632 /* libAudioPlayerManager.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,9 +108,9 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-		C451930B1C6E4AAA0078C3E4 /* PBXContainerItemProxy */ = {
+		C4AE03B81C7C4BAB003F0632 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C45193071C6E4AA90078C3E4 /* AudioPlayerManager.xcodeproj */;
+			containerPortal = C4AE03B41C7C4BAB003F0632 /* AudioPlayerManager.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = AudioPlayerManager;
@@ -141,9 +142,9 @@
 		C4285D711C477AFC0076F7F2 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
 		C444B6741C45D3F0003A3C3A /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		C444B6751C45D3F0003A3C3A /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
-		C45193071C6E4AA90078C3E4 /* AudioPlayerManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AudioPlayerManager.xcodeproj; path = ../Libraries/AudioPlayerManager/AudioPlayerManager.xcodeproj; sourceTree = "<group>"; };
 		C4A8B46B1C714A080084D7D2 /* MakeMeWorkOut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MakeMeWorkOut.mp3; sourceTree = "<group>"; };
 		C4A8B46C1C714A080084D7D2 /* WorkoutQuit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WorkoutQuit.mp3; sourceTree = "<group>"; };
+		C4AE03B41C7C4BAB003F0632 /* AudioPlayerManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AudioPlayerManager.xcodeproj; path = ../Libraries/AudioPlayerManager/AudioPlayerManager.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4AE03BA1C7C4CF0003F0632 /* libAudioPlayerManager.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -280,7 +282,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				C45193071C6E4AA90078C3E4 /* AudioPlayerManager.xcodeproj */,
+				C4AE03B41C7C4BAB003F0632 /* AudioPlayerManager.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -329,10 +331,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C45193081C6E4AA90078C3E4 /* Products */ = {
+		C4AE03B51C7C4BAB003F0632 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C451930C1C6E4AAA0078C3E4 /* libAudioPlayerManager.a */,
+				C4AE03B91C7C4BAB003F0632 /* libAudioPlayerManager.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -407,8 +409,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C45193081C6E4AA90078C3E4 /* Products */;
-					ProjectRef = C45193071C6E4AA90078C3E4 /* AudioPlayerManager.xcodeproj */;
+					ProductGroup = C4AE03B51C7C4BAB003F0632 /* Products */;
+					ProjectRef = C4AE03B41C7C4BAB003F0632 /* AudioPlayerManager.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
@@ -530,11 +532,11 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C451930C1C6E4AAA0078C3E4 /* libAudioPlayerManager.a */ = {
+		C4AE03B91C7C4BAB003F0632 /* libAudioPlayerManager.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libAudioPlayerManager.a;
-			remoteRef = C451930B1C6E4AAA0078C3E4 /* PBXContainerItemProxy */;
+			remoteRef = C4AE03B81C7C4BAB003F0632 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

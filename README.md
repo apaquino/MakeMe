@@ -31,10 +31,10 @@ npm install
 ```
 
 Please follow the Facebook instructions to open the application on xCode and perform a build.
-NOTE:  The build scheme for this repo in for prod.  You may want to change it to debug if you want to modify.
+NOTE:  The build scheme for this repo is debug.  
 
 ## Log In
-  To see a sample user with populated data -
+  To see a sample user with populated data
 
   Username: mjones
 

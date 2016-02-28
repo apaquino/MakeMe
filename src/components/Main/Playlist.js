@@ -76,9 +76,10 @@ class Playlist extends Component {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
           newPlayList = ds.cloneWithRows(AppStore.getPlaylistRoutines());
     const { _cachedRowCount } = this.state.dataSource;
+    const isPlaylistEmpty = _cachedRowCount === 0;
     return (
 			<View style={styles.container}>
-      { _cachedRowCount === 0 ?
+      { isPlaylistEmpty === 0 ?
         <EmptyMessage /> :
         (<ListView
           automaticallyAdjustContentInsets={false}

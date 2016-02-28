@@ -86,6 +86,7 @@ class Go extends Component {
               </TouchableHighlight>
               {/* do not show button if on the last routine */}
               {/* +routineIndex is to convert to number if came in as a prop */}
+              {/* technical debt, fix later */}
               { routineIndex < playlistRoutines.length - 1 ? (
                 <TouchableHighlight onPress={() => this.setState({routineIndex: +routineIndex + 1})}>
                   <Image

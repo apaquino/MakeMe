@@ -1,4 +1,4 @@
-import React, { Component } from 'react-native';
+import React, { Component, PropTypes } from 'react-native';
 import LoginSignupLogo from './LoginSignupLogo';
 import Button from 'apsl-react-native-button';
 import InputBackground from './InputBackground';
@@ -18,6 +18,10 @@ const {
   TouchableHighlight,
   TouchableOpacity
 } = React;
+
+const propTypes = {
+  startform: PropTypes.string.isRequired
+}
 
 class LoginSignup extends Component {
   constructor(props){
@@ -236,8 +240,9 @@ class LoginSignup extends Component {
   }
 };
 
+LoginSignup.propTypes = propTypes;
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',

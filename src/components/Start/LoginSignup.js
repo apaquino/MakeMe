@@ -15,7 +15,8 @@ const {
   Text,
   TextInput,
   AlertIOS,
-  TouchableHighlight
+  TouchableHighlight,
+  TouchableOpacity
 } = React;
 
 class LoginSignup extends Component {
@@ -217,16 +218,16 @@ class LoginSignup extends Component {
         <LoginSignupLogo />
         <Text style={styles.tagLine}>Exercise just got personal.</Text>
         <View style={{flexDirection: 'row'}}>
-          <TouchableHighlight
+          <TouchableOpacity
             onPress={() => this.setState({formType: 'login'})}
           >
           <Text style={styles.tagLineDirectionLeft}>LOG IN</Text>
-          </TouchableHighlight>
-          <TouchableHighlight
+          </TouchableOpacity>
+          <TouchableOpacity
             onPress={() => this.setState({formType: 'signup1'})}
           >
            <Text style={styles.tagLineDirectionRight}>SIGN UP</Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
         </View>
         {this._renderLoginSignUpForm()}
         </Image>

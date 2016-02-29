@@ -49,7 +49,6 @@ class Go extends Component {
     const routine = this.state.playlistRoutines[routineIndex];
 
     if (playlistRoutines.length === 0) {
-      console.log(playlistRoutines.length);
       return (
         <View style={styles.emptyContainer}>
           <EmptyMessage />

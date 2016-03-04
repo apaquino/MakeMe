@@ -23,22 +23,24 @@ This is the optional if you want to change the name.  You can just run the npm i
 
 1.    You just need to install "flux" and "events" node modules to run this flux.
 2.    That was done for you when you did the npm install command
-3.    Make a dispatcher and make sure it is a singleton by creating when you export. see /src/dispatcher
-4.    Make constants for you actions in snake_case
-5.    Make actions based on constants but make the camelCase.  Use the constants rather than magic strings
+3.    Make a dispatcher and make sure it is a singleton by creating when you export. e.g. export default new Flux.Dispatcher();
+4.    Make constants for your actions in snake_case
+5.    Make actions based on CONSTANTS but make them camelCase.  Don't use magic strings!
 6.    The dispatcher is used in the actions in this setup because the app is not making API calls.  
   *   If there are API calls,
   *   then the action may make a call to retrieve the data,
-  *   then that API call will return a function when the data is received and there you use the dispatcher
-7.    The store is setup and registers to evaluate actionTypes and do something if necessary, usually the case.
-8.    The store that handles it will then emit that a change event has occurred.
-9.    Each store should have a function to allows components to listen for events and register a callback AND a function to remove the listener when the component unmounts.  Otherwise you will have listeners to running a callback to something that doesn't exist.  Very very bad.
-10.   Have getter functions for the data so components can retrieve them.
-11.   The data is outside the class to keep them private.  The class has access to them but it cannot be called by AppStore.data where you can change it (e.g AppStore.isAdmin = true).  The store is the only thing that can mutate the data.  There are no setters.
+  *   then that API call will return a function when the data is received and there you use the dispatcher.
+  *   Have single responsibility.  
+7.    The store is setup and registers to evaluate actionTypes and do something with payload, usually the case.
+  *   Example when you don't have a payload and just change state, e.g. isLoading: true | false
+8.    The store that handles it will then emit that a certain change event has occurred.
+9.    Each store should have a function to allows components to listen for events and register a callback AND a function to remove the certain callback when the component unmounts.  Otherwise you will have listeners to running a callback to something that doesn't exist.  Very very bad.
+10.   Have getter functions for the data, state, so components can retrieve them.
+11.   The data is outside the class to keep them private.  The class has access to them but it cannot be called by store object where you can change it (e.g AppStore.isAdmin = true).  The store is the only thing that can mutate the data.  There are no setters.
 12.   Make sure to follow the singleton pattern for the stores so there is only one copy of used by multiple components.  That is to make sure there is a single source of truth.  e.g. export default new fooStore();
 13.   If a component wants data from a store and then wants to get notified when some event happens so it can do something, then import the actions and store to the component.
 14.   For example, use the store to get the data and set the state.
-15.   When you want to do an action, add something, then the handle function should call the action with data it needs.
+15.   When you want to do an action, e.g. add something, then the handle function should call the action with data it needs.
 16.   Add a listener for change events, and pass a callback that will call setState.  You should use the store getter to assign the state variable as it will be the single source of truth.
 17.   Order of operations:
   *   action will be requested

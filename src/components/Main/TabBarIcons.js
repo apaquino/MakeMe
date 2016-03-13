@@ -1,9 +1,9 @@
 import React, { Component } from  'react-native';
 
-const {
-  Image,
-  StyleSheet
-} = React;
+const
+  { Image
+  , StyleSheet
+  } = React;
 
 export class ProfileTabIcon extends Component {
   render(){
@@ -60,10 +60,11 @@ export class SuggestedTabIcon extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  icon: {
-    height: 28,
-    width: 28,
-    backgroundColor: "#1c1c1c"
+const styles = StyleSheet.create(
+  { icon:
+      { height: 28
+      , width: 28
+      , backgroundColor: "#1c1c1c"
+      }
   }
-});
+);

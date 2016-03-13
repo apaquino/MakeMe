@@ -5,15 +5,15 @@ import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import { EVENTS } from "../../constants/EVENT_CONSTANTS";
 
-const {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ListView,
-  TouchableHighlight,
-  ScrollView,
-} = React;
+const
+  { View
+  , Text
+  , StyleSheet
+  , Image
+  , ListView
+  , TouchableHighlight
+  , ScrollView
+  } = React;
 
 /*
  *  This is a componet that is for POC only.  Data is mostly mocked and not
@@ -29,12 +29,12 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.state = {
-      dataSource: ds.cloneWithRows(AppStore.getCompletedRoutineDetails()),
-      showCompletedRoutines: false,
-      showMinutes: false,
-      showWeekId: 0
-    };
+    this.state =
+      { dataSource: ds.cloneWithRows(AppStore.getCompletedRoutineDetails())
+      , showCompletedRoutines: false
+      , showMinutes: false
+      , showWeekId: 0
+      };
   }
 
   componentWillMount() {

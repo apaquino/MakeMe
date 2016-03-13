@@ -2,22 +2,22 @@ import React, { Component } from 'react-native';
 import { AudioPlayer } from './AudioPlayer';
 import { Actions } from 'react-native-router-flux';
 
-const {
-  View,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  AlertIOS
-} = React;
+const
+  { View
+  , StyleSheet
+  , Text
+  , TouchableHighlight
+  , AlertIOS
+  } = React;
 
 class Workout extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showOption: false,
-      playingAudio: true,
-      isPaused: false
-    };
+    this.state =
+      { showOption: false
+      , playingAudio: true
+      , isPaused: false
+      };
   }
 
   componentDidMount() {
@@ -49,9 +49,8 @@ class Workout extends Component {
 
   alertQuitWorkout() {
     AlertIOS.alert('Exit Current Workout?', 'Are you sure?',
-      [
-        {text: 'Cancel', onPress: () => console.log("cancelled logout")},
-        {text: 'Yes', onPress: this.quitWorkout },
+      [ {text: 'Cancel', onPress: () => console.log("cancelled logout")}
+      , {text: 'Yes', onPress: this.quitWorkout },
       ]
     );
   }

@@ -1,12 +1,12 @@
 import React from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-const {
-  View,
-  Image,
-  StyleSheet,
-  TouchableHighlight,
-} = React;
+const
+  { View
+  , Image
+  , StyleSheet
+  , TouchableHighlight
+  } = React;
 
 export const renderTitle = () => {
   return (
@@ -74,32 +74,33 @@ export const renderLeftFilter = () => {
   )
 }
 
-const styles = StyleSheet.create({
-	title: {
-		width: 90,
-		height: 28,
-		alignItems: 'center',
-		justifyContent: 'center',
-		marginBottom: 5,
-    marginTop: 5
-	},
-  icon: {
-		width: 21,
-		height: 21,
-		alignItems: 'center',
-    marginRight: 10,
-    marginTop: 10
-	},
-  backButtonIcon: {
-    width: 13,
-    height: 18,
-    marginLeft: 10,
-    marginTop: 13
-  },
-  filterIcon: {
-    marginLeft: 10,
-    width: 20,
-    height: 20,
-    marginTop: 10
+const styles = StyleSheet.create(
+  { title:
+      { width: 90
+    	, height: 28
+    	, alignItems: 'center'
+    	, justifyContent: 'center'
+    	, marginBottom: 5
+      , marginTop: 5
+  	  }
+  , icon:
+      { width: 21
+  		, height: 21
+  		, alignItems: 'center'
+      , marginRight: 10
+      , marginTop: 10
+  	  }
+  , backButtonIcon:
+      { width: 13
+      , height: 18
+      , marginLeft: 10
+      , marginTop: 13
+      }
+  , filterIcon:
+      { marginLeft: 10
+      , width: 20
+      , height: 20
+      , marginTop: 10
+      }
   }
-});
+);

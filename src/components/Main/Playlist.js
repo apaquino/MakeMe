@@ -6,22 +6,22 @@ import AppStore from '../../stores/AppStore';
 import { EVENTS } from "../../constants/EVENT_CONSTANTS";
 import EmptyMessage from './EmptyMessage';
 
-const {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ListView,
-  TouchableHighlight
-} = React;
+const
+  { View
+  , Text
+  , StyleSheet
+  , Image
+  , ListView
+  , TouchableHighlight
+  } = React;
 
 class Playlist extends Component {
   constructor(props) {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.state = {
-      dataSource: ds.cloneWithRows(AppStore.getPlaylistRoutines()),
-    };
+    this.state =
+      { dataSource: ds.cloneWithRows(AppStore.getPlaylistRoutines()),
+      };
   }
 
   componentWillMount() {

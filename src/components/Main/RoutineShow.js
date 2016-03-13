@@ -6,22 +6,22 @@ import { EVENTS } from "../../constants/EVENT_CONSTANTS";
 
 import Button from 'apsl-react-native-button';
 
-const {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  TouchableHighlight
-} = React;
+const
+  { View
+  , Text
+  , StyleSheet
+  , Image
+  , TouchableHighlight
+  } = React;
 
 class RoutineShow extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      routineAdd: false,
-      routine: AppStore.getRoutineDetails(this.props.routineId),
-      trainer: AppStore.getTrainerDetails(this.props.trainerId)
-    };
+    this.state =
+      { routineAdd: false
+      , routine: AppStore.getRoutineDetails(this.props.routineId)
+      , trainer: AppStore.getTrainerDetails(this.props.trainerId)
+      };
   }
 
   onPressAdd = () => {

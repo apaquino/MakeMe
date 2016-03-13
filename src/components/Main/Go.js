@@ -6,13 +6,13 @@ import AppStore from '../../stores/AppStore';
 import { EVENTS } from "../../constants/EVENT_CONSTANTS";
 import EmptyMessage from './EmptyMessage';
 
-const {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  TouchableHighlight,
-} = React;
+const
+  { View
+  , Text
+  , StyleSheet
+  , Image
+  , TouchableHighlight
+  } = React;
 
 class Go extends Component {
   constructor(props) {
@@ -20,10 +20,10 @@ class Go extends Component {
     // will have rowIdx props if coming from playlist
     // if from go tab, initialize to 0
     const routineIndex = this.props.rowIdx || 0;
-    this.state = {
-      playlistRoutines: AppStore.getPlaylistRoutines(),
-      routineIndex
-    };
+    this.state =
+      { playlistRoutines: AppStore.getPlaylistRoutines()
+      , routineIndex
+      };
   }
 
   componentWillMount() {

@@ -5,22 +5,22 @@ import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import { EVENTS } from "../../constants/EVENT_CONSTANTS";
 
-const {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ListView,
-  TouchableHighlight
-} = React;
+const
+  { View
+  , Text
+  , StyleSheet
+  , Image
+  , ListView
+  , TouchableHighlight
+  } = React;
 
 class Suggested extends Component {
   constructor(props) {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.state = {
-      dataSource: ds.cloneWithRows(AppStore.getSuggestedRoutines()),
-    };
+    this.state =
+      { dataSource: ds.cloneWithRows(AppStore.getSuggestedRoutines())
+      };
   }
 
   componentWillMount() {

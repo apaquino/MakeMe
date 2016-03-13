@@ -5,28 +5,28 @@ import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import { EVENTS } from "../../constants/EVENT_CONSTANTS";
 
-const {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ListView,
-  TouchableHighlight,
-  ScrollView
-} = React;
+const
+  { View
+  , Text
+  , StyleSheet
+  , Image
+  , ListView
+  , TouchableHighlight
+  , ScrollView
+  } = React;
 
 class TrainerShow extends Component {
   constructor(props) {
     super(props);
     const { trainerId } = this.props;
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.state = {
-      dataSource: ds.cloneWithRows(AppStore.getTrainerRoutines(trainerId)),
-      trainer: AppStore.getTrainerDetails(trainerId),
-      showRoutines: false,
-      showBio: false,
-      isFavorite: AppStore.isTrainerFavorite(trainerId)
-    };
+    this.state =
+      { dataSource: ds.cloneWithRows(AppStore.getTrainerRoutines(trainerId))
+      , trainer: AppStore.getTrainerDetails(trainerId)
+      , showRoutines: false
+      , showBio: false
+      , isFavorite: AppStore.isTrainerFavorite(trainerId)
+      };
   }
 
   componentWillMount() {

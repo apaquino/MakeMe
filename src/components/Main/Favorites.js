@@ -5,24 +5,24 @@ import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import { EVENTS } from "../../constants/EVENT_CONSTANTS";
 
-const {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ListView,
-  TouchableHighlight,
-} = React;
+const
+  { View
+  , Text
+  , StyleSheet
+  , Image
+  , ListView
+  , TouchableHighlight
+  } = React;
 
 class Favorites extends Component {
   constructor(props){
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.state = {
-      favTrainers: ds.cloneWithRows(AppStore.getUserFavoriteTrainers()),
-      favRoutines: ds.cloneWithRows(AppStore.getUserFavoriteRoutines()),
-      isTrainerTabSelected: true
-    };
+    this.state =
+      { favTrainers: ds.cloneWithRows(AppStore.getUserFavoriteTrainers())
+      , favRoutines: ds.cloneWithRows(AppStore.getUserFavoriteRoutines())
+      , isTrainerTabSelected: true
+      };
   }
 
   componentWillMount() {

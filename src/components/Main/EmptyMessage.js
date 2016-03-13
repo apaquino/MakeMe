@@ -1,10 +1,10 @@
 import React from 'react-native';
 
-const {
-  View,
-  Text,
-  StyleSheet,
-} = React;
+const
+  { View
+  , Text
+  , StyleSheet
+  } = React;
 
 const EmptyMessage = () => {
   return (
@@ -17,19 +17,20 @@ const EmptyMessage = () => {
   )
 };
 
-const styles = StyleSheet.create({
-  tagLine: {
-    color: 'white',
-    letterSpacing: 1,
-    fontFamily: 'Raleway',
-    marginTop: 110,
-    fontSize: 12,
-    textAlign: 'center'
-  },
-  aboutText: {
-    paddingLeft: 65,
-    paddingRight: 65
+const styles = StyleSheet.create(
+  { tagLine:
+    { color: 'white'
+    , letterSpacing: 1
+    , fontFamily: 'Raleway'
+    , marginTop: 110
+    , fontSize: 12
+    , textAlign: 'center'
+    }
+  , aboutText:
+    { paddingLeft: 65
+    , paddingRight: 65
+    }
   }
- })
+)
 
 export default EmptyMessage;

@@ -242,72 +242,73 @@ class LoginSignup extends Component {
 
 LoginSignup.propTypes = propTypes;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-  },
-  backgroundImage: {
-    flex: 1,
-    resizeMode: 'contain',
-    alignItems: 'center',
-    justifyContent: 'flex-start'
-  },
-  tagLine: {
-    color: '#e6e6e6',
-    letterSpacing: 1,
-    fontFamily: 'Raleway',
-    marginTop: 19,
-    fontSize: 12
-  },
-  tagLineDirectionLeft: {
-    color: '#e6e6e6',
-    letterSpacing: 1,
-    fontFamily: 'Raleway',
-    marginTop: 70,
-    fontSize: 11,
-    letterSpacing: 1,
-    textAlign: 'center',
-    marginRight: 45
-  },
-  tagLineDirectionRight: {
-    color: '#e6e6e6',
-    letterSpacing: 1,
-    fontFamily: 'Raleway',
-    marginTop: 70,
-    fontSize: 11,
-    letterSpacing: 1,
-    textAlign: 'center',
-    marginLeft: 45
-  },
-  makeRows: {
-    flex: 1,
-    flexDirection: 'row'
-  },
-  inputView: {
-    flex: 1,
-    alignItems: 'center',
-    marginTop: 17,
-  },
-  inputLogin: {
-    height: 40,
-    width: 330,
-    borderColor: 'transparent',
-    borderWidth: 2,
-    backgroundColor: 'transparent',
-    textAlign: 'center',
-    fontFamily: 'Raleway',
-    fontSize: 15
-  },
-  nextSignup: {
-    color: '#ce3c3c',
-    marginTop: 12,
-    fontSize: 15,
-    fontFamily: 'Raleway',
-    letterSpacing: 1
+const styles = StyleSheet.create(
+  { container:
+      { flex: 1
+      , flexDirection: 'column'
+      , alignItems: 'center'
+      , backgroundColor: 'transparent'
+      }
+  , backgroundImage:
+      { flex: 1
+      , resizeMode: 'contain'
+      , alignItems: 'center'
+      , justifyContent: 'flex-start'
+      }
+  , tagLine:
+      { color: '#e6e6e6'
+      , letterSpacing: 1
+      , fontFamily: 'Raleway'
+      , marginTop: 19
+      , fontSize: 12
+      }
+  , tagLineDirectionLeft:
+      { color: '#e6e6e6'
+      , letterSpacing: 1
+      , fontFamily: 'Raleway'
+      , marginTop: 70
+      , fontSize: 11
+      , letterSpacing: 1
+      , textAlign: 'center'
+      , marginRight: 45
+      }
+  , tagLineDirectionRight:
+      { color: '#e6e6e6'
+      , letterSpacing: 1
+      , fontFamily: 'Raleway'
+      , marginTop: 70
+      , fontSize: 11
+      , letterSpacing: 1
+      , textAlign: 'center'
+      , marginLeft: 45
+      }
+  , makeRows:
+      { flex: 1
+      ,flexDirection: 'row'
+      }
+  , inputView:
+      { flex: 1
+      , alignItems: 'center'
+      , marginTop: 17
+      }
+  , inputLogin:
+      { height: 40
+      , width: 330
+      , borderColor: 'transparent'
+      , borderWidth: 2
+      , backgroundColor: 'transparent'
+      , textAlign: 'center'
+      , fontFamily: 'Raleway'
+      , fontSize: 15
+      }
+  , nextSignup:
+      { color: '#ce3c3c'
+      , marginTop: 12
+      , fontSize: 15
+      , fontFamily: 'Raleway'
+      , letterSpacing: 1
+      }
   }
-});
+);
 
 export default LoginSignup;

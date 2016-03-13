@@ -93,63 +93,64 @@ class Playlist extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: 'black'
-	},
-	listContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-  },
-    backgroundImage: {
-    height: 135,
-    width: 375
-  },
-  routineName: {
-  	marginLeft: 23,
-  	marginTop: 22,
-  	fontFamily: 'Raleway',
-  	fontSize: 19,
-  	letterSpacing: 1.5,
-  	color: '#ce3c3c'
-  },
-  trainerName: {
-  	marginLeft: 23,
-  	fontFamily: 'Raleway',
-  	color: '#b3b3b3',
-  	fontSize: 11,
-  	marginTop: 7,
-  	letterSpacing: 1
-  },
-  routineLevel: {
-  	marginLeft: 23,
-  	fontFamily: 'Raleway',
-		color: '#b3b3b3',
-		fontSize: 10,
-		letterSpacing: 1,
-  	marginTop: 5,
-		backgroundColor: 'transparent'
-  },
-  playlistButton: {
-  	marginLeft: 23,
-  	backgroundColor: '#1c1c1c',
-  	width: 40,
-  	height: 22,
-  	borderRadius: 7,
-  	borderColor: '#1c1c1c',
-  	marginTop: 12
-  },
-  playlistButtonText: {
-  	fontFamily: 'BebasNeue',
-  	color: '#ce3c3c',
-  	letterSpacing: 3,
-  	fontSize: 16
-  },
-  listView: {
-  	marginTop: 55
+const styles = StyleSheet.create(
+  { container:
+      { flex: 1
+  		, backgroundColor: 'black'
+  	  }
+	, listContainer:
+      { flex: 1
+      , flexDirection: 'column'
+      , alignItems: 'flex-start'
+      }
+  , backgroundImage:
+      { height: 135
+      , width: 375
+      }
+  , routineName:
+      { marginLeft: 23
+  	  , marginTop: 22
+  	  , fontFamily: 'Raleway'
+  	  , fontSize: 19
+  	  , letterSpacing: 1.5
+  	  , color: '#ce3c3c'
+      }
+  , trainerName:
+      { marginLeft: 23
+  	  , fontFamily: 'Raleway'
+  	  , color: '#b3b3b3'
+  	  , fontSize: 11
+  	  , marginTop: 7
+  	  , letterSpacing: 1
+      }
+  , routineLevel:
+      {	marginLeft: 23
+  	  , fontFamily: 'Raleway'
+		  , color: '#b3b3b3'
+		  , fontSize: 10
+		  , letterSpacing: 1
+  	  , marginTop: 5
+		  , backgroundColor: 'transparent'
+      }
+  , playlistButton:
+      {	marginLeft: 23
+  	  , backgroundColor: '#1c1c1c'
+    	, width: 40
+    	, height: 22
+    	, borderRadius: 7
+    	, borderColor: '#1c1c1c'
+    	, marginTop: 12
+      }
+  , playlistButtonText:
+      { fontFamily: 'BebasNeue'
+  	  , color: '#ce3c3c'
+  	  , letterSpacing: 3
+  	  ,fontSize: 16
+      }
+  , listView:
+      { marginTop: 55
+      }
   }
-});
+);
 
 export default Playlist;

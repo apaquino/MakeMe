@@ -8,16 +8,16 @@ import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import { EVENTS } from "../../constants/EVENT_CONSTANTS";
 
-const {
-  View,
-  StyleSheet,
-  Image,
-  Text,
-  TextInput,
-  AlertIOS,
-  TouchableHighlight,
-  TouchableOpacity
-} = React;
+const
+  { View
+  , StyleSheet
+  , Image
+  , Text
+  , TextInput
+  , AlertIOS
+  , TouchableHighlight
+  , TouchableOpacity
+  } = React;
 
 const propTypes = {
   startform: PropTypes.string.isRequired
@@ -27,16 +27,16 @@ class LoginSignup extends Component {
   constructor(props){
     super(props);
     // NOT binding props to state.  It is to initialize on first load from the router.
-    this.state = {
-      formType: this.props.startform,
-      password: '',
-      username: '',
-      newUsername: '',
-      newPassword: '',
-      newEmail: '',
-      msg: '',
-      isLoggedIn:''
-    };
+    this.state =
+      { formType: this.props.startform
+      , password: ''
+      , username: ''
+      , newUsername: ''
+      , newPassword: ''
+      , newEmail: ''
+      , msg: ''
+      , isLoggedIn:''
+      };
   }
 
   componentWillMount() {
@@ -59,20 +59,20 @@ class LoginSignup extends Component {
 
   signup = () => {
     const { newUsername, newPassword, newEmail } = this.state;
-    const newUser = {
-      username: newUsername,
-      email: newEmail,
-      password: newPassword
-    };
+    const newUser =
+      { username: newUsername
+      , email: newEmail
+      , password: newPassword
+      };
     AppActions.createNewUser(newUser);
   };
 
   loginAuthentification = () => {
     const { username, password } = this.state;
-    const user = {
-      username,
-      password
-    };
+    const user =
+      { username
+      , password
+      };
 
     AppActions.authenticateUser(user);
     this.setState({

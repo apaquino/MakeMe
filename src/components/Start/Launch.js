@@ -8,13 +8,13 @@ import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import { EVENTS } from "../../constants/EVENT_CONSTANTS";
 
-const {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  StatusBarIOS,
-} = React;
+const
+  { StyleSheet
+  , Text
+  , View
+  , Image
+  , StatusBarIOS
+  } = React;
 
 class Launch extends Component {
   componentDidMount () {
@@ -50,50 +50,51 @@ class Launch extends Component {
   }
 };
 
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-  },
-    backgroundImage: {
-    flex: 1,
-    resizeMode: 'contain',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  tagLine: {
-  	color: '#e6e6e6',
-  	letterSpacing: 1,
-  	fontFamily: 'Raleway',
-  	marginTop: 19,
-  	fontSize: 12
-  },
-  loginStyleButton: {
-  	marginTop: 290,
-  	backgroundColor: '#ce3c3c',
-  	width: 185,
-  	alignSelf: 'center',
-  	borderRadius: 23,
-  	borderColor: '#e6e6e6',
-  	borderWidth: .5
-  },
-  loginStyleText: {
-  	color: '#e6e6e6',
-  	fontFamily: 'Raleway',
-  	fontSize: 14,
-  	letterSpacing: 1.2
-  },
-  signupStyleButton: {
-  	marginTop: 10,
-  	backgroundColor: 'transparent',
-  	width: 185,
-  	alignSelf: 'center',
-  	borderRadius: 23,
-  	borderColor: '#e6e6e6',
-  	borderWidth: .5
+var styles = StyleSheet.create(
+  { container:
+      { flex: 1
+      , flexDirection: 'column'
+      , alignItems: 'center'
+      , backgroundColor: 'transparent'
+      }
+  , backgroundImage:
+      { flex: 1
+      , resizeMode: 'contain'
+      , alignItems: 'center'
+      , justifyContent: 'flex-start'
+      }
+  , tagLine:
+      {	color: '#e6e6e6'
+      , letterSpacing: 1
+      , fontFamily: 'Raleway'
+      , marginTop: 19
+      , fontSize: 12
+      }
+  , loginStyleButton:
+      { marginTop: 290
+    	, backgroundColor: '#ce3c3c'
+    	, width: 185
+    	, alignSelf: 'center'
+    	, borderRadius: 23
+    	, borderColor: '#e6e6e6'
+    	, borderWidth: .5
+      }
+  , loginStyleText:
+      { color: '#e6e6e6'
+    	, fontFamily: 'Raleway'
+    	, fontSize: 14
+    	, letterSpacing: 1.2
+      }
+  , signupStyleButton:
+      { marginTop: 10
+    	, backgroundColor: 'transparent'
+    	, width: 185
+    	, alignSelf: 'center'
+    	, borderRadius: 23
+    	, borderColor: '#e6e6e6'
+    	, borderWidth: .5
+      }
   }
-});
+);
 
 export default Launch;

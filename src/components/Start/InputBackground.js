@@ -1,10 +1,10 @@
 import React from 'react-native';
 
-const {
-	View,
-	Image,
-	StyleSheet
-} = React;
+const
+	{	View
+	,	Image
+	,	StyleSheet
+	} = React;
 
 const InputBackground = (props) => {
 	return (
@@ -19,14 +19,15 @@ const InputBackground = (props) => {
 	)
 };
 
-const styles = StyleSheet.create({
-	icon: {
-		width: 375,
-		height: 100,
-		alignItems: 'center',
-		justifyContent: 'center',
-		marginTop: 12
+const styles = StyleSheet.create(
+	{	icon:
+			{	width: 375
+			, height: 100
+			, alignItems: 'center'
+			, justifyContent: 'center'
+			, marginTop: 12
+			}
 	}
-});
+);
 
 export default InputBackground;

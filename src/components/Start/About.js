@@ -3,12 +3,12 @@ import Button from 'apsl-react-native-button';
 import UseMe from './UseMe';
 import { Actions } from 'react-native-router-flux';
 
-const {
-  View,
-  StyleSheet,
-  Image,
-  Text,
-} = React;
+const
+  { View
+  , StyleSheet
+  , Image
+  , Text
+  } = React;
 
 class About extends Component {
 	render(){
@@ -40,54 +40,55 @@ class About extends Component {
   }
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-    flexWrap: 'wrap'
-  },
-  backgroundImage: {
-    flex: 1,
-    resizeMode: 'contain',
-    alignItems: 'center',
-    justifyContent: 'flex-start'
-  },
-  tagLine: {
-    color: '#e6e6e6',
-    letterSpacing: 1,
-    fontFamily: 'Raleway',
-    marginTop: 19,
-    fontSize: 12,
-    textAlign: 'justify'
-   },
-    continueStyleButton: {
-	  marginTop: 200,
-	  backgroundColor: 'transparent',
-	  width: 185,
-	  alignSelf: 'center',
-	  borderRadius: 23,
-	  borderColor: '#e6e6e6',
-	  borderWidth: .5
-  },
-   continueStyleText: {
-  	color: '#e6e6e6',
-  	fontFamily: 'Raleway',
-  	fontSize: 14,
-  	letterSpacing: 1.2
-  },
-  underTagline: {
-  	color: '#e6e6e6',
-    letterSpacing: 1,
-    fontFamily: 'Raleway',
-    marginTop: 19,
-    fontSize: 12
-  },
-  aboutText: {
-    paddingLeft: 50,
-    paddingRight: 50
+const styles = StyleSheet.create(
+  { container:
+      { flex: 1
+      , flexDirection: 'column'
+      , alignItems: 'center'
+      , backgroundColor: 'transparent'
+      , flexWrap: 'wrap'
+      }
+  , backgroundImage:
+      { flex: 1
+      , resizeMode: 'contain'
+      , alignItems: 'center'
+      , justifyContent: 'flex-start'
+      }
+  , tagLine:
+      { color: '#e6e6e6'
+      , letterSpacing: 1
+      , fontFamily: 'Raleway'
+      , marginTop: 19
+      , fontSize: 12
+      , textAlign: 'justify'
+      }
+  , continueStyleButton:
+      { marginTop: 200
+	    , backgroundColor: 'transparent'
+	    , width: 185
+	    , alignSelf: 'center'
+	    , borderRadius: 23
+	    , borderColor: '#e6e6e6'
+	    , borderWidth: .5
+      }
+  , continueStyleText:
+      { color: '#e6e6e6'
+  	  , fontFamily: 'Raleway'
+  	  , fontSize: 14
+  	  , letterSpacing: 1.2
+      }
+  , underTagline:
+      {	color: '#e6e6e6'
+      , letterSpacing: 1
+      , fontFamily: 'Raleway'
+      , marginTop: 19
+      , fontSize: 12
+      }
+  , aboutText:
+      { paddingLeft: 50
+      , paddingRight: 50
+      }
   }
-});
+);
 
 export default About;

@@ -1,10 +1,10 @@
 import React from 'react-native';
 
-const {
-	View,
-	Image,
-	StyleSheet
-} = React;
+const
+	{	View
+	,	Image
+	,	StyleSheet
+	} = React;
 
 const StartLogo = () => {
 	return (
@@ -17,14 +17,15 @@ const StartLogo = () => {
 	)
 };
 
-const styles = StyleSheet.create({
-	icon: {
-		width: 110,
-		height: 28,
-		alignItems: 'center',
-		justifyContent: 'center',
-		marginTop: 130
+const styles = StyleSheet.create(
+	{ icon:
+		{	width: 110
+		, height: 28
+		, alignItems: 'center'
+		, justifyContent: 'center'
+		, marginTop: 130
+		}
 	}
-});
+);
 
 export default StartLogo;

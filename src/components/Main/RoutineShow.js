@@ -103,137 +103,137 @@ class RoutineShow extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: 'black',
-    flexWrap: 'wrap',
-    alignItems: 'flex-start',
-    marginTop: 60
-  },
-  coverImage: {
-    width: 375,
-    height: 200,
-    justifyContent: 'flex-end'
-  },
-  profileImage: {
-    width: 95,
-    height: 95,
-    alignSelf: 'flex-start',
-    marginLeft: 13,
-    position: 'absolute',
-    bottom: 13
-  },
-  trainerName1: {
-    fontFamily: 'Raleway',
-    color: '#ffffff',
-    fontSize: 16,
-    letterSpacing: 2,
-    fontWeight: 'bold',
-    alignSelf: 'center',
-    backgroundColor: 'transparent'
-  },
-  location: {
-    fontFamily: 'Raleway',
-    color: '#b3b3b3',
-    alignSelf: 'center',
-    fontSize: 12,
-    marginBottom: 20,
-    marginTop: 5,
-    letterSpacing: 1
-  },
-  redBar: {
-    width: 375,
-    height: 55
-  },
-  parent: {
-    backgroundColor: 'transparent',
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  child: {
-    textAlign: 'center',
-    fontSize: 12,
-    flex: 1,
-    color: '#ffffff',
-    fontFamily: 'Raleway',
-    letterSpacing: 2,
-    fontWeight: 'bold',
-    marginTop: 9
-  },
-  childLow: {
-    textAlign: 'center',
-    fontSize: 11,
-    flex: 1,
-    color: '#000000',
-    fontFamily: 'Raleway',
-    letterSpacing: 2,
-    fontWeight: 'bold',
-    marginBottom: 10
-  },
-  parentBottom: {
-    // flex: 1,
-    flexDirection: 'column',
-    backgroundColor: 'black',
-    borderWidth: 1,
-    marginBottom: 25,
-    alignSelf: 'stretch'
-  },
-  childBottom: {
-    flexDirection: 'row',
-    borderColor: '#333333',
-    borderWidth: .5,
-    height: 60
-  },
-  childBottomLeft: {
-    flex: 1,
-    textAlign: 'left',
-    fontSize: 13,
-    fontFamily: 'Raleway',
-    color: '#cccccc',
-    alignSelf: 'center',
-    paddingLeft: 30,
-    letterSpacing: 1,
-    backgroundColor: 'transparent'
-  },
-  childBottomRight: {
-    flex: 1,
-    textAlign: 'right',
-    fontSize: 12,
-    fontFamily: 'Raleway',
-    color: '#999999',
-    alignSelf: 'center',
-    paddingRight: 30,
-    letterSpacing: 1,
-    backgroundColor: 'transparent'
-  },
-  playlistButton: {
-    backgroundColor: '#1c1c1c',
-    width: 45,
-    height: 30,
-    borderRadius: 7,
-    borderColor: '#1c1c1c',
-    marginLeft: 165
-  },
-  playlistButtonText: {
-    backgroundColor: 'transparent',
-    fontFamily: 'BebasNeue',
-    color: '#ce3c3c',
-    marginTop: 2,
-    fontSize: 30
-  },
-  playlistButtonIcon: {
-    height: 30,
-    width: 45
-  },
-  highlightButton: {
-    marginLeft: 165,
-    position: 'absolute',
-    bottom: 69
+const styles = StyleSheet.create(
+  { container:
+      { flex: 1
+      , flexDirection: 'column'
+      , alignItems: 'center'
+      , backgroundColor: 'black'
+      , flexWrap: 'wrap'
+      , alignItems: 'flex-start'
+      , marginTop: 60
+      }
+  , coverImage:
+      { width: 375
+      , height: 200
+      , justifyContent: 'flex-end'
+      }
+  , profileImage:
+      { width: 95
+      , height: 95
+      , alignSelf: 'flex-start'
+      , marginLeft: 13
+      , position: 'absolute'
+      , bottom: 13
+      }
+  , trainerName1:
+      { fontFamily: 'Raleway'
+      , color: '#ffffff'
+      , fontSize: 16
+      , letterSpacing: 2
+      , fontWeight: 'bold'
+      , alignSelf: 'center'
+      , backgroundColor: 'transparent'
+      }
+  , location:
+      { fontFamily: 'Raleway'
+      , color: '#b3b3b3'
+      , alignSelf: 'center'
+      , fontSize: 12
+      , marginBottom: 20
+      , marginTop: 5
+      , letterSpacing: 1
+      }
+  , redBar:
+      { width: 375
+      , height: 55
+      }
+  , parent:
+      { backgroundColor: 'transparent'
+      , flex: 1
+      , flexDirection: 'row'
+      , alignItems: 'center'
+      }
+  , child:
+      { textAlign: 'center'
+      , fontSize: 12
+      , flex: 1
+      , color: '#ffffff'
+      , fontFamily: 'Raleway'
+      , letterSpacing: 2
+      , fontWeight: 'bold'
+       ,marginTop: 9
+      }
+  , childLow:
+      { textAlign: 'center'
+      , fontSize: 11
+      , flex: 1
+      , color: '#000000'
+      , fontFamily: 'Raleway'
+      , letterSpacing: 2
+      , fontWeight: 'bold'
+      , marginBottom: 10
+      }
+  , parentBottom:
+      { flexDirection: 'column'
+      , backgroundColor: 'black'
+      , borderWidth: 1
+      , marginBottom: 25
+      , alignSelf: 'stretch'
+      }
+  , childBottom:
+      { flexDirection: 'row'
+      , borderColor: '#333333'
+      , borderWidth: .5
+      , height: 60
+      }
+  , childBottomLeft:
+      { flex: 1
+      , textAlign: 'left'
+      , fontSize: 13
+      , fontFamily: 'Raleway'
+      , color: '#cccccc'
+      , alignSelf: 'center'
+      , paddingLeft: 30
+      , letterSpacing: 1
+      , backgroundColor: 'transparent'
+      }
+  , childBottomRight:
+      { flex: 1
+      , textAlign: 'right'
+      , fontSize: 12
+      , fontFamily: 'Raleway'
+      , color: '#999999'
+      , alignSelf: 'center'
+      , paddingRight: 30
+      , letterSpacing: 1
+      , backgroundColor: 'transparent'
+      }
+  , playlistButton:
+      { backgroundColor: '#1c1c1c'
+      , width: 45
+      , height: 30
+      , borderRadius: 7
+      , borderColor: '#1c1c1c'
+      , marginLeft: 165
+      }
+  , playlistButtonText:
+      { backgroundColor: 'transparent'
+      , fontFamily: 'BebasNeue'
+      , color: '#ce3c3c'
+      , marginTop: 2
+      , fontSize: 30
+      }
+  , playlistButtonIcon:
+      { height: 30
+      , width: 45
+      }
+  , highlightButton:
+      { marginLeft: 165
+      , position: 'absolute'
+      , bottom: 69
+      }
   }
-});
+);
 
 export default RoutineShow;

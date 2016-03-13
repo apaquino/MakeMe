@@ -101,71 +101,72 @@ class Go extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: 'transparent'
-  },
-  backgroundImage: {
-    flex: 1,
-    resizeMode: 'cover',
-    alignItems: 'center',
-    justifyContent: 'flex-start'
-  },
-  trainerName: {
-    color: '#b3b3b3',
-    letterSpacing: 1.5,
-    fontFamily: 'Raleway',
-    marginTop: 14,
-    fontSize: 12
-  },
-  routineName: {
-    color: '#b3b3b3',
-    letterSpacing: 1.5,
-    fontFamily: 'Raleway',
-    fontWeight: 'bold',
-    marginTop: 19,
-    fontSize: 17
-  },
-  profileImage: {
-    width: 95,
-    height: 95,
-    alignSelf: 'center',
-    marginTop: 150
-  },
-  readyText: {
-    fontFamily: 'BebasNeue',
-    color: '#ce3c3c',
-    fontSize: 31,
-    letterSpacing: 2
-  },
-  xText: {
-    fontFamily: 'Raleway',
-    fontWeight: 'bold',
-    color: '#ce3c3c',
-    fontSize: 29,
-    letterSpacing: 2,
-    marginRight: 25
-  },
-  playText: {
-    flex: 1,
-    flexDirection: 'row',
-    marginTop: 140
-  },
-  nextGo: {
-    marginTop: 7,
-    height: 20,
-    width: 32,
-    marginLeft: 22
-  },
-  emptyContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: 'black'
-  },
-});
+const styles = StyleSheet.create(
+  { container:
+      { flex: 1
+      , flexDirection: 'column'
+      , alignItems: 'center'
+      , backgroundColor: 'transparent'
+      }
+  , backgroundImage:
+      { flex: 1
+      , resizeMode: 'cover'
+      , alignItems: 'center'
+      , justifyContent: 'flex-start'
+      }
+  , trainerName:
+      { color: '#b3b3b3'
+      , letterSpacing: 1.5
+      , fontFamily: 'Raleway'
+      , marginTop: 14
+      , fontSize: 12
+      }
+  , routineName:
+      { color: '#b3b3b3'
+      , letterSpacing: 1.5
+      , fontFamily: 'Raleway'
+      , fontWeight: 'bold'
+      , marginTop: 19
+      , fontSize: 17
+      }
+  , profileImage:
+      { width: 95
+      , height: 95
+      , alignSelf: 'center'
+      , marginTop: 150
+      }
+  , readyText:
+      { fontFamily: 'BebasNeue'
+      , color: '#ce3c3c'
+      , fontSize: 31
+      , letterSpacing: 2
+      }
+  , xText:
+      { fontFamily: 'Raleway'
+      , fontWeight: 'bold'
+      , color: '#ce3c3c'
+      , fontSize: 29
+      , letterSpacing: 2
+      , marginRight: 25
+      }
+  , playText:
+      { flex: 1
+      , flexDirection: 'row'
+      , marginTop: 140
+      }
+  , nextGo:
+      { marginTop: 7
+      , height: 20
+      , width: 32
+      , marginLeft: 22
+      }
+  , emptyContainer:
+    { flex: 1
+    , flexDirection: 'column'
+    , alignItems: 'center'
+    , backgroundColor: 'black'
+    }
+  }
+);
 
 export default Go;

@@ -79,7 +79,7 @@ class Playlist extends Component {
     const isPlaylistEmpty = _cachedRowCount === 0;
     return (
 			<View style={styles.container}>
-      { isPlaylistEmpty === 0 ?
+      { isPlaylistEmpty ?
         <EmptyMessage /> :
         (<ListView
           automaticallyAdjustContentInsets={false}

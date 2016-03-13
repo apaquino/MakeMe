@@ -19,7 +19,8 @@ const EmptyMessage = () => {
 
 const styles = StyleSheet.create(
   { tagLine:
-    { color: 'white'
+    { flex: 1
+    , color: 'white'
     , letterSpacing: 1
     , fontFamily: 'Raleway'
     , marginTop: 110
@@ -27,7 +28,8 @@ const styles = StyleSheet.create(
     , textAlign: 'center'
     }
   , aboutText:
-    { paddingLeft: 65
+    { flex: 1
+    , paddingLeft: 65
     , paddingRight: 65
     }
   }

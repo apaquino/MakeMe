@@ -12,30 +12,30 @@ import Profile from '../components/Main/Profile';
 import Go from '../components/Main/Go';
 import Workout from '../components/Main/Workout';
 
-import {
-  ProfileTabIcon,
-  FavoritesTabIcon,
-  PlaylistTabIcon,
-  GoTabIcon,
-  SuggestedTabIcon,
-} from '../components/Main/TabBarIcons';
+import
+  { ProfileTabIcon
+  , FavoritesTabIcon
+  , PlaylistTabIcon
+  , GoTabIcon
+  , SuggestedTabIcon
+  } from '../components/Main/TabBarIcons';
 
-import {
-  renderTitle,
-  renderTitleTryMe,
-  renderTitleLikeMe,
-  renderRightButtonGear,
-  renderLeftBackButton,
-  renderLeftFilter,
-} from '../components/Main/NavBarIcons';
+import
+  { renderTitle
+  , renderTitleTryMe
+  , renderTitleLikeMe
+  , renderRightButtonGear
+  , renderLeftBackButton
+  , renderLeftFilter
+  } from '../components/Main/NavBarIcons';
 
-const {
-  Navigator,
-  Text,
-  View,
-  Image,
-  StyleSheet
-} = React;
+const
+  { Navigator
+  , Text
+  , View
+  , Image
+  , StyleSheet
+  } = React;
 
 class MakeMeRouter extends Component {
   render() {

@@ -19,9 +19,9 @@ const
   , TouchableOpacity
   } = React;
 
-const propTypes = {
-  startform: PropTypes.string.isRequired
-}
+const propTypes =
+  { startform: PropTypes.string.isRequired
+  }
 
 class LoginSignup extends Component {
   constructor(props){
@@ -205,7 +205,9 @@ class LoginSignup extends Component {
     const userid = AppStore.getCurentUserId();
     if (!result) {
       AlertIOS.alert('The Creditionals You Provided Are Invalid', 'Please try again',
-        [{text: 'Okay', onPress: () => this._username.focus()}]
+        [{text: 'Okay'
+        , onPress: () => this._username.focus()}
+        ]
       );
     } else {
       Actions.tabbar();
